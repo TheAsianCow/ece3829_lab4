@@ -55,17 +55,46 @@
 int main(){
 	init_platform();
 	 u32 data;
-	 XIOModule gpi;
-	 XIOModule gpo;
-	 print("Reading switches and writing to LED port\n\r");
-	 data = XIOModule_Initialize(&gpi, XPAR_IOMODULE_0_DEVICE_ID);
-	 data = XIOModule_Start(&gpi);
-	 data = XIOModule_Initialize(&gpo, XPAR_IOMODULE_0_DEVICE_ID);
-	 data = XIOModule_Start(&gpo);
-	 while (1)
-	 {
-	 data = XIOModule_DiscreteRead(&gpi, 1); // read switches (channel 1)
-	 XIOModule_DiscreteWrite(&gpo, 1, data); // turn on LEDs (channel 1)
+	 XIOModule iomodule; // iomodule variable for gpi, gpo, and uart
+	 u8 msg[15] = "This is a test";// buffer for sending message using XIOModule_Send
+	 u8 rx_buf[10]; // receive buffer using XIOModule_Recv
+	 u32 counter;
+	 // example using xil_printf
+	 counter = 1234;
+	 xil_printf("The counter value is %d in decimal and %x in hex\n\r", counter,
+	counter);
+	 print("Read switches, write to LED port, and UART send and receive chars\n\r");
+	 // Initialize module to obtain base address
+	 data = XIOModule_Initialize(&iomodule, XPAR_IOMODULE_0_DEVICE_ID);
+	 data = XIOModule_Start(&iomodule);
+	 // Send 12 characters using Send
+	 // Send is non-blocking so must be called in a loop, may return without sending a character
+	 // unsigned int XIOModule_Send(XIOModule *InstancePtr, u8 *DataBufferPtr, unsigned int NumBytes);
+	 const int count = 14;
+	 int index = 0;
+	 while (index < count) {
+		 data = XIOModule_Send(&iomodule, &msg[index], count - index);
+		 index += data;
+	 }
+	 xil_printf("\n\rThe number of bytes sent was %d\n\r", index);
+	 // Another way to send individual characters
+	 outbyte('X');
+	 outbyte(0x37); // number '7'
+	 outbyte('Z');
+	 outbyte('\n'); // line feed
+	 // Receive a character and store in rx_buf
+	 // unsigned int XIOModule_Recv(XIOModule *InstancePtr, u8 *DataBufferPtr, unsigned int NumBytes);
+	 while
+		 ((data = XIOModule_Recv(&iomodule, rx_buf, 1)) == 0);
+	 xil_printf("The number of bytes received was %d\n\r", data);
+	 xil_printf("Recv: The received char was %c\n\r", rx_buf[0]);
+	 // Another way to receive a single character
+	 rx_buf[0] = inbyte();
+	 xil_printf("inbyte: The received char was %c\n\r", rx_buf[0]);
+	 while (1) {
+		 data = XIOModule_DiscreteRead(&iomodule, 1); // read switches (channel 1)
+		 // data = XIOModule_DiscreteRead(&iomodule, 2); // read push (channel 2)
+		 XIOModule_DiscreteWrite(&iomodule, 1, data); // turn on LEDs (channel 1)
 	 }
 	 cleanup_platform();
 	 return 0;
