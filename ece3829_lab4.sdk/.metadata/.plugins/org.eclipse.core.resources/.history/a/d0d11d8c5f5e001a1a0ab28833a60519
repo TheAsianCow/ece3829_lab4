@@ -56,7 +56,8 @@ int main()
 
 {
     init_platform();
-    u32 data;
+    u32 data_button;
+    u32 data_disp;
     XIOModule iomodule;
 
     u8 keyboard[10];
@@ -67,13 +68,11 @@ int main()
     u32 x_pos = 9;
     u32 y_pos = 7;
 
-    data = XIOModule_Initialize(&iomodule, XPAR_IOMODULE_0_DEVICE_ID);
-    data = XIOModule_Start(&iomodule);
 
 
     while(1) {
 
-    	data = XIOModule_Recv(&iomodule, keyboard, 1);
+    	data_button = XIOModule_Recv(&iomodule, keyboard, 1);
     	if(!pressed) {
 			if(keyboard[0] == 'w') { //up
 				y_pos = y_pos - 1;
@@ -139,8 +138,8 @@ int main()
 		XIOModule_DiscreteWrite(&iomodule, 3, x_coord);
 		XIOModule_DiscreteWrite(&iomodule, 4, y_coord);
 
-		data = XIOModule_DiscreteRead(&iomodule, 1);
-		if(data){
+		data_disp = XIOModule_DiscreteRead(&iomodule, 1);
+		if(data_disp){
 			xil_printf("Lab 4: Alyssa Ungerer and Jeffrey Huang\n\r");
 			xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
 		}
