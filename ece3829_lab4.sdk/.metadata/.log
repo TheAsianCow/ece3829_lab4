@@ -2642,3 +2642,283 @@ For each bit:
 
 !ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 14:14:27.669
 !MESSAGE XSCT command with result: [::hsi::utils::closesw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY org.eclipse.tcf 4 0 2020-03-04 16:49:15.937
+!MESSAGE TCF channel terminated
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:186)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:85)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:328)
+!SESSION 2020-03-04 18:03:17.308 -----------------------------------------------
+eclipse.buildId=2019.1
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-03-04 18:03:18.866
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2020-03-04 18:03:19.692
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-03-04 18:03:19.692
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2020-03-04 18:03:20.270
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-03-04 18:03:20.271
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:27.966
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-2
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:27.982
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:28.367
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-2
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:28.373
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:28.381
+!MESSAGE XSCT Command: [setws R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:28.402
+!MESSAGE XSCT Command: [::hsi::utils::openhw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Thread: Worker-4
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:28.411
+!MESSAGE XSCT command with result: [setws R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk], Result: [null, ]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:03:31.037
+!MESSAGE XSCT command with result: [::hsi::utils::openhw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Result: [null, ]. Thread: Worker-4
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:37.903
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:37.965
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:37.970
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:37.985
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {"procname": "microblaze_I",
+"osname": "standalone",
+"osver": "7.0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:37.991
+!MESSAGE XSCT Command: [hsi::utils::get_supported_os -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.006
+!MESSAGE XSCT command with result: [hsi::utils::get_supported_os -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Result: [null, {"microblaze_I": {"freertos10_xilinx_v1_3": {"name": "freertos10_xilinx",
+"version": "1.3",
+"desc": "This Xilinx FreeRTOS port is based on FreeRTOS kernel version 10.1.1",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/ThirdParty/bsp/freertos10_xilinx_v1_3",
+},
+"standalone_v7_0": {"name": "standalone",
+"version": "7.0",
+"desc": "Standalone is a simple, low-level software layer. It provides access to basic processor features such as caches, interrupts and exceptions as well as the basic features of a hosted environment, such as standard input and output, profiling, abort and exit.",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lgcc,-lc,--end-group",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/lib/bsp/standalone_v7_0",
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.021
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf microblaze_I], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.031
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf microblaze_I], Result: [null, dlmb_cntlr ilmb_cntlr iomodule_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.037
+!MESSAGE XSCT Command: [::hsi::utils::get_drivers_for_sw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.052
+!MESSAGE XSCT command with result: [::hsi::utils::get_drivers_for_sw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {"dlmb_cntlr": {"name": "bram",
+"ver": "4.3",
+},
+"ilmb_cntlr": {"name": "bram",
+"ver": "4.3",
+},
+"iomodule_0": {"name": "iomodule",
+"ver": "2.7",
+},
+"microblaze_I": {"name": "cpu",
+"ver": "2.9",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.058
+!MESSAGE XSCT Command: [hsi::utils::get_drivers_for_hw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.083
+!MESSAGE XSCT command with result: [hsi::utils::get_drivers_for_hw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf], Result: [null, {"dlmb": {"version": "3.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"dlmb_cntlr": {"version": "4.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"bram_v4_3": {"name": "bram",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"ilmb": {"version": "3.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"ilmb_cntlr": {"version": "4.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"bram_v4_3": {"name": "bram",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"iomodule_0": {"version": "3.1",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"iomodule_v2_7": {"name": "iomodule",
+"version": "2.7",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/iomodule_v2_7",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"lmb_bram_I": {"version": "8.4",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"microblaze_I": {"version": "11.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"cpu_v2_9": {"name": "cpu",
+"version": "2.9",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/cpu_v2_9",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"rst_0": {"version": "5.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2019.1/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.115
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.130
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.136
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.150
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {"procname": "microblaze_I",
+"osname": "standalone",
+"osver": "7.0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.159
+!MESSAGE XSCT Command: [::hsi::utils::get_libs_from_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.174
+!MESSAGE XSCT command with result: [::hsi::utils::get_libs_from_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.203
+!MESSAGE XSCT Command: [::hsi::utils::closesw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:08:38.214
+!MESSAGE XSCT command with result: [::hsi::utils::closesw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.467
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.508
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.513
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.532
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {"procname": "microblaze_I",
+"osname": "standalone",
+"osver": "7.0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.538
+!MESSAGE XSCT Command: [::hsi::utils::get_libs_from_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.557
+!MESSAGE XSCT command with result: [::hsi::utils::get_libs_from_sw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.562
+!MESSAGE XSCT Command: [::hsi::utils::get_sw_libs -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.580
+!MESSAGE XSCT command with result: [::hsi::utils::get_sw_libs -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.587
+!MESSAGE XSCT Command: [::hsi::utils::get_drivers_for_sw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.601
+!MESSAGE XSCT command with result: [::hsi::utils::get_drivers_for_sw -json R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top_hw_platform_0/system.hdf R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, {"dlmb_cntlr": {"name": "bram",
+"ver": "4.3",
+},
+"ilmb_cntlr": {"name": "bram",
+"ver": "4.3",
+},
+"iomodule_0": {"name": "iomodule",
+"ver": "2.7",
+},
+"microblaze_I": {"name": "cpu",
+"ver": "2.9",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.607
+!MESSAGE XSCT Command: [::hsi::utils::closesw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-03-04 18:14:50.618
+!MESSAGE XSCT command with result: [::hsi::utils::closesw R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world_bsp/system.mss], Result: [null, ]. Thread: main

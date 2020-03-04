@@ -27,7 +27,7 @@ module mcs_top(
     input rx,
     output tx,
     input [7:0] sw,
-    output [7:0] LED,
+    output [3:0] LED,
     output [6:0] seg,
     output [3:0] an,
     output Hsync,

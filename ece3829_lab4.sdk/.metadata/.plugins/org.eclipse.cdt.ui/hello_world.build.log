@@ -1,4 +1,4 @@
-16:31:45 **** Auto Build of configuration Debug for project hello_world ****
+18:08:40 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -17,5 +17,5 @@ mb-size hello_world.elf  |tee "hello_world.elf.size"
 'Finished building: hello_world.elf.size'
 ' '
 
-16:31:48 Build Finished (took 2s.663ms)
+18:08:43 Build Finished (took 2s.819ms)
 

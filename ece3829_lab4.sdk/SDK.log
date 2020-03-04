@@ -11,3 +11,8 @@
 13:22:42 INFO  : Successfully done setting SDK workspace  
 13:22:42 INFO  : Processing command line option -hwspec R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top.hdf.
 13:22:42 INFO  : Checking for hwspec changes in the project mcs_top_hw_platform_0.
+18:03:27 INFO  : XSCT server has started successfully.
+18:03:28 INFO  : Processing command line option -hwspec R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top.hdf.
+18:03:28 INFO  : Successfully done setting XSCT server connection channel  
+18:03:28 INFO  : Checking for hwspec changes in the project mcs_top_hw_platform_0.
+18:03:28 INFO  : Successfully done setting SDK workspace  
