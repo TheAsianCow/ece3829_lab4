@@ -38,13 +38,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="1"/>
-    <Option Name="WTModelSimExportSim" Val="1"/>
-    <Option Name="WTQuestaExportSim" Val="1"/>
-    <Option Name="WTIesExportSim" Val="1"/>
-    <Option Name="WTVcsExportSim" Val="1"/>
-    <Option Name="WTRivieraExportSim" Val="1"/>
-    <Option Name="WTActivehdlExportSim" Val="1"/>
+    <Option Name="WTXSimExportSim" Val="2"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTIesExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -59,6 +59,75 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/imports/sources_1/imports/new/bcd7seg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/imports/sources_1/imports/new/bcd7seg.v"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/imports/new/decoder2to4.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/imports/new/decoder2to4.v"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/imports/new/my_counter.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/imports/new/my_counter.v"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/imports/sources_1/new/seven_seg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/imports/sources_1/new/seven_seg.v"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/new/slowclock.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/vga_clk.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/new/vga_clk.v"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/vga_display.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/new/vga_display.v"/>
+          <Attr Name="ImportTime" Val="1583347566"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/ECE3829/vga_controller_640_60.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/ECE3829/vga_controller_640_60.vhd"/>
+          <Attr Name="ImportTime" Val="1583346588"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/mcs_top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -66,8 +135,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSDKDIR/hello_world/Debug/hello_world.elf">
+      <File Path="$PSRCDIR/sources_1/imports/Debug/hello_world.elf">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSDKDIR/hello_world/Debug/hello_world.elf"/>
+          <Attr Name="ImportTime" Val="1583351341"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="ScopedToRef" Val="microblaze_mcs_0"/>
           <Attr Name="ScopedToCell" Val="inst/microblaze_I"/>
@@ -93,6 +164,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="mcs_top"/>
@@ -144,9 +216,7 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -155,9 +225,7 @@
     </Run>
     <Run Id="microblaze_mcs_0_synth_1" Type="Ft3:Synth" SrcSet="microblaze_mcs_0" Part="xc7a35tcpg236-1" ConstrsSet="microblaze_mcs_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/microblaze_mcs_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -166,9 +234,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -185,9 +251,7 @@
     </Run>
     <Run Id="microblaze_mcs_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="microblaze_mcs_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="microblaze_mcs_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

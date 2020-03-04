@@ -1214,7 +1214,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>C_USE_GPO2</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO2.C_USE_GPO2" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;))">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO2.C_USE_GPO2" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;))">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:enablement>
@@ -1293,7 +1293,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI2&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI2&apos;)) = 1)">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -1326,7 +1326,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>C_USE_GPO3</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO3.C_USE_GPO3" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;))">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO3.C_USE_GPO3" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;))">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:enablement>
@@ -1405,7 +1405,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI3&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI3&apos;)) = 1)">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -1438,7 +1438,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>C_USE_GPO4</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO4.C_USE_GPO4" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;))">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.GPIO4.C_USE_GPO4" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;))">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:enablement>
@@ -1517,7 +1517,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI4&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.GPIO4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1) or (spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPI4&apos;)) = 1)">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -1820,7 +1820,7 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 2" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1)">true</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -1856,7 +1856,7 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 3" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1)">true</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -1892,7 +1892,7 @@ For each bit:
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.SLMB.REG.GPO 4" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1)">true</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -5483,11 +5483,11 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 03 19:44:49 UTC 2020</spirit:value>
+            <spirit:value>Wed Mar 04 20:17:23 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b859a4f5</spirit:value>
+            <spirit:value>9:236ddba1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5498,7 +5498,7 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b859a4f5</spirit:value>
+            <spirit:value>9:236ddba1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5514,11 +5514,11 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 03 19:44:49 UTC 2020</spirit:value>
+            <spirit:value>Wed Mar 04 20:17:24 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b859a4f5</spirit:value>
+            <spirit:value>9:236ddba1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5534,11 +5534,11 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 03 19:44:49 UTC 2020</spirit:value>
+            <spirit:value>Wed Mar 04 20:17:24 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a7b5aae6</spirit:value>
+            <spirit:value>9:3709b4bf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5554,11 +5554,11 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 03 19:44:49 UTC 2020</spirit:value>
+            <spirit:value>Wed Mar 04 20:17:24 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a7b5aae6</spirit:value>
+            <spirit:value>9:3709b4bf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5572,11 +5572,11 @@ The period is the value + 2.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 03 19:44:49 UTC 2020</spirit:value>
+            <spirit:value>Wed Mar 04 20:17:24 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b859a4f5</spirit:value>
+            <spirit:value>9:236ddba1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6457,7 +6457,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO2" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO2" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -6481,7 +6481,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO3" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO3" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -6505,7 +6505,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO4" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.GPO4" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -7487,7 +7487,7 @@ The period is the value + 2.
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_GPO2</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO2">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO2">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GPO2_SIZE</spirit:name>
@@ -7495,7 +7495,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO2_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO2_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
@@ -7506,14 +7506,14 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO2_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO2_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO2&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_GPO3</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO3">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO3">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GPO3_SIZE</spirit:name>
@@ -7521,7 +7521,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO3_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO3_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
@@ -7532,14 +7532,14 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO3_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO3_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO3&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_GPO4</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO4">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_GPO4">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GPO4_SIZE</spirit:name>
@@ -7547,7 +7547,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO4_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO4_SIZE" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
@@ -7558,7 +7558,7 @@ The period is the value + 2.
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO4_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_GPO4_INIT" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_GPO4&apos;)) = 1">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
@@ -8440,7 +8440,7 @@ The period is the value + 2.
     <spirit:parameter>
       <spirit:name>C_USE_GPO2</spirit:name>
       <spirit:displayName>Use GPO</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO2" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5040" spirit:configGroups="5 GPO">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO2" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5040" spirit:configGroups="5 GPO">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_GPO2_SIZE</spirit:name>
@@ -8449,7 +8449,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO2_SIZE" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO2_SIZE" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8461,7 +8461,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO2_INIT" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO2_INIT" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8469,7 +8469,7 @@ The period is the value + 2.
     <spirit:parameter>
       <spirit:name>C_USE_GPO3</spirit:name>
       <spirit:displayName>Use GPO</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO3" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5070" spirit:configGroups="5 GPO">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO3" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5070" spirit:configGroups="5 GPO">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_GPO3_SIZE</spirit:name>
@@ -8478,7 +8478,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO3_SIZE" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO3_SIZE" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8490,7 +8490,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO3_INIT" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO3_INIT" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8498,7 +8498,7 @@ The period is the value + 2.
     <spirit:parameter>
       <spirit:name>C_USE_GPO4</spirit:name>
       <spirit:displayName>Use GPO</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO4" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5100" spirit:configGroups="5 GPO">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_GPO4" spirit:choiceRef="choice_pairs_4873554b" spirit:order="5100" spirit:configGroups="5 GPO">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_GPO4_SIZE</spirit:name>
@@ -8507,7 +8507,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO4_SIZE" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO4_SIZE" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8519,7 +8519,7 @@ The period is the value + 2.
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO4_INIT" xilinx:dependency="true">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_GPO4_INIT" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8785,6 +8785,9 @@ The period is the value + 2.
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_MASK" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_GPI1" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_GPO1" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_GPO2" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_GPO3" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_GPO4" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_UART_RX" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_UART_TX" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>

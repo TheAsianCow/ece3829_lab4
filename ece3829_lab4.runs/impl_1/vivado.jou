@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Mar  3 15:36:52 2020
-# Process ID: 12428
+# Start of session at: Wed Mar  4 15:30:25 2020
+# Process ID: 12524
 # Current directory: R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/impl_1
 # Command line: vivado.exe -log mcs_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mcs_top.tcl -notrace
 # Log file: R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/impl_1/mcs_top.vdi

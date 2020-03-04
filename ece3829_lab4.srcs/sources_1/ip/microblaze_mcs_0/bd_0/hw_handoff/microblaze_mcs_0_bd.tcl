@@ -165,6 +165,36 @@ proc create_root_design { parentCell } {
    CONFIG.C_USE_GPO1 {1} \
    ] $GPIO1
 
+  set GPIO2 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 GPIO2 ]
+  set_property -dict [ list \
+   CONFIG.C_GPI2_INTERRUPT {0} \
+   CONFIG.C_GPI2_SIZE {32} \
+   CONFIG.C_GPO2_INIT {0x00000000} \
+   CONFIG.C_GPO2_SIZE {32} \
+   CONFIG.C_USE_GPI2 {0} \
+   CONFIG.C_USE_GPO2 {1} \
+   ] $GPIO2
+
+  set GPIO3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 GPIO3 ]
+  set_property -dict [ list \
+   CONFIG.C_GPI3_INTERRUPT {0} \
+   CONFIG.C_GPI3_SIZE {32} \
+   CONFIG.C_GPO3_INIT {0x00000000} \
+   CONFIG.C_GPO3_SIZE {32} \
+   CONFIG.C_USE_GPI3 {0} \
+   CONFIG.C_USE_GPO3 {1} \
+   ] $GPIO3
+
+  set GPIO4 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 GPIO4 ]
+  set_property -dict [ list \
+   CONFIG.C_GPI4_INTERRUPT {0} \
+   CONFIG.C_GPI4_SIZE {32} \
+   CONFIG.C_GPO4_INIT {0x00000000} \
+   CONFIG.C_GPO4_SIZE {32} \
+   CONFIG.C_USE_GPI4 {0} \
+   CONFIG.C_USE_GPO4 {1} \
+   ] $GPIO4
+
   set UART [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 UART ]
 
 
@@ -213,6 +243,9 @@ proc create_root_design { parentCell } {
    CONFIG.C_MASK {0x00000000C0000000} \
    CONFIG.C_USE_GPI1 {1} \
    CONFIG.C_USE_GPO1 {1} \
+   CONFIG.C_USE_GPO2 {1} \
+   CONFIG.C_USE_GPO3 {1} \
+   CONFIG.C_USE_GPO4 {1} \
    CONFIG.C_USE_UART_RX {1} \
    CONFIG.C_USE_UART_TX {1} \
  ] $iomodule_0
@@ -251,6 +284,9 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ilmb_port [get_bd_intf_pins ilmb_cntlr/BRAM_PORT] [get_bd_intf_pins lmb_bram_I/BRAM_PORTB]
   connect_bd_intf_net -intf_net ilmb_sl_0 [get_bd_intf_pins ilmb/LMB_Sl_0] [get_bd_intf_pins ilmb_cntlr/SLMB]
   connect_bd_intf_net -intf_net iomodule_0_GPIO1 [get_bd_intf_ports GPIO1] [get_bd_intf_pins iomodule_0/GPIO1]
+  connect_bd_intf_net -intf_net iomodule_0_GPIO2 [get_bd_intf_ports GPIO2] [get_bd_intf_pins iomodule_0/GPIO2]
+  connect_bd_intf_net -intf_net iomodule_0_GPIO3 [get_bd_intf_ports GPIO3] [get_bd_intf_pins iomodule_0/GPIO3]
+  connect_bd_intf_net -intf_net iomodule_0_GPIO4 [get_bd_intf_ports GPIO4] [get_bd_intf_pins iomodule_0/GPIO4]
   connect_bd_intf_net -intf_net iomodule_0_UART [get_bd_intf_ports UART] [get_bd_intf_pins iomodule_0/UART]
 
   # Create port connections

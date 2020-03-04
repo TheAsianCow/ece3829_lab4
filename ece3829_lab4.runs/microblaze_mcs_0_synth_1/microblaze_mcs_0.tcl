@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_param project.vivado.isBlockSynthRun true
@@ -34,7 +35,9 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.xci
+read_ip -quiet R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.xci
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_board.xdc]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/bd_fc5c_0_microblaze_I_0.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/bd_fc5c_0_microblaze_I_0_ooc_debug.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_1/bd_fc5c_0_rst_0_0_board.xdc]
@@ -44,10 +47,8 @@ set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece382
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_6/bd_fc5c_0_lmb_bram_I_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_7/bd_fc5c_0_iomodule_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/bd_fc5c_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_board.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/data/mb_bootloop_le.elf]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/mb_bootloop_le.elf]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/data/mb_bootloop_le.elf]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -102,32 +103,32 @@ write_checkpoint -force -noxdef microblaze_mcs_0.dcp
 create_report "microblaze_mcs_0_synth_1_synth_report_utilization_0" "report_utilization -file microblaze_mcs_0_utilization_synth.rpt -pb microblaze_mcs_0_utilization_synth.pb"
 
 if { [catch {
-  file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0.dcp r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.dcp
+  file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0.dcp R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v
+  write_verilog -force -mode synth_stub R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl
+  write_vhdl -force -mode synth_stub R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
+  write_verilog -force -mode funcsim R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -137,32 +138,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0.dcp r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.dcp
+  file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0.dcp R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_stub.v r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v
+  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_stub.v R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_stub.vhdl r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl
+  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_stub.vhdl R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_sim_netlist.v r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
+  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_sim_netlist.v R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_sim_netlist.vhdl r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
+  file rename -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.runs/microblaze_mcs_0_synth_1/microblaze_mcs_0_sim_netlist.vhdl R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -171,13 +172,13 @@ if { [catch {
 
 if {[file isdir R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0]} {
   catch { 
-    file copy -force r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0
+    file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.v R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0
   }
 }
 
 if {[file isdir R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0]} {
   catch { 
-    file copy -force r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0
+    file copy -force R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_stub.vhdl R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.ip_user_files/ip/microblaze_mcs_0
   }
 }
 file delete __synthesis_is_running__

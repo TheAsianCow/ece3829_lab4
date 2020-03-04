@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Tue Mar  3 14:47:56 2020
+-- Date        : Wed Mar  4 15:22:12 2020
 -- Host        : AK113-07 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
+--               R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.vhdl
 -- Design      : microblaze_mcs_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -18,7 +18,7 @@ entity microblaze_mcs_0_GPI_Module is
   port (
     \Using_GPI.GPI_In_reg[7]_0\ : out STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    \Using_GPI.GPI_In_reg[0]_0\ : in STD_LOGIC;
+    \Using_GPI.GPI_In_reg[7]_1\ : in STD_LOGIC;
     GPI1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     Clk : in STD_LOGIC
   );
@@ -27,20 +27,20 @@ entity microblaze_mcs_0_GPI_Module is
 end microblaze_mcs_0_GPI_Module;
 
 architecture STRUCTURE of microblaze_mcs_0_GPI_Module is
-  signal \p_0_in__0\ : STD_LOGIC;
+  signal \Using_GPI.GPI_In[7]_i_1_n_0\ : STD_LOGIC;
 begin
 \Using_GPI.GPI_In[7]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFEFFFFFFFFFFFF"
+      INIT => X"FFFFFFFBFFFFFFFF"
     )
         port map (
       I0 => Q(2),
-      I1 => Q(0),
-      I2 => Q(1),
+      I1 => Q(3),
+      I2 => Q(0),
       I3 => Q(4),
-      I4 => Q(3),
-      I5 => \Using_GPI.GPI_In_reg[0]_0\,
-      O => \p_0_in__0\
+      I4 => Q(1),
+      I5 => \Using_GPI.GPI_In_reg[7]_1\,
+      O => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -48,7 +48,7 @@ begin
       CE => '1',
       D => GPI1(0),
       Q => \Using_GPI.GPI_In_reg[7]_0\(0),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -56,7 +56,7 @@ begin
       CE => '1',
       D => GPI1(1),
       Q => \Using_GPI.GPI_In_reg[7]_0\(1),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -64,7 +64,7 @@ begin
       CE => '1',
       D => GPI1(2),
       Q => \Using_GPI.GPI_In_reg[7]_0\(2),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -72,7 +72,7 @@ begin
       CE => '1',
       D => GPI1(3),
       Q => \Using_GPI.GPI_In_reg[7]_0\(3),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -80,7 +80,7 @@ begin
       CE => '1',
       D => GPI1(4),
       Q => \Using_GPI.GPI_In_reg[7]_0\(4),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -88,7 +88,7 @@ begin
       CE => '1',
       D => GPI1(5),
       Q => \Using_GPI.GPI_In_reg[7]_0\(5),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -96,7 +96,7 @@ begin
       CE => '1',
       D => GPI1(6),
       Q => \Using_GPI.GPI_In_reg[7]_0\(6),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 \Using_GPI.GPI_In_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -104,7 +104,7 @@ begin
       CE => '1',
       D => GPI1(7),
       Q => \Using_GPI.GPI_In_reg[7]_0\(7),
-      R => \p_0_in__0\
+      R => \Using_GPI.GPI_In[7]_i_1_n_0\
     );
 end STRUCTURE;
 library IEEE;
@@ -113,10 +113,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_mcs_0_GPO_Module is
   port (
-    \lmb_abus_Q_reg[2]\ : out STD_LOGIC;
     GPO1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    lmb_reg_write : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    \TMR_No.gpo_io_i_reg[0]_0\ : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
     Rst : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 7 downto 0 );
     Clk : in STD_LOGIC
@@ -127,30 +126,19 @@ end microblaze_mcs_0_GPO_Module;
 
 architecture STRUCTURE of microblaze_mcs_0_GPO_Module is
   signal gpo1_write : STD_LOGIC;
-  signal \^lmb_abus_q_reg[2]\ : STD_LOGIC;
 begin
-  \lmb_abus_Q_reg[2]\ <= \^lmb_abus_q_reg[2]\;
 \TMR_No.gpo_io_i[7]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000200000"
+      INIT => X"0000000200000000"
     )
         port map (
-      I0 => lmb_reg_write,
+      I0 => \TMR_No.gpo_io_i_reg[0]_0\,
       I1 => Q(3),
-      I2 => \^lmb_abus_q_reg[2]\,
-      I3 => Q(0),
-      I4 => Q(2),
-      I5 => Q(5),
+      I2 => Q(0),
+      I3 => Q(4),
+      I4 => Q(1),
+      I5 => Q(2),
       O => gpo1_write
-    );
-\TMR_No.gpo_io_i[7]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => Q(4),
-      I1 => Q(1),
-      O => \^lmb_abus_q_reg[2]\
     );
 \TMR_No.gpo_io_i_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -221,6 +209,888 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
+entity \microblaze_mcs_0_GPO_Module__parameterized1\ is
+  port (
+    GPO2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    \TMR_No.gpo_io_i_reg[0]_0\ : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Rst : in STD_LOGIC;
+    D : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Clk : in STD_LOGIC
+  );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of \microblaze_mcs_0_GPO_Module__parameterized1\ : entity is "GPO_Module";
+end \microblaze_mcs_0_GPO_Module__parameterized1\;
+
+architecture STRUCTURE of \microblaze_mcs_0_GPO_Module__parameterized1\ is
+  signal gpo2_write : STD_LOGIC;
+begin
+\TMR_No.gpo_io_i[31]_i_1__0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0002000000000000"
+    )
+        port map (
+      I0 => \TMR_No.gpo_io_i_reg[0]_0\,
+      I1 => Q(3),
+      I2 => Q(4),
+      I3 => Q(1),
+      I4 => Q(0),
+      I5 => Q(2),
+      O => gpo2_write
+    );
+\TMR_No.gpo_io_i_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(0),
+      Q => GPO2(0),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(10),
+      Q => GPO2(10),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(11),
+      Q => GPO2(11),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(12),
+      Q => GPO2(12),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(13),
+      Q => GPO2(13),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(14),
+      Q => GPO2(14),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(15),
+      Q => GPO2(15),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(16),
+      Q => GPO2(16),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(17),
+      Q => GPO2(17),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(18),
+      Q => GPO2(18),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(19),
+      Q => GPO2(19),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(1),
+      Q => GPO2(1),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(20),
+      Q => GPO2(20),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(21),
+      Q => GPO2(21),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(22),
+      Q => GPO2(22),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[23]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(23),
+      Q => GPO2(23),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[24]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(24),
+      Q => GPO2(24),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[25]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(25),
+      Q => GPO2(25),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[26]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(26),
+      Q => GPO2(26),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[27]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(27),
+      Q => GPO2(27),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[28]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(28),
+      Q => GPO2(28),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[29]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(29),
+      Q => GPO2(29),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(2),
+      Q => GPO2(2),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[30]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(30),
+      Q => GPO2(30),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[31]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(31),
+      Q => GPO2(31),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(3),
+      Q => GPO2(3),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(4),
+      Q => GPO2(4),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(5),
+      Q => GPO2(5),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(6),
+      Q => GPO2(6),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(7),
+      Q => GPO2(7),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(8),
+      Q => GPO2(8),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo2_write,
+      D => D(9),
+      Q => GPO2(9),
+      R => Rst
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity \microblaze_mcs_0_GPO_Module__parameterized1_767\ is
+  port (
+    lmb_reg_write_reg : out STD_LOGIC;
+    GPO3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    lmb_reg_write : in STD_LOGIC;
+    Rst : in STD_LOGIC;
+    D : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Clk : in STD_LOGIC
+  );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of \microblaze_mcs_0_GPO_Module__parameterized1_767\ : entity is "GPO_Module";
+end \microblaze_mcs_0_GPO_Module__parameterized1_767\;
+
+architecture STRUCTURE of \microblaze_mcs_0_GPO_Module__parameterized1_767\ is
+  signal gpo3_write : STD_LOGIC;
+  signal \^lmb_reg_write_reg\ : STD_LOGIC;
+begin
+  lmb_reg_write_reg <= \^lmb_reg_write_reg\;
+\TMR_No.gpo_io_i[31]_i_1__1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000020000000000"
+    )
+        port map (
+      I0 => \^lmb_reg_write_reg\,
+      I1 => Q(3),
+      I2 => Q(0),
+      I3 => Q(1),
+      I4 => Q(4),
+      I5 => Q(2),
+      O => gpo3_write
+    );
+\TMR_No.gpo_io_i[7]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => lmb_reg_write,
+      I1 => Q(5),
+      O => \^lmb_reg_write_reg\
+    );
+\TMR_No.gpo_io_i_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(0),
+      Q => GPO3(0),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(10),
+      Q => GPO3(10),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(11),
+      Q => GPO3(11),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(12),
+      Q => GPO3(12),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(13),
+      Q => GPO3(13),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(14),
+      Q => GPO3(14),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(15),
+      Q => GPO3(15),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(16),
+      Q => GPO3(16),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(17),
+      Q => GPO3(17),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(18),
+      Q => GPO3(18),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(19),
+      Q => GPO3(19),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(1),
+      Q => GPO3(1),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(20),
+      Q => GPO3(20),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(21),
+      Q => GPO3(21),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(22),
+      Q => GPO3(22),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[23]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(23),
+      Q => GPO3(23),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[24]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(24),
+      Q => GPO3(24),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[25]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(25),
+      Q => GPO3(25),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[26]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(26),
+      Q => GPO3(26),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[27]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(27),
+      Q => GPO3(27),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[28]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(28),
+      Q => GPO3(28),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[29]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(29),
+      Q => GPO3(29),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(2),
+      Q => GPO3(2),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[30]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(30),
+      Q => GPO3(30),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[31]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(31),
+      Q => GPO3(31),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(3),
+      Q => GPO3(3),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(4),
+      Q => GPO3(4),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(5),
+      Q => GPO3(5),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(6),
+      Q => GPO3(6),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(7),
+      Q => GPO3(7),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(8),
+      Q => GPO3(8),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo3_write,
+      D => D(9),
+      Q => GPO3(9),
+      R => Rst
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity \microblaze_mcs_0_GPO_Module__parameterized1_768\ is
+  port (
+    GPO4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    \TMR_No.gpo_io_i_reg[0]_0\ : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Rst : in STD_LOGIC;
+    D : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Clk : in STD_LOGIC
+  );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of \microblaze_mcs_0_GPO_Module__parameterized1_768\ : entity is "GPO_Module";
+end \microblaze_mcs_0_GPO_Module__parameterized1_768\;
+
+architecture STRUCTURE of \microblaze_mcs_0_GPO_Module__parameterized1_768\ is
+  signal gpo4_write : STD_LOGIC;
+begin
+\TMR_No.gpo_io_i[31]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0020000000000000"
+    )
+        port map (
+      I0 => \TMR_No.gpo_io_i_reg[0]_0\,
+      I1 => Q(3),
+      I2 => Q(1),
+      I3 => Q(4),
+      I4 => Q(0),
+      I5 => Q(2),
+      O => gpo4_write
+    );
+\TMR_No.gpo_io_i_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(0),
+      Q => GPO4(0),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(10),
+      Q => GPO4(10),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(11),
+      Q => GPO4(11),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(12),
+      Q => GPO4(12),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(13),
+      Q => GPO4(13),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(14),
+      Q => GPO4(14),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(15),
+      Q => GPO4(15),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(16),
+      Q => GPO4(16),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(17),
+      Q => GPO4(17),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(18),
+      Q => GPO4(18),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(19),
+      Q => GPO4(19),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(1),
+      Q => GPO4(1),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(20),
+      Q => GPO4(20),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(21),
+      Q => GPO4(21),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(22),
+      Q => GPO4(22),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[23]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(23),
+      Q => GPO4(23),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[24]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(24),
+      Q => GPO4(24),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[25]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(25),
+      Q => GPO4(25),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[26]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(26),
+      Q => GPO4(26),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[27]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(27),
+      Q => GPO4(27),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[28]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(28),
+      Q => GPO4(28),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[29]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(29),
+      Q => GPO4(29),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(2),
+      Q => GPO4(2),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[30]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(30),
+      Q => GPO4(30),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[31]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(31),
+      Q => GPO4(31),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(3),
+      Q => GPO4(3),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(4),
+      Q => GPO4(4),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(5),
+      Q => GPO4(5),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(6),
+      Q => GPO4(6),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(7),
+      Q => GPO4(7),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(8),
+      Q => GPO4(8),
+      R => Rst
+    );
+\TMR_No.gpo_io_i_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => Clk,
+      CE => gpo4_write,
+      D => D(9),
+      Q => GPO4(9),
+      R => Rst
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_mcs_0_MB_MUXF5 is
   port (
     mux_0123 : out STD_LOGIC;
@@ -241,8 +1111,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_MUXF5 is
   attribute XILINX_TRANSFORM_PINMAP : string;
   attribute XILINX_TRANSFORM_PINMAP of \Using_FPGA.Native\ : label is "S:I2";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2\ : label is "soft_lutpair8";
 begin
 \Using_FPGA.Native\: unisim.vcomponents.LUT3
     generic map(
@@ -254,7 +1124,7 @@ begin
       I2 => Q(1),
       O => mux_0123
     );
-\Using_FPGA.Native_i_1__1\: unisim.vcomponents.LUT3
+\Using_FPGA.Native_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -279,18 +1149,18 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_MB_MUXF5_770 is
+entity microblaze_mcs_0_MB_MUXF5_772 is
   port (
     mux_4567 : out STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \Using_FPGA.Native_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_MB_MUXF5_770 : entity is "MB_MUXF5";
-end microblaze_mcs_0_MB_MUXF5_770;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_MB_MUXF5_772 : entity is "MB_MUXF5";
+end microblaze_mcs_0_MB_MUXF5_772;
 
-architecture STRUCTURE of microblaze_mcs_0_MB_MUXF5_770 is
-  signal \Using_FPGA.Native_i_1__2_n_0\ : STD_LOGIC;
+architecture STRUCTURE of microblaze_mcs_0_MB_MUXF5_772 is
+  signal \Using_FPGA.Native_i_1__0_n_0\ : STD_LOGIC;
   signal \Using_FPGA.Native_i_2__0_n_0\ : STD_LOGIC;
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
@@ -299,20 +1169,20 @@ architecture STRUCTURE of microblaze_mcs_0_MB_MUXF5_770 is
   attribute XILINX_TRANSFORM_PINMAP : string;
   attribute XILINX_TRANSFORM_PINMAP of \Using_FPGA.Native\ : label is "S:I2";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__0\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__0\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__0\ : label is "soft_lutpair9";
 begin
 \Using_FPGA.Native\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"CA"
     )
         port map (
-      I0 => \Using_FPGA.Native_i_1__2_n_0\,
+      I0 => \Using_FPGA.Native_i_1__0_n_0\,
       I1 => \Using_FPGA.Native_i_2__0_n_0\,
       I2 => Q(1),
       O => mux_4567
     );
-\Using_FPGA.Native_i_1__2\: unisim.vcomponents.LUT3
+\Using_FPGA.Native_i_1__0\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
@@ -320,7 +1190,7 @@ begin
       I0 => \Using_FPGA.Native_0\(2),
       I1 => Q(0),
       I2 => \Using_FPGA.Native_0\(3),
-      O => \Using_FPGA.Native_i_1__2_n_0\
+      O => \Using_FPGA.Native_i_1__0_n_0\
     );
 \Using_FPGA.Native_i_2__0\: unisim.vcomponents.LUT3
     generic map(
@@ -374,18 +1244,19 @@ use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_mcs_0_Uart_Control_Status is
   port (
     D : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \lmb_abus_Q_reg[4]\ : out STD_LOGIC;
+    UART_Status_Read : out STD_LOGIC;
+    UART_Interrupt : out STD_LOGIC;
     \UART_Status_reg[6]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \TMR_No.error_interrupt_reg_0\ : out STD_LOGIC;
     Rst : in STD_LOGIC;
     \TMR_No.overrun_error_reg_0\ : in STD_LOGIC;
     Clk : in STD_LOGIC;
     \TMR_No.frame_error_reg_0\ : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \UART_Status_reg[0]_0\ : in STD_LOGIC;
-    \UART_Status_reg[3]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \out\ : in STD_LOGIC;
-    \TMR_No.error_interrupt_reg_1\ : in STD_LOGIC
+    tx_data_transmitted : in STD_LOGIC;
+    \UART_Status_reg[3]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \TMR_No.error_interrupt_reg_0\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of microblaze_mcs_0_Uart_Control_Status : entity is "Uart_Control_Status";
@@ -394,7 +1265,11 @@ end microblaze_mcs_0_Uart_Control_Status;
 architecture STRUCTURE of microblaze_mcs_0_Uart_Control_Status is
   signal \^d\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \TMR_No.error_interrupt_i_1_n_0\ : STD_LOGIC;
+  signal UART_Error_Interrupt : STD_LOGIC;
   signal \UART_Status[6]_i_1_n_0\ : STD_LOGIC;
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \TMR_No.error_interrupt_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of UART_Interrupt_INST_0 : label is "soft_lutpair0";
 begin
   D(1 downto 0) <= \^d\(1 downto 0);
 \TMR_No.error_interrupt_i_1\: unisim.vcomponents.LUT3
@@ -402,9 +1277,9 @@ begin
       INIT => X"EA"
     )
         port map (
-      I0 => \out\,
-      I1 => \TMR_No.error_interrupt_reg_1\,
-      I2 => \UART_Status_reg[3]_0\(0),
+      I0 => \TMR_No.error_interrupt_reg_0\,
+      I1 => \UART_Status_reg[3]_0\(0),
+      I2 => \out\,
       O => \TMR_No.error_interrupt_i_1_n_0\
     );
 \TMR_No.error_interrupt_reg\: unisim.vcomponents.FDRE
@@ -412,7 +1287,7 @@ begin
       C => Clk,
       CE => '1',
       D => \TMR_No.error_interrupt_i_1_n_0\,
-      Q => \TMR_No.error_interrupt_reg_0\,
+      Q => UART_Error_Interrupt,
       R => Rst
     );
 \TMR_No.frame_error_reg\: unisim.vcomponents.FDRE
@@ -425,16 +1300,16 @@ begin
     );
 \TMR_No.overrun_error_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000001000000000"
+      INIT => X"0000000000020000"
     )
         port map (
-      I0 => Q(2),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => Q(4),
-      I4 => Q(3),
-      I5 => \UART_Status_reg[0]_0\,
-      O => \lmb_abus_Q_reg[4]\
+      I0 => \UART_Status_reg[0]_0\,
+      I1 => Q(2),
+      I2 => Q(3),
+      I3 => Q(0),
+      I4 => Q(1),
+      I5 => Q(4),
+      O => UART_Status_Read
     );
 \TMR_No.overrun_error_reg\: unisim.vcomponents.FDRE
      port map (
@@ -444,16 +1319,26 @@ begin
       Q => \^d\(0),
       R => Rst
     );
-\UART_Status[6]_i_1\: unisim.vcomponents.LUT6
+UART_Interrupt_INST_0: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"FFFFFEFFFFFFFFFF"
+      INIT => X"FE"
     )
         port map (
-      I0 => Q(2),
-      I1 => Q(0),
-      I2 => Q(4),
-      I3 => Q(1),
-      I4 => Q(3),
+      I0 => UART_Error_Interrupt,
+      I1 => \out\,
+      I2 => tx_data_transmitted,
+      O => UART_Interrupt
+    );
+\UART_Status[6]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFBFFFFFFFF"
+    )
+        port map (
+      I0 => Q(4),
+      I1 => Q(1),
+      I2 => Q(0),
+      I3 => Q(3),
+      I4 => Q(2),
       I5 => \UART_Status_reg[0]_0\,
       O => \UART_Status[6]_i_1_n_0\
     );
@@ -532,17 +1417,17 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_XIL_SRL16E_780 is
+entity microblaze_mcs_0_XIL_SRL16E_782 is
   port (
     loop_Bit : out STD_LOGIC;
     Clk_En_I_2 : in STD_LOGIC;
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_XIL_SRL16E_780 : entity is "XIL_SRL16E";
-end microblaze_mcs_0_XIL_SRL16E_780;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_XIL_SRL16E_782 : entity is "XIL_SRL16E";
+end microblaze_mcs_0_XIL_SRL16E_782;
 
-architecture STRUCTURE of microblaze_mcs_0_XIL_SRL16E_780 is
+architecture STRUCTURE of microblaze_mcs_0_XIL_SRL16E_782 is
   signal \^loop_bit\ : STD_LOGIC;
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Use_unisim.XIL_SRL16E_I1\ : label is "PRIMITIVE";
@@ -572,16 +1457,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_XIL_SRL16E_781 is
+entity microblaze_mcs_0_XIL_SRL16E_783 is
   port (
     Clk_En_I_2 : out STD_LOGIC;
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_XIL_SRL16E_781 : entity is "XIL_SRL16E";
-end microblaze_mcs_0_XIL_SRL16E_781;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_XIL_SRL16E_783 : entity is "XIL_SRL16E";
+end microblaze_mcs_0_XIL_SRL16E_783;
 
-architecture STRUCTURE of microblaze_mcs_0_XIL_SRL16E_781 is
+architecture STRUCTURE of microblaze_mcs_0_XIL_SRL16E_783 is
   signal \^clk_en_i_2\ : STD_LOGIC;
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Use_unisim.XIL_SRL16E_I1\ : label is "PRIMITIVE";
@@ -640,20 +1525,20 @@ architecture STRUCTURE of \microblaze_mcs_0_XIL_SRL16E__parameterized1\ is
   signal \Use_unisim.XIL_SRL16E_I1_i_1_n_0\ : STD_LOGIC;
   signal \^sample_point\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \TMR_No.stop_Bit_Position_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \TMR_No.stop_Bit_Position_i_1\ : label is "soft_lutpair1";
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Use_unisim.XIL_SRL16E_I1\ : label is "PRIMITIVE";
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.XIL_SRL16E_I1\ : label is "inst/iomodule_0/U0/\IOModule_Core_I1/Using_UART_RX.UART_RX_I1/TMR_No.Delay_16/Use_unisim.XIL_SRL16E_I1 ";
-  attribute SOFT_HLUTNM of \Use_unisim.XIL_SRL16E_I1_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__10\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__11\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__4\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__5\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__6\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__7\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__8\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \Use_unisim.XIL_SRL16E_I1_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__3\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__4\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__5\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__6\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__7\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__8\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9\ : label is "soft_lutpair5";
 begin
   sample_Point <= \^sample_point\;
 \TMR_No.running_i_1\: unisim.vcomponents.LUT5
@@ -704,29 +1589,7 @@ begin
       I2 => \TMR_No.stop_Bit_Position_reg_0\,
       O => \Use_unisim.XIL_SRL16E_I1_i_1_n_0\
     );
-\Using_FPGA.Native_i_1__10\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"BA8A"
-    )
-        port map (
-      I0 => \out\(6),
-      I1 => \TMR_No.stop_Bit_Position_reg_0\,
-      I2 => \^sample_point\,
-      I3 => \out\(7),
-      O => \TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg\
-    );
-\Using_FPGA.Native_i_1__11\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"BA8A"
-    )
-        port map (
-      I0 => \out\(7),
-      I1 => \TMR_No.stop_Bit_Position_reg_0\,
-      I2 => \^sample_point\,
-      I3 => \out\(8),
-      O => D_0
-    );
-\Using_FPGA.Native_i_1__4\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__2\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -737,7 +1600,7 @@ begin
       I3 => \out\(1),
       O => \TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg\
     );
-\Using_FPGA.Native_i_1__5\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__3\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -748,7 +1611,7 @@ begin
       I3 => \out\(2),
       O => \TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg\
     );
-\Using_FPGA.Native_i_1__6\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__4\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -759,7 +1622,7 @@ begin
       I3 => \out\(3),
       O => \TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg\
     );
-\Using_FPGA.Native_i_1__7\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__5\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -770,7 +1633,7 @@ begin
       I3 => \out\(4),
       O => \TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg\
     );
-\Using_FPGA.Native_i_1__8\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__6\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -781,7 +1644,7 @@ begin
       I3 => \out\(5),
       O => \TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg\
     );
-\Using_FPGA.Native_i_1__9\: unisim.vcomponents.LUT4
+\Using_FPGA.Native_i_1__7\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"BA8A"
     )
@@ -792,12 +1655,34 @@ begin
       I3 => \out\(6),
       O => \TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg\
     );
+\Using_FPGA.Native_i_1__8\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"BA8A"
+    )
+        port map (
+      I0 => \out\(6),
+      I1 => \TMR_No.stop_Bit_Position_reg_0\,
+      I2 => \^sample_point\,
+      I3 => \out\(7),
+      O => \TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg\
+    );
+\Using_FPGA.Native_i_1__9\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"BA8A"
+    )
+        port map (
+      I0 => \out\(7),
+      I1 => \TMR_No.stop_Bit_Position_reg_0\,
+      I2 => \^sample_point\,
+      I3 => \out\(8),
+      O => D_0
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_778\ is
+entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_780\ is
   port (
     mid_Start_Bit : out STD_LOGIC;
     en_16x_baud : in STD_LOGIC;
@@ -805,10 +1690,10 @@ entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_778\ is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_mcs_0_XIL_SRL16E__parameterized1_778\ : entity is "XIL_SRL16E";
-end \microblaze_mcs_0_XIL_SRL16E__parameterized1_778\;
+  attribute ORIG_REF_NAME of \microblaze_mcs_0_XIL_SRL16E__parameterized1_780\ : entity is "XIL_SRL16E";
+end \microblaze_mcs_0_XIL_SRL16E__parameterized1_780\;
 
-architecture STRUCTURE of \microblaze_mcs_0_XIL_SRL16E__parameterized1_778\ is
+architecture STRUCTURE of \microblaze_mcs_0_XIL_SRL16E__parameterized1_780\ is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Use_unisim.XIL_SRL16E_I1\ : label is "PRIMITIVE";
   attribute srl_name : string;
@@ -834,7 +1719,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_779\ is
+entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_781\ is
   port (
     loop_Bit : out STD_LOGIC;
     Clk_En_I_1 : in STD_LOGIC;
@@ -843,10 +1728,10 @@ entity \microblaze_mcs_0_XIL_SRL16E__parameterized1_779\ is
     lopt : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_mcs_0_XIL_SRL16E__parameterized1_779\ : entity is "XIL_SRL16E";
-end \microblaze_mcs_0_XIL_SRL16E__parameterized1_779\;
+  attribute ORIG_REF_NAME of \microblaze_mcs_0_XIL_SRL16E__parameterized1_781\ : entity is "XIL_SRL16E";
+end \microblaze_mcs_0_XIL_SRL16E__parameterized1_781\;
 
-architecture STRUCTURE of \microblaze_mcs_0_XIL_SRL16E__parameterized1_779\ is
+architecture STRUCTURE of \microblaze_mcs_0_XIL_SRL16E__parameterized1_781\ is
   signal \NLW_Use_unisim.XIL_SRL16CE_I1Use_unisim.XIL_SRL16E_I1_Q31_UNCONNECTED\ : STD_LOGIC;
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Use_unisim.XIL_SRL16CE_I1Use_unisim.XIL_SRL16E_I1\ : label is "PRIMITIVE";
@@ -1113,13 +1998,13 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE is
     tx_Data_Enable : out STD_LOGIC;
     p_3_out : out STD_LOGIC;
     p_7_out : out STD_LOGIC;
-    p_11_out : out STD_LOGIC;
+    \Using_FPGA.Native_0\ : out STD_LOGIC;
     en_16x_baud : in STD_LOGIC;
     div16 : in STD_LOGIC;
     Clk : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    tx_DataBits : in STD_LOGIC;
     tx_Start : in STD_LOGIC;
+    tx_DataBits : in STD_LOGIC;
     tx_data_transmitted : in STD_LOGIC;
     \out\ : in STD_LOGIC
   );
@@ -1130,44 +2015,44 @@ end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE;
 architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE is
   signal \^tx_data_enable\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \TMR_No.tx_DataBits_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \TMR_No.tx_Start_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \TMR_No.tx_DataBits_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \TMR_No.tx_Start_i_1\ : label is "soft_lutpair7";
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
   tx_Data_Enable <= \^tx_data_enable\;
 \TMR_No.data_is_sent_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0100"
+      INIT => X"0002"
     )
         port map (
-      I0 => Q(1),
+      I0 => \^tx_data_enable\,
       I1 => Q(2),
       I2 => Q(0),
-      I3 => \^tx_data_enable\,
+      I3 => Q(1),
       O => p_3_out
     );
 \TMR_No.tx_DataBits_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00EA"
+      INIT => X"00F8"
     )
         port map (
-      I0 => tx_DataBits,
+      I0 => tx_Start,
       I1 => \^tx_data_enable\,
-      I2 => tx_Start,
+      I2 => tx_DataBits,
       I3 => tx_data_transmitted,
       O => p_7_out
     );
 \TMR_No.tx_Start_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00AE"
+      INIT => X"00F2"
     )
         port map (
-      I0 => tx_Start,
-      I1 => \^tx_data_enable\,
-      I2 => \out\,
+      I0 => \^tx_data_enable\,
+      I1 => \out\,
+      I2 => tx_Start,
       I3 => tx_DataBits,
-      O => p_11_out
+      O => \Using_FPGA.Native_0\
     );
 \Using_FPGA.Native\: unisim.vcomponents.FDRE
     generic map(
@@ -1188,7 +2073,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1197,10 +2082,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1223,7 +2108,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1232,10 +2117,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1258,7 +2143,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1267,10 +2152,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1293,7 +2178,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1302,10 +2187,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1328,7 +2213,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1337,10 +2222,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1363,7 +2248,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1372,10 +2257,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1398,7 +2283,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779 is
   port (
     in0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     mid_Start_Bit : in STD_LOGIC;
@@ -1407,10 +2292,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 is
     Clk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 : entity is "iomodule_v3_1_4_MB_FDRE";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779 : entity is "iomodule_v3_1_4_MB_FDRE";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779 is
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
 begin
@@ -1471,7 +2356,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY is
   port (
     cnt_cy_2 : out STD_LOGIC;
-    LI : out STD_LOGIC;
+    \TMR_No.mux_sel_reg[0]\ : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     cnt_cy_1 : in STD_LOGIC;
     lopt : in STD_LOGIC
@@ -1485,20 +2370,12 @@ architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY is
 begin
   \^cnt_cy_2\ <= lopt;
   cnt_cy_2 <= \^cnt_cy_2\;
-\Using_FPGA.Native_i_1__0\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => Q(0),
-      O => LI
-    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770 is
   port (
     cnt_cy_1 : out STD_LOGIC;
     \TMR_No.Counter[2].h_Cnt_reg\ : out STD_LOGIC;
@@ -1512,10 +2389,10 @@ entity microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768 is
     lopt_4 : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768 : entity is "iomodule_v3_1_4_MB_MUXCY";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770 : entity is "iomodule_v3_1_4_MB_MUXCY";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770 is
   signal \^ci\ : STD_LOGIC;
   signal \^tmr_no.counter[2].h_cnt_reg\ : STD_LOGIC;
   signal \^lopt_1\ : STD_LOGIC;
@@ -1561,7 +2438,7 @@ begin
       S(1) => \^lopt_3\,
       S(0) => \^tmr_no.counter[2].h_cnt_reg\
     );
-\Using_FPGA.Native_i_1__3\: unisim.vcomponents.LUT1
+\Using_FPGA.Native_i_1__1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
@@ -1596,35 +2473,37 @@ end microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY;
 
 architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY is
   signal \^d\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \TMR_No.Counter[0].h_Cnt_reg\ : STD_LOGIC;
+  signal \Using_FPGA.Native_i_1__10_n_0\ : STD_LOGIC;
 begin
   D(0) <= \^d\(0);
   \^d\(0) <= lopt;
-  lopt_1 <= \TMR_No.Counter[0].h_Cnt_reg\;
-\Using_FPGA.Native_i_1\: unisim.vcomponents.LUT1
+  lopt_1 <= \Using_FPGA.Native_i_1__10_n_0\;
+\Using_FPGA.Native_i_1__10\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => Q(0),
-      O => \TMR_No.Counter[0].h_Cnt_reg\
+      O => \Using_FPGA.Native_i_1__10_n_0\
     );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 is
   port (
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
-    LI : in STD_LOGIC;
-    cnt_cy_1 : in STD_LOGIC
+    \TMR_No.mux_sel_reg[1]\ : out STD_LOGIC;
+    cnt_cy_1 : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767 : entity is "iomodule_v3_1_4_MB_XORCY";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 : entity is "iomodule_v3_1_4_MB_XORCY";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 is
+  signal \^tmr_no.mux_sel_reg[1]\ : STD_LOGIC;
   signal \NLW_Using_FPGA.Native_CARRY4_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_Using_FPGA.Native_CARRY4_DI_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_Using_FPGA.Native_CARRY4_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
@@ -1636,6 +2515,7 @@ architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767 is
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of \Using_FPGA.Native_CARRY4\ : label is "(MUXCY,XORCY)";
 begin
+  \TMR_No.mux_sel_reg[1]\ <= \^tmr_no.mux_sel_reg[1]\;
 \Using_FPGA.Native_CARRY4\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -1645,24 +2525,32 @@ begin
       O(3 downto 1) => \NLW_Using_FPGA.Native_CARRY4_O_UNCONNECTED\(3 downto 1),
       O(0) => D(0),
       S(3 downto 1) => \NLW_Using_FPGA.Native_CARRY4_S_UNCONNECTED\(3 downto 1),
-      S(0) => LI
+      S(0) => \^tmr_no.mux_sel_reg[1]\
+    );
+\Using_FPGA.Native_i_1__11\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => Q(0),
+      O => \^tmr_no.mux_sel_reg[1]\
     );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 is
+entity microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771 is
   port (
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     \TMR_No.Counter[2].h_Cnt_reg\ : in STD_LOGIC;
     CI : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 : entity is "iomodule_v3_1_4_MB_XORCY";
-end microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769;
+  attribute ORIG_REF_NAME of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771 : entity is "iomodule_v3_1_4_MB_XORCY";
+end microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771;
 
-architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 is
+architecture STRUCTURE of microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771 is
   signal \NLW_Using_FPGA.Native_CARRY4_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_Using_FPGA.Native_CARRY4_DI_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_Using_FPGA.Native_CARRY4_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
@@ -2470,10 +3358,10 @@ architecture STRUCTURE of microblaze_mcs_0_upcnt_n is
   signal clear : STD_LOGIC;
   signal q_int0 : STD_LOGIC_VECTOR ( 5 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \q_int[1]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \q_int[2]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \q_int[3]_i_1\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \q_int[4]_i_1\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \q_int[1]_i_1\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \q_int[2]_i_1\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \q_int[3]_i_1\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \q_int[4]_i_1\ : label is "soft_lutpair44";
 begin
   Q(5 downto 0) <= \^q\(5 downto 0);
 \q_int[0]_i_1\: unisim.vcomponents.LUT1
@@ -4248,8 +5136,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_FDRSE_659 is
   attribute IS_S_INVERTED : string;
   attribute IS_S_INVERTED of \Using_FPGA.Native\ : label is "1'b0";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__16\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9__0\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__16\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9__0\ : label is "soft_lutpair11";
 begin
   MSR(0) <= \^msr\(0);
 \Using_FPGA.Native\: unisim.vcomponents.FDRE
@@ -15531,10 +16419,10 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[0].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of doublet_Read_i_i_2 : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of select_ALU_Carry_i_1 : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of writing_i_1 : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of doublet_Read_i_i_2 : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of select_ALU_Carry_i_1 : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of writing_i_1 : label is "soft_lutpair13";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_0\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram_0\;
@@ -15719,8 +16607,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_37 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[10].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.enable_Interrupts_I_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \write_Addr_I[4]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \Using_FPGA.enable_Interrupts_I_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \write_Addr_I[4]_i_1\ : label is "soft_lutpair14";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
 \Use_unisim.MB_SRL16E_I1\: unisim.vcomponents.SRL16E
@@ -16494,8 +17382,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_44 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[17].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__34\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of mtsmsr_write_i_i_2 : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__34\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of mtsmsr_write_i_i_2 : label is "soft_lutpair15";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
 \Use_unisim.MB_SRL16E_I1\: unisim.vcomponents.SRL16E
@@ -17832,8 +18720,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_58 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[2].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of using_Imm_i_2 : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of write_Reg_i_4 : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of using_Imm_i_2 : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of write_Reg_i_4 : label is "soft_lutpair16";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
 Compare_Instr_i_2: unisim.vcomponents.LUT4
@@ -18110,8 +18998,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_61 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[3].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__52\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__4\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__52\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__4\ : label is "soft_lutpair17";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_0\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram_0\;
@@ -18247,8 +19135,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_62 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[4].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_3__1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of mbar_decode_I_i_2 : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_3__1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of mbar_decode_I_i_2 : label is "soft_lutpair18";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_1\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram_1\;
@@ -18440,8 +19328,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_63 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[5].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__53\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__55\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__53\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__55\ : label is "soft_lutpair19";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_2\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram_2\;
@@ -18598,8 +19486,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_64 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[6].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of mbar_is_sleep_i_1 : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \write_Addr_I[0]_i_2\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of mbar_is_sleep_i_1 : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \write_Addr_I[0]_i_2\ : label is "soft_lutpair20";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
 \Use_unisim.MB_SRL16E_I1\: unisim.vcomponents.SRL16E
@@ -18783,8 +19671,8 @@ architecture STRUCTURE of microblaze_mcs_0_MB_SRL16E_67 is
   attribute srl_name : string;
   attribute srl_name of \Use_unisim.MB_SRL16E_I1\ : label is "inst/microblaze_I/U0/\MicroBlaze_Core_I/Area.Core/Decode_I/PreFetch_Buffer_I/PreFetch_Buffers[9].SRL16E_I/Use_unisim.MB_SRL16E_I1 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.reset_BIP_I_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \write_Addr_I[3]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \Using_FPGA.reset_BIP_I_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \write_Addr_I[3]_i_1\ : label is "soft_lutpair21";
 begin
   \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram\ <= \^device_7series.with_bmm_info.true_dp.simple_prim36.tdp_sp36_no_ecc_attr.ram\;
 \Use_unisim.MB_SRL16E_I1\: unisim.vcomponents.SRL16E
@@ -21066,12 +21954,12 @@ architecture STRUCTURE of microblaze_mcs_0_microblaze_v11_0_1_MB_FDR is
   signal \^using_fpga.native_0\ : STD_LOGIC;
   signal nonvalid_IFetch_n_i_2_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Size_17to32.imm_Reg[0]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \Size_17to32.imm_Reg[0]_i_1\ : label is "soft_lutpair22";
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native\ : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of \Using_FPGA.Native\ : label is "FDR";
-  attribute SOFT_HLUTNM of nonvalid_IFetch_n_i_2 : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of nonvalid_IFetch_n_i_2 : label is "soft_lutpair22";
 begin
   \Using_FPGA.Native_0\ <= \^using_fpga.native_0\;
 \Size_17to32.imm_Reg[0]_i_1\: unisim.vcomponents.LUT5
@@ -26493,10 +27381,10 @@ architecture STRUCTURE of microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_12 is
   signal \<const0>\ : STD_LOGIC;
   signal \^of_pause_reg\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__2__0\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__3__0\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__0\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of ex_Valid_i_1 : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__2__0\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__3__0\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__0\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of ex_Valid_i_1 : label is "soft_lutpair23";
 begin
   \^of_pause_reg\ <= lopt;
   lopt_1 <= \<const0>\;
@@ -26781,10 +27669,10 @@ architecture STRUCTURE of microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_25 is
   signal \<const1>\ : STD_LOGIC;
   signal \^take_intr_now_iii\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of Select_Logic_i_1 : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__58\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \Using_FPGA.take_Intr_2nd_Phase_i_1\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_3\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of Select_Logic_i_1 : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__58\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \Using_FPGA.take_Intr_2nd_Phase_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_3\ : label is "soft_lutpair25";
 begin
   \^take_intr_now_iii\ <= lopt;
   lopt_1 <= \<const0>\;
@@ -27194,9 +28082,9 @@ architecture STRUCTURE of microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32 is
   signal \^mul_executing_reg\ : STD_LOGIC;
   signal \NLW_Using_FPGA.Native_CARRY4_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of Blocked_Valid_Instr_i_1 : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of Compare_Instr_i_1 : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of Unsigned_Op_i_1 : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of Blocked_Valid_Instr_i_1 : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of Compare_Instr_i_1 : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of Unsigned_Op_i_1 : label is "soft_lutpair29";
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of \Using_FPGA.Native_CARRY4\ : label is "PRIMITIVE";
   attribute OPT_MODIFIED : string;
@@ -27205,11 +28093,11 @@ architecture STRUCTURE of microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32 is
   attribute XILINX_LEGACY_PRIM of \Using_FPGA.Native_CARRY4\ : label is "(MUXCY,XORCY)";
   attribute XILINX_TRANSFORM_PINMAP : string;
   attribute XILINX_TRANSFORM_PINMAP of \Using_FPGA.Native_CARRY4\ : label is "LO:O";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__61\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of ex_Valid_1st_cycle_i_1 : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of is_lwx_I_i_3 : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of swx_ready_i_1 : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \write_Addr_I[0]_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__61\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of ex_Valid_1st_cycle_i_1 : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of is_lwx_I_i_3 : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of swx_ready_i_1 : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \write_Addr_I[0]_i_1\ : label is "soft_lutpair27";
 begin
   \Use_Async_Reset.sync_reset_reg_0\ <= \^use_async_reset.sync_reset_reg_0\;
   \^lopt_2\ <= lopt_1;
@@ -30857,7 +31745,7 @@ end microblaze_mcs_0_Divide_part;
 
 architecture STRUCTURE of microblaze_mcs_0_Divide_part is
 begin
-\One_SRL16.SRL16E_I\: entity work.microblaze_mcs_0_XIL_SRL16E_781
+\One_SRL16.SRL16E_I\: entity work.microblaze_mcs_0_XIL_SRL16E_783
      port map (
       Clk => Clk,
       Clk_En_I_2 => Clk_En_I_2
@@ -30881,7 +31769,7 @@ architecture STRUCTURE of \microblaze_mcs_0_Divide_part__parameterized0\ is
   signal Out1 : STD_LOGIC;
   signal loop_Bit : STD_LOGIC;
 begin
-\One_SRL16.SRL16E_I\: entity work.microblaze_mcs_0_XIL_SRL16E_780
+\One_SRL16.SRL16E_I\: entity work.microblaze_mcs_0_XIL_SRL16E_782
      port map (
       Clk => Clk,
       Clk_En_I_2 => Clk_En_I_2,
@@ -30929,7 +31817,7 @@ architecture STRUCTURE of \microblaze_mcs_0_Divide_part__parameterized1\ is
   signal shift : STD_LOGIC;
 begin
   en_16x_baud <= \^en_16x_baud\;
-\Two_SRL16.SRL16E_2\: entity work.\microblaze_mcs_0_XIL_SRL16E__parameterized1_779\
+\Two_SRL16.SRL16E_2\: entity work.\microblaze_mcs_0_XIL_SRL16E__parameterized1_781\
      port map (
       Clk => Clk,
       Clk_En_I_1 => Clk_En_I_1,
@@ -30983,7 +31871,6 @@ entity microblaze_mcs_0_UART_Receive is
     \out\ : out STD_LOGIC;
     \not_First.Clk_En_Out_i_reg\ : out STD_LOGIC;
     \TMR_No.rx_data_exists_i_reg_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    UART_Interrupt : out STD_LOGIC;
     \TMR_No.rx_data_exists_i_reg_1\ : out STD_LOGIC;
     \TMR_No.frame_error_reg\ : out STD_LOGIC;
     \TMR_No.RX_Data_reg[7]_0\ : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -30991,11 +31878,9 @@ entity microblaze_mcs_0_UART_Receive is
     Clk : in STD_LOGIC;
     Rst : in STD_LOGIC;
     UART_Rx : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \TMR_No.RX_Data_reg[0]_0\ : in STD_LOGIC;
-    tx_data_transmitted : in STD_LOGIC;
-    UART_Interrupt_INST_0_0 : in STD_LOGIC;
-    \TMR_No.overrun_error_reg\ : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    UART_Status_Read : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -31021,6 +31906,7 @@ architecture STRUCTURE of microblaze_mcs_0_UART_Receive is
   signal \TMR_No.start_Edge_Detected_i_1_n_0\ : STD_LOGIC;
   signal \TMR_No.start_Edge_Detected_reg_n_0\ : STD_LOGIC;
   signal \TMR_No.stop_Bit_Position_reg_n_0\ : STD_LOGIC;
+  signal UART_Rx_Read : STD_LOGIC;
   signal mid_Start_Bit : STD_LOGIC;
   signal new_rx_data : STD_LOGIC_VECTOR ( 0 to 8 );
   attribute RTL_KEEP : string;
@@ -31041,8 +31927,8 @@ architecture STRUCTURE of microblaze_mcs_0_UART_Receive is
   attribute equivalent_register_removal : string;
   attribute equivalent_register_removal of \TMR_No.new_rx_data_write_reg\ : label is "no";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \TMR_No.previous_RX_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \TMR_No.start_Edge_Detected_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \TMR_No.previous_RX_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \TMR_No.start_Edge_Detected_i_1\ : label is "soft_lutpair6";
 begin
   \TMR_No.rx_data_exists_i_reg_0\(0) <= \^tmr_no.rx_data_exists_i_reg_0\(0);
   \not_First.Clk_En_Out_i_reg\ <= rx_frame_error_i;
@@ -31055,7 +31941,7 @@ begin
       in0(0) => new_rx_data(1),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[2].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771
+\TMR_No.Convert_Serial_To_Parallel[2].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg\,
@@ -31063,7 +31949,7 @@ begin
       in0(0) => new_rx_data(2),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[3].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772
+\TMR_No.Convert_Serial_To_Parallel[3].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg\,
@@ -31071,7 +31957,7 @@ begin
       in0(0) => new_rx_data(3),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[4].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773
+\TMR_No.Convert_Serial_To_Parallel[4].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg\,
@@ -31079,7 +31965,7 @@ begin
       in0(0) => new_rx_data(4),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[5].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774
+\TMR_No.Convert_Serial_To_Parallel[5].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg\,
@@ -31087,7 +31973,7 @@ begin
       in0(0) => new_rx_data(5),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[6].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775
+\TMR_No.Convert_Serial_To_Parallel[6].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg\,
@@ -31095,7 +31981,7 @@ begin
       in0(0) => new_rx_data(6),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[7].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776
+\TMR_No.Convert_Serial_To_Parallel[7].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg\,
@@ -31103,7 +31989,7 @@ begin
       in0(0) => new_rx_data(7),
       mid_Start_Bit => mid_Start_Bit
     );
-\TMR_No.Convert_Serial_To_Parallel[8].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777
+\TMR_No.Convert_Serial_To_Parallel[8].Rest_Bits.Others_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779
      port map (
       Clk => Clk,
       \TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg\ => \TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg\,
@@ -31140,7 +32026,7 @@ begin
       \out\(0) => new_rx_data(8),
       sample_Point => sample_Point
     );
-\TMR_No.Mid_Start_Bit_SRL16\: entity work.\microblaze_mcs_0_XIL_SRL16E__parameterized1_778\
+\TMR_No.Mid_Start_Bit_SRL16\: entity work.\microblaze_mcs_0_XIL_SRL16E__parameterized1_780\
      port map (
       Clk => Clk,
       \Using_FPGA.Native\ => \TMR_No.start_Edge_Detected_reg_n_0\,
@@ -31149,15 +32035,15 @@ begin
     );
 \TMR_No.RX_Data[7]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFEFFFFFFFF"
+      INIT => X"FFFFFFFFFFFFFFFD"
     )
         port map (
-      I0 => Q(2),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => Q(4),
+      I0 => \TMR_No.RX_Data_reg[0]_0\,
+      I1 => Q(1),
+      I2 => Q(4),
+      I3 => Q(0),
       I4 => Q(3),
-      I5 => \TMR_No.RX_Data_reg[0]_0\,
+      I5 => Q(2),
       O => \TMR_No.RX_Data[7]_i_1_n_0\
     );
 \TMR_No.RX_Data_reg[0]\: unisim.vcomponents.FDRE
@@ -31226,11 +32112,11 @@ begin
     );
 \TMR_No.frame_error_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"DC"
+      INIT => X"BA"
     )
         port map (
-      I0 => \TMR_No.overrun_error_reg\,
-      I1 => rx_frame_error_i,
+      I0 => rx_frame_error_i,
+      I1 => UART_Status_Read,
       I2 => D(1),
       O => \TMR_No.frame_error_reg\
     );
@@ -31249,7 +32135,7 @@ begin
         port map (
       I0 => \^tmr_no.rx_data_exists_i_reg_0\(0),
       I1 => new_rx_data_write,
-      I2 => \TMR_No.overrun_error_reg\,
+      I2 => UART_Status_Read,
       I3 => D(0),
       O => \TMR_No.rx_data_exists_i_reg_1\
     );
@@ -31297,14 +32183,27 @@ begin
     );
 \TMR_No.rx_data_exists_i_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"4440"
+      INIT => X"000E"
     )
         port map (
-      I0 => Rst,
-      I1 => \TMR_No.RX_Data[7]_i_1_n_0\,
-      I2 => \^tmr_no.rx_data_exists_i_reg_0\(0),
-      I3 => new_rx_data_write,
+      I0 => \^tmr_no.rx_data_exists_i_reg_0\(0),
+      I1 => new_rx_data_write,
+      I2 => UART_Rx_Read,
+      I3 => Rst,
       O => \TMR_No.rx_data_exists_i_i_1_n_0\
+    );
+\TMR_No.rx_data_exists_i_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000100000000"
+    )
+        port map (
+      I0 => Q(2),
+      I1 => Q(3),
+      I2 => Q(0),
+      I3 => Q(4),
+      I4 => Q(1),
+      I5 => \TMR_No.RX_Data_reg[0]_0\,
+      O => UART_Rx_Read
     );
 \TMR_No.rx_data_exists_i_reg\: unisim.vcomponents.FDRE
      port map (
@@ -31406,16 +32305,6 @@ begin
       Q => \TMR_No.stop_Bit_Position_reg_n_0\,
       R => Rst
     );
-UART_Interrupt_INST_0: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"FE"
-    )
-        port map (
-      I0 => new_rx_data_write,
-      I1 => tx_data_transmitted,
-      I2 => UART_Interrupt_INST_0_0,
-      O => UART_Interrupt
-    );
 i_0: unisim.vcomponents.LUT1
     generic map(
       INIT => X"2"
@@ -31468,9 +32357,10 @@ end microblaze_mcs_0_UART_Transmit;
 
 architecture STRUCTURE of microblaze_mcs_0_UART_Transmit is
   signal CI : STD_LOGIC;
-  signal LI : STD_LOGIC;
   signal S : STD_LOGIC;
+  signal \TMR_No.Counter[1].XORCY_I_n_1\ : STD_LOGIC;
   signal \TMR_No.Counter[2].h_Cnt_reg\ : STD_LOGIC;
+  signal \TMR_No.FDRE_I_n_3\ : STD_LOGIC;
   signal \TMR_No.fifo_DOut_reg_n_0_[1]\ : STD_LOGIC;
   signal \TMR_No.fifo_DOut_reg_n_0_[2]\ : STD_LOGIC;
   signal \TMR_No.fifo_DOut_reg_n_0_[3]\ : STD_LOGIC;
@@ -31491,7 +32381,6 @@ architecture STRUCTURE of microblaze_mcs_0_UART_Transmit is
   signal mux_4567 : STD_LOGIC;
   signal mux_Out : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
-  signal p_11_out : STD_LOGIC;
   signal p_2_out : STD_LOGIC;
   signal p_3_out : STD_LOGIC;
   signal p_7_out : STD_LOGIC;
@@ -31525,19 +32414,20 @@ begin
     );
 \TMR_No.Counter[1].Used_MuxCY.MUXCY_L_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY
      port map (
-      LI => LI,
       Q(0) => S,
+      \TMR_No.mux_sel_reg[0]\ => \TMR_No.Counter[1].XORCY_I_n_1\,
       cnt_cy_1 => cnt_cy_1,
       cnt_cy_2 => cnt_cy_2,
       lopt => lopt
     );
-\TMR_No.Counter[1].XORCY_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767
+\TMR_No.Counter[1].XORCY_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769
      port map (
       D(0) => sum_cnt(1),
-      LI => LI,
+      Q(0) => S,
+      \TMR_No.mux_sel_reg[1]\ => \TMR_No.Counter[1].XORCY_I_n_1\,
       cnt_cy_1 => cnt_cy_1
     );
-\TMR_No.Counter[2].Used_MuxCY.MUXCY_L_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768
+\TMR_No.Counter[2].Used_MuxCY.MUXCY_L_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770
      port map (
       CI => CI,
       Q(0) => \TMR_No.mux_sel_reg_n_0_[2]\,
@@ -31545,12 +32435,12 @@ begin
       cnt_cy_1 => cnt_cy_1,
       lopt => lopt,
       lopt_1 => S,
-      lopt_2 => LI,
+      lopt_2 => \TMR_No.Counter[1].XORCY_I_n_1\,
       lopt_3 => lopt_1,
       lopt_4 => lopt_2,
       tx_DataBits => tx_DataBits
     );
-\TMR_No.Counter[2].XORCY_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769
+\TMR_No.Counter[2].XORCY_I\: entity work.microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771
      port map (
       CI => CI,
       D(0) => sum_cnt(2),
@@ -31568,10 +32458,10 @@ begin
       Q(2) => \TMR_No.mux_sel_reg_n_0_[0]\,
       Q(1) => S,
       Q(0) => \TMR_No.mux_sel_reg_n_0_[2]\,
+      \Using_FPGA.Native_0\ => \TMR_No.FDRE_I_n_3\,
       div16 => div16,
       en_16x_baud => en_16x_baud,
       \out\ => tx_buffer_empty_i,
-      p_11_out => p_11_out,
       p_3_out => p_3_out,
       p_7_out => p_7_out,
       tx_DataBits => tx_DataBits,
@@ -31596,7 +32486,7 @@ begin
       \Using_FPGA.Native_0\(0) => \TMR_No.fifo_DOut_reg_n_0_[3]\,
       mux_0123 => mux_0123
     );
-\TMR_No.MUX_F5_2\: entity work.microblaze_mcs_0_MB_MUXF5_770
+\TMR_No.MUX_F5_2\: entity work.microblaze_mcs_0_MB_MUXF5_772
      port map (
       Q(1) => S,
       Q(0) => \TMR_No.mux_sel_reg_n_0_[2]\,
@@ -31722,19 +32612,19 @@ begin
      port map (
       C => Clk,
       CE => '1',
-      D => p_11_out,
+      D => \TMR_No.FDRE_I_n_3\,
       Q => tx_Start,
       R => Rst
     );
 \TMR_No.tx_buffer_empty_i_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"EFEE"
+      INIT => X"FFF4"
     )
         port map (
-      I0 => Rst,
-      I1 => \^tx_data_transmitted\,
-      I2 => E(0),
-      I3 => tx_buffer_empty_i,
+      I0 => E(0),
+      I1 => tx_buffer_empty_i,
+      I2 => \^tx_data_transmitted\,
+      I3 => Rst,
       O => \TMR_No.tx_buffer_empty_i_i_1_n_0\
     );
 \TMR_No.tx_buffer_empty_i_reg\: unisim.vcomponents.FDRE
@@ -31747,12 +32637,12 @@ begin
     );
 \TMR_No.tx_i_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"23"
+      INIT => X"0D"
     )
         port map (
-      I0 => serial_Data,
-      I1 => tx_Start,
-      I2 => tx_DataBits,
+      I0 => tx_DataBits,
+      I1 => serial_Data,
+      I2 => tx_Start,
       O => p_2_out
     );
 \TMR_No.tx_i_reg\: unisim.vcomponents.FDSE
@@ -32421,16 +33311,16 @@ architecture STRUCTURE of microblaze_mcs_0_sequence_psr is
   signal seq_cnt : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal seq_cnt_en : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \pr_dec[0]_i_1\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \pr_dec[0]_i_1\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair48";
 begin
   Bsr_out <= \^bsr_out\;
   MB_out <= \^mb_out\;
@@ -45370,24 +46260,24 @@ architecture STRUCTURE of microblaze_mcs_0_Decode is
   signal write_Reg_reg_n_0 : STD_LOGIC;
   signal writing_reg_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of D_AS_INST_0 : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of Read_Strobe_INST_0 : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of Trace_Reg_Write_INST_0 : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of Trace_Valid_Instr : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__65\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__39\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_4__0\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_5\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_2\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_5\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \Using_dynamic_instr_Address.Interrupt_Ack[0]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \Using_dynamic_instr_Address.Interrupt_Ack[1]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of Write_Strobe_INST_0 : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of break_Pipe_i_i_2 : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of hibernate_i_i_2 : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of mbar_first_i_3 : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of suspend_i_i_2 : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of trace_data_access_i_i_1 : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of D_AS_INST_0 : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of Read_Strobe_INST_0 : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of Trace_Reg_Write_INST_0 : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of Trace_Valid_Instr : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__65\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2__39\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_4__0\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_5\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_2\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \Using_LWX_SWX_instr.reservation_i_5\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \Using_dynamic_instr_Address.Interrupt_Ack[0]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \Using_dynamic_instr_Address.Interrupt_Ack[1]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of Write_Strobe_INST_0 : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of break_Pipe_i_i_2 : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of hibernate_i_i_2 : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of mbar_first_i_3 : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of suspend_i_i_2 : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of trace_data_access_i_i_1 : label is "soft_lutpair31";
 begin
   Buffer_Addr(2 downto 0) <= \^buffer_addr\(2 downto 0);
   D(6 downto 0) <= \^d\(6 downto 0);
@@ -50155,18 +51045,21 @@ use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_mcs_0_Iomodule_core is
   port (
     UART_Tx : out STD_LOGIC;
-    \lmb_abus_Q_reg[2]\ : out STD_LOGIC;
+    lmb_reg_write_reg : out STD_LOGIC;
     UART_Interrupt : out STD_LOGIC;
     Sl_DBus : out STD_LOGIC_VECTOR ( 7 downto 0 );
     GPO1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPO2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPO3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPO4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     Clk : in STD_LOGIC;
     Rst : in STD_LOGIC;
     UART_Rx : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    \TMR_No.RX_Data_reg[0]\ : in STD_LOGIC;
-    lmb_reg_write : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    D : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    lmb_reg_write : in STD_LOGIC;
+    \TMR_No.RX_Data_reg[0]\ : in STD_LOGIC;
+    D : in STD_LOGIC_VECTOR ( 31 downto 0 );
     GPI1 : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -50176,13 +51069,13 @@ end microblaze_mcs_0_Iomodule_core;
 architecture STRUCTURE of microblaze_mcs_0_Iomodule_core is
   signal GPI_In : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal RX_Data : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal UART_Error_Interrupt : STD_LOGIC;
   signal UART_Status : STD_LOGIC_VECTOR ( 6 downto 0 );
-  signal \Using_UART.Uart_Control_Status_I1_n_2\ : STD_LOGIC;
+  signal UART_Status_Read : STD_LOGIC;
+  signal \Using_UART_RX.UART_RX_I1_n_3\ : STD_LOGIC;
   signal \Using_UART_RX.UART_RX_I1_n_4\ : STD_LOGIC;
-  signal \Using_UART_RX.UART_RX_I1_n_5\ : STD_LOGIC;
   signal en_16x_baud : STD_LOGIC;
   signal frame_error : STD_LOGIC;
+  signal \^lmb_reg_write_reg\ : STD_LOGIC;
   signal overrun_error : STD_LOGIC;
   signal p_0_out : STD_LOGIC_VECTOR ( 3 to 3 );
   signal rx_data_exists : STD_LOGIC;
@@ -50190,23 +51083,51 @@ architecture STRUCTURE of microblaze_mcs_0_Iomodule_core is
   signal rx_frame_error : STD_LOGIC;
   signal tx_data_transmitted : STD_LOGIC;
 begin
+  lmb_reg_write_reg <= \^lmb_reg_write_reg\;
 GPI_I1: entity work.microblaze_mcs_0_GPI_Module
      port map (
       Clk => Clk,
       GPI1(7 downto 0) => GPI1(7 downto 0),
       Q(4 downto 0) => Q(4 downto 0),
-      \Using_GPI.GPI_In_reg[0]_0\ => \TMR_No.RX_Data_reg[0]\,
-      \Using_GPI.GPI_In_reg[7]_0\(7 downto 0) => GPI_In(7 downto 0)
+      \Using_GPI.GPI_In_reg[7]_0\(7 downto 0) => GPI_In(7 downto 0),
+      \Using_GPI.GPI_In_reg[7]_1\ => \TMR_No.RX_Data_reg[0]\
     );
 GPO_I1: entity work.microblaze_mcs_0_GPO_Module
      port map (
       Clk => Clk,
       D(7 downto 0) => D(7 downto 0),
       GPO1(7 downto 0) => GPO1(7 downto 0),
+      Q(4 downto 0) => Q(4 downto 0),
+      Rst => Rst,
+      \TMR_No.gpo_io_i_reg[0]_0\ => \^lmb_reg_write_reg\
+    );
+GPO_I2: entity work.\microblaze_mcs_0_GPO_Module__parameterized1\
+     port map (
+      Clk => Clk,
+      D(31 downto 0) => D(31 downto 0),
+      GPO2(31 downto 0) => GPO2(31 downto 0),
+      Q(4 downto 0) => Q(4 downto 0),
+      Rst => Rst,
+      \TMR_No.gpo_io_i_reg[0]_0\ => \^lmb_reg_write_reg\
+    );
+GPO_I3: entity work.\microblaze_mcs_0_GPO_Module__parameterized1_767\
+     port map (
+      Clk => Clk,
+      D(31 downto 0) => D(31 downto 0),
+      GPO3(31 downto 0) => GPO3(31 downto 0),
       Q(5 downto 0) => Q(5 downto 0),
       Rst => Rst,
-      \lmb_abus_Q_reg[2]\ => \lmb_abus_Q_reg[2]\,
-      lmb_reg_write => lmb_reg_write
+      lmb_reg_write => lmb_reg_write,
+      lmb_reg_write_reg => \^lmb_reg_write_reg\
+    );
+GPO_I4: entity work.\microblaze_mcs_0_GPO_Module__parameterized1_768\
+     port map (
+      Clk => Clk,
+      D(31 downto 0) => D(31 downto 0),
+      GPO4(31 downto 0) => GPO4(31 downto 0),
+      Q(4 downto 0) => Q(4 downto 0),
+      Rst => Rst,
+      \TMR_No.gpo_io_i_reg[0]_0\ => \^lmb_reg_write_reg\
     );
 \Sl_DBus[24]_INST_0\: unisim.vcomponents.LUT2
     generic map(
@@ -50296,18 +51217,19 @@ GPO_I1: entity work.microblaze_mcs_0_GPO_Module
       D(0) => overrun_error,
       Q(4 downto 0) => Q(4 downto 0),
       Rst => Rst,
-      \TMR_No.error_interrupt_reg_0\ => UART_Error_Interrupt,
-      \TMR_No.error_interrupt_reg_1\ => rx_data_received,
-      \TMR_No.frame_error_reg_0\ => \Using_UART_RX.UART_RX_I1_n_5\,
-      \TMR_No.overrun_error_reg_0\ => \Using_UART_RX.UART_RX_I1_n_4\,
+      \TMR_No.error_interrupt_reg_0\ => rx_frame_error,
+      \TMR_No.frame_error_reg_0\ => \Using_UART_RX.UART_RX_I1_n_4\,
+      \TMR_No.overrun_error_reg_0\ => \Using_UART_RX.UART_RX_I1_n_3\,
+      UART_Interrupt => UART_Interrupt,
+      UART_Status_Read => UART_Status_Read,
       \UART_Status_reg[0]_0\ => \TMR_No.RX_Data_reg[0]\,
       \UART_Status_reg[3]_0\(1) => p_0_out(3),
       \UART_Status_reg[3]_0\(0) => rx_data_exists,
       \UART_Status_reg[6]_0\(3 downto 2) => UART_Status(6 downto 5),
       \UART_Status_reg[6]_0\(1) => UART_Status(3),
       \UART_Status_reg[6]_0\(0) => UART_Status(0),
-      \lmb_abus_Q_reg[4]\ => \Using_UART.Uart_Control_Status_I1_n_2\,
-      \out\ => rx_frame_error
+      \out\ => rx_data_received,
+      tx_data_transmitted => tx_data_transmitted
     );
 \Using_UART_RX.UART_RX_I1\: entity work.microblaze_mcs_0_UART_Receive
      port map (
@@ -50318,17 +51240,14 @@ GPO_I1: entity work.microblaze_mcs_0_GPO_Module
       Rst => Rst,
       \TMR_No.RX_Data_reg[0]_0\ => \TMR_No.RX_Data_reg[0]\,
       \TMR_No.RX_Data_reg[7]_0\(7 downto 0) => RX_Data(7 downto 0),
-      \TMR_No.frame_error_reg\ => \Using_UART_RX.UART_RX_I1_n_5\,
-      \TMR_No.overrun_error_reg\ => \Using_UART.Uart_Control_Status_I1_n_2\,
+      \TMR_No.frame_error_reg\ => \Using_UART_RX.UART_RX_I1_n_4\,
       \TMR_No.rx_data_exists_i_reg_0\(0) => rx_data_exists,
-      \TMR_No.rx_data_exists_i_reg_1\ => \Using_UART_RX.UART_RX_I1_n_4\,
-      UART_Interrupt => UART_Interrupt,
-      UART_Interrupt_INST_0_0 => UART_Error_Interrupt,
+      \TMR_No.rx_data_exists_i_reg_1\ => \Using_UART_RX.UART_RX_I1_n_3\,
       UART_Rx => UART_Rx,
+      UART_Status_Read => UART_Status_Read,
       en_16x_baud => en_16x_baud,
       \not_First.Clk_En_Out_i_reg\ => rx_frame_error,
-      \out\ => rx_data_received,
-      tx_data_transmitted => tx_data_transmitted
+      \out\ => rx_data_received
     );
 \Using_UART_TX.UART_TX_I1\: entity work.microblaze_mcs_0_UART_Transmit
      port map (
@@ -51523,11 +52442,11 @@ entity microblaze_mcs_0_iomodule is
   attribute C_USE_GPO1 : integer;
   attribute C_USE_GPO1 of microblaze_mcs_0_iomodule : entity is 1;
   attribute C_USE_GPO2 : integer;
-  attribute C_USE_GPO2 of microblaze_mcs_0_iomodule : entity is 0;
+  attribute C_USE_GPO2 of microblaze_mcs_0_iomodule : entity is 1;
   attribute C_USE_GPO3 : integer;
-  attribute C_USE_GPO3 of microblaze_mcs_0_iomodule : entity is 0;
+  attribute C_USE_GPO3 of microblaze_mcs_0_iomodule : entity is 1;
   attribute C_USE_GPO4 : integer;
-  attribute C_USE_GPO4 of microblaze_mcs_0_iomodule : entity is 0;
+  attribute C_USE_GPO4 of microblaze_mcs_0_iomodule : entity is 1;
   attribute C_USE_IO_BUS : integer;
   attribute C_USE_IO_BUS of microblaze_mcs_0_iomodule : entity is 0;
   attribute C_USE_PIT1 : integer;
@@ -51570,8 +52489,8 @@ architecture STRUCTURE of microblaze_mcs_0_iomodule is
   signal write_data : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute RTL_KEEP of write_data : signal is "true";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of lmb_reg_read_i_1 : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of lmb_reg_write_i_1 : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of lmb_reg_read_i_1 : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of lmb_reg_write_i_1 : label is "soft_lutpair10";
   attribute KEEP : string;
   attribute KEEP of \write_data_reg[0]\ : label is "yes";
   attribute equivalent_register_removal : string;
@@ -51651,102 +52570,6 @@ begin
   GPI2_Interrupt <= \<const0>\;
   GPI3_Interrupt <= \<const0>\;
   GPI4_Interrupt <= \<const0>\;
-  GPO2(31) <= \<const0>\;
-  GPO2(30) <= \<const0>\;
-  GPO2(29) <= \<const0>\;
-  GPO2(28) <= \<const0>\;
-  GPO2(27) <= \<const0>\;
-  GPO2(26) <= \<const0>\;
-  GPO2(25) <= \<const0>\;
-  GPO2(24) <= \<const0>\;
-  GPO2(23) <= \<const0>\;
-  GPO2(22) <= \<const0>\;
-  GPO2(21) <= \<const0>\;
-  GPO2(20) <= \<const0>\;
-  GPO2(19) <= \<const0>\;
-  GPO2(18) <= \<const0>\;
-  GPO2(17) <= \<const0>\;
-  GPO2(16) <= \<const0>\;
-  GPO2(15) <= \<const0>\;
-  GPO2(14) <= \<const0>\;
-  GPO2(13) <= \<const0>\;
-  GPO2(12) <= \<const0>\;
-  GPO2(11) <= \<const0>\;
-  GPO2(10) <= \<const0>\;
-  GPO2(9) <= \<const0>\;
-  GPO2(8) <= \<const0>\;
-  GPO2(7) <= \<const0>\;
-  GPO2(6) <= \<const0>\;
-  GPO2(5) <= \<const0>\;
-  GPO2(4) <= \<const0>\;
-  GPO2(3) <= \<const0>\;
-  GPO2(2) <= \<const0>\;
-  GPO2(1) <= \<const0>\;
-  GPO2(0) <= \<const0>\;
-  GPO3(31) <= \<const0>\;
-  GPO3(30) <= \<const0>\;
-  GPO3(29) <= \<const0>\;
-  GPO3(28) <= \<const0>\;
-  GPO3(27) <= \<const0>\;
-  GPO3(26) <= \<const0>\;
-  GPO3(25) <= \<const0>\;
-  GPO3(24) <= \<const0>\;
-  GPO3(23) <= \<const0>\;
-  GPO3(22) <= \<const0>\;
-  GPO3(21) <= \<const0>\;
-  GPO3(20) <= \<const0>\;
-  GPO3(19) <= \<const0>\;
-  GPO3(18) <= \<const0>\;
-  GPO3(17) <= \<const0>\;
-  GPO3(16) <= \<const0>\;
-  GPO3(15) <= \<const0>\;
-  GPO3(14) <= \<const0>\;
-  GPO3(13) <= \<const0>\;
-  GPO3(12) <= \<const0>\;
-  GPO3(11) <= \<const0>\;
-  GPO3(10) <= \<const0>\;
-  GPO3(9) <= \<const0>\;
-  GPO3(8) <= \<const0>\;
-  GPO3(7) <= \<const0>\;
-  GPO3(6) <= \<const0>\;
-  GPO3(5) <= \<const0>\;
-  GPO3(4) <= \<const0>\;
-  GPO3(3) <= \<const0>\;
-  GPO3(2) <= \<const0>\;
-  GPO3(1) <= \<const0>\;
-  GPO3(0) <= \<const0>\;
-  GPO4(31) <= \<const0>\;
-  GPO4(30) <= \<const0>\;
-  GPO4(29) <= \<const0>\;
-  GPO4(28) <= \<const0>\;
-  GPO4(27) <= \<const0>\;
-  GPO4(26) <= \<const0>\;
-  GPO4(25) <= \<const0>\;
-  GPO4(24) <= \<const0>\;
-  GPO4(23) <= \<const0>\;
-  GPO4(22) <= \<const0>\;
-  GPO4(21) <= \<const0>\;
-  GPO4(20) <= \<const0>\;
-  GPO4(19) <= \<const0>\;
-  GPO4(18) <= \<const0>\;
-  GPO4(17) <= \<const0>\;
-  GPO4(16) <= \<const0>\;
-  GPO4(15) <= \<const0>\;
-  GPO4(14) <= \<const0>\;
-  GPO4(13) <= \<const0>\;
-  GPO4(12) <= \<const0>\;
-  GPO4(11) <= \<const0>\;
-  GPO4(10) <= \<const0>\;
-  GPO4(9) <= \<const0>\;
-  GPO4(8) <= \<const0>\;
-  GPO4(7) <= \<const0>\;
-  GPO4(6) <= \<const0>\;
-  GPO4(5) <= \<const0>\;
-  GPO4(4) <= \<const0>\;
-  GPO4(3) <= \<const0>\;
-  GPO4(2) <= \<const0>\;
-  GPO4(1) <= \<const0>\;
-  GPO4(0) <= \<const0>\;
   INTC_IRQ <= \<const0>\;
   INTC_IRQ_OUT <= \<const0>\;
   INTC_Interrupt_Address(31) <= \<const0>\;
@@ -52919,10 +53742,13 @@ GND: unisim.vcomponents.GND
 IOModule_Core_I1: entity work.microblaze_mcs_0_Iomodule_core
      port map (
       Clk => Clk,
-      D(7 downto 0) => write_data(7 downto 0),
+      D(31 downto 0) => write_data(31 downto 0),
       E(0) => uart_tx_write,
       GPI1(7 downto 0) => GPI1(7 downto 0),
       GPO1(7 downto 0) => GPO1(7 downto 0),
+      GPO2(31 downto 0) => GPO2(31 downto 0),
+      GPO3(31 downto 0) => GPO3(31 downto 0),
+      GPO4(31 downto 0) => GPO4(31 downto 0),
       Q(5) => p_0_in16_in,
       Q(4) => \lmb_abus_Q_reg_n_0_[2]\,
       Q(3) => \lmb_abus_Q_reg_n_0_[3]\,
@@ -52942,8 +53768,8 @@ IOModule_Core_I1: entity work.microblaze_mcs_0_Iomodule_core
       UART_Interrupt => UART_Interrupt,
       UART_Rx => UART_Rx,
       UART_Tx => UART_Tx,
-      \lmb_abus_Q_reg[2]\ => IOModule_Core_I1_n_1,
-      lmb_reg_write => lmb_reg_write
+      lmb_reg_write => lmb_reg_write,
+      lmb_reg_write_reg => IOModule_Core_I1_n_1
     );
 Sl_Ready_INST_0: unisim.vcomponents.LUT2
     generic map(
@@ -53054,15 +53880,15 @@ lmb_reg_write_reg: unisim.vcomponents.FDRE
     );
 uart_tx_write_inferred_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000002000"
+      INIT => X"0000000200000000"
     )
         port map (
-      I0 => lmb_reg_write,
-      I1 => \lmb_abus_Q_reg_n_0_[3]\,
-      I2 => IOModule_Core_I1_n_1,
-      I3 => \lmb_abus_Q_reg_n_0_[6]\,
-      I4 => \lmb_abus_Q_reg_n_0_[4]\,
-      I5 => p_0_in16_in,
+      I0 => IOModule_Core_I1_n_1,
+      I1 => \lmb_abus_Q_reg_n_0_[4]\,
+      I2 => \lmb_abus_Q_reg_n_0_[3]\,
+      I3 => \lmb_abus_Q_reg_n_0_[2]\,
+      I4 => \lmb_abus_Q_reg_n_0_[5]\,
+      I5 => \lmb_abus_Q_reg_n_0_[6]\,
       O => uart_tx_write
     );
 \write_data_reg[0]\: unisim.vcomponents.FDRE
@@ -53533,14 +54359,14 @@ architecture STRUCTURE of microblaze_mcs_0_MicroBlaze_Area is
   signal valid_Fetch : STD_LOGIC;
   signal write_Addr : STD_LOGIC_VECTOR ( 0 to 4 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__10\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__11\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__12\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__13\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__7\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__8\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__10\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__11\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__12\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__13\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__7\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__8\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_1__9\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \Using_FPGA.Native_i_2\ : label is "soft_lutpair40";
 begin
   D(247 downto 0) <= \^d\(247 downto 0);
 Byte_Doublet_Handle_I: entity work.microblaze_mcs_0_Byte_Doublet_Handle
@@ -55273,6 +56099,9 @@ entity microblaze_mcs_0_bd_fc5c_0_iomodule_0_0 is
     UART_Rx : in STD_LOGIC;
     UART_Tx : out STD_LOGIC;
     GPO1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPO2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPO3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPO4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     GPI1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
@@ -55323,9 +56152,6 @@ architecture STRUCTURE of microblaze_mcs_0_bd_fc5c_0_iomodule_0_0 is
   signal NLW_U0_PIT4_Interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_PIT4_Toggle_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_UART_Interrupt_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_GPO2_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal NLW_U0_GPO3_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal NLW_U0_GPO4_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_INTC_Interrupt_Address_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_IO_Address_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_IO_Byte_Enable_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -55492,11 +56318,11 @@ architecture STRUCTURE of microblaze_mcs_0_bd_fc5c_0_iomodule_0_0 is
   attribute C_USE_GPO1 : integer;
   attribute C_USE_GPO1 of U0 : label is 1;
   attribute C_USE_GPO2 : integer;
-  attribute C_USE_GPO2 of U0 : label is 0;
+  attribute C_USE_GPO2 of U0 : label is 1;
   attribute C_USE_GPO3 : integer;
-  attribute C_USE_GPO3 of U0 : label is 0;
+  attribute C_USE_GPO3 of U0 : label is 1;
   attribute C_USE_GPO4 : integer;
-  attribute C_USE_GPO4 of U0 : label is 0;
+  attribute C_USE_GPO4 of U0 : label is 1;
   attribute C_USE_IO_BUS : integer;
   attribute C_USE_IO_BUS of U0 : label is 0;
   attribute C_USE_PIT1 : integer;
@@ -55532,6 +56358,12 @@ architecture STRUCTURE of microblaze_mcs_0_bd_fc5c_0_iomodule_0_0 is
   attribute X_INTERFACE_INFO of GPI1 : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I";
   attribute X_INTERFACE_INFO of GPO1 : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O";
   attribute X_INTERFACE_PARAMETER of GPO1 : signal is "XIL_INTERFACENAME GPIO1, C_USE_GPO1 1, C_GPO1_SIZE 8, C_GPO1_INIT 0x00000000, C_USE_GPI1 1, C_GPI1_SIZE 8, C_GPI1_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO1_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPO2 : signal is "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPO2 : signal is "XIL_INTERFACENAME GPIO2, C_USE_GPO2 1, C_GPO2_SIZE 32, C_GPO2_INIT 0x00000000, C_USE_GPI2 0, C_GPI2_SIZE 32, C_GPI2_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPO3 : signal is "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPO3 : signal is "XIL_INTERFACENAME GPIO3, C_USE_GPO3 1, C_GPO3_SIZE 32, C_GPO3_INIT 0x00000000, C_USE_GPI3 0, C_GPI3_SIZE 32, C_GPI3_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO3_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPO4 : signal is "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPO4 : signal is "XIL_INTERFACENAME GPIO4, C_USE_GPO4 1, C_GPO4_SIZE 32, C_GPO4_INIT 0x00000000, C_USE_GPI4 0, C_GPI4_SIZE 32, C_GPI4_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO4_BOARD_INTERFACE";
   attribute X_INTERFACE_INFO of LMB_ABus : signal is "xilinx.com:interface:lmb:1.0 SLMB ABUS";
   attribute X_INTERFACE_PARAMETER of LMB_ABus : signal is "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE";
   attribute X_INTERFACE_INFO of LMB_BE : signal is "xilinx.com:interface:lmb:1.0 SLMB BE";
@@ -55561,9 +56393,9 @@ U0: entity work.microblaze_mcs_0_iomodule
       GPI4(31 downto 0) => B"00000000000000000000000000000000",
       GPI4_Interrupt => NLW_U0_GPI4_Interrupt_UNCONNECTED,
       GPO1(7 downto 0) => GPO1(7 downto 0),
-      GPO2(31 downto 0) => NLW_U0_GPO2_UNCONNECTED(31 downto 0),
-      GPO3(31 downto 0) => NLW_U0_GPO3_UNCONNECTED(31 downto 0),
-      GPO4(31 downto 0) => NLW_U0_GPO4_UNCONNECTED(31 downto 0),
+      GPO2(31 downto 0) => GPO2(31 downto 0),
+      GPO3(31 downto 0) => GPO3(31 downto 0),
+      GPO4(31 downto 0) => GPO4(31 downto 0),
       INTC_IRQ => NLW_U0_INTC_IRQ_UNCONNECTED,
       INTC_IRQ_OUT => NLW_U0_INTC_IRQ_OUT_UNCONNECTED,
       INTC_Interrupt(0) => '0',
@@ -70375,6 +71207,9 @@ entity microblaze_mcs_0_bd_fc5c_0 is
     Clk : in STD_LOGIC;
     GPIO1_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     GPIO1_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO2_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPIO3_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPIO4_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     Reset : in STD_LOGIC;
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC
@@ -70498,6 +71333,12 @@ architecture STRUCTURE of microblaze_mcs_0_bd_fc5c_0 is
   attribute X_INTERFACE_INFO of GPIO1_tri_i : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I";
   attribute X_INTERFACE_PARAMETER of GPIO1_tri_i : signal is "XIL_INTERFACENAME GPIO1, C_GPI1_INTERRUPT 0, C_GPI1_SIZE 8, C_GPO1_INIT 0x00000000, C_GPO1_SIZE 8, C_USE_GPI1 1, C_USE_GPO1 1";
   attribute X_INTERFACE_INFO of GPIO1_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O";
+  attribute X_INTERFACE_INFO of GPIO2_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO2_tri_o : signal is "XIL_INTERFACENAME GPIO2, C_GPI2_INTERRUPT 0, C_GPI2_SIZE 32, C_GPO2_INIT 0x00000000, C_GPO2_SIZE 32, C_USE_GPI2 0, C_USE_GPO2 1";
+  attribute X_INTERFACE_INFO of GPIO3_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO3_tri_o : signal is "XIL_INTERFACENAME GPIO3, C_GPI3_INTERRUPT 0, C_GPI3_SIZE 32, C_GPO3_INIT 0x00000000, C_GPO3_SIZE 32, C_USE_GPI3 0, C_USE_GPO3 1";
+  attribute X_INTERFACE_INFO of GPIO4_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO4_tri_o : signal is "XIL_INTERFACENAME GPIO4, C_GPI4_INTERRUPT 0, C_GPI4_SIZE 32, C_GPO4_INIT 0x00000000, C_GPO4_SIZE 32, C_USE_GPI4 0, C_USE_GPO4 1";
 begin
 dlmb: entity work.microblaze_mcs_0_bd_fc5c_0_dlmb_0
      port map (
@@ -70673,6 +71514,9 @@ iomodule_0: entity work.microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
       Clk => Clk,
       GPI1(7 downto 0) => GPIO1_tri_i(7 downto 0),
       GPO1(7 downto 0) => GPIO1_tri_o(7 downto 0),
+      GPO2(31 downto 0) => GPIO2_tri_o(31 downto 0),
+      GPO3(31 downto 0) => GPIO3_tri_o(31 downto 0),
+      GPO4(31 downto 0) => GPIO4_tri_o(31 downto 0),
       LMB_ABus(0 to 31) => dlmb_sl_0_ABUS(0 to 31),
       LMB_AddrStrobe => dlmb_sl_0_ADDRSTROBE,
       LMB_BE(0 to 3) => dlmb_sl_0_BE(0 to 3),
@@ -70889,7 +71733,10 @@ entity microblaze_mcs_0 is
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC;
     GPIO1_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    GPIO1_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    GPIO1_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO2_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPIO3_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    GPIO4_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of microblaze_mcs_0 : entity is true;
@@ -70916,12 +71763,21 @@ architecture STRUCTURE of microblaze_mcs_0 is
   attribute X_INTERFACE_INFO of GPIO1_tri_i : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I";
   attribute X_INTERFACE_INFO of GPIO1_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O";
   attribute X_INTERFACE_PARAMETER of GPIO1_tri_o : signal is "XIL_INTERFACENAME GPIO1, C_USE_GPO1 1, C_GPO1_SIZE 8, C_GPO1_INIT 0x00000000, C_USE_GPI1 1, C_GPI1_SIZE 8, C_GPI1_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO1_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPIO2_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO2_tri_o : signal is "XIL_INTERFACENAME GPIO2, C_USE_GPO2 1, C_GPO2_SIZE 32, C_GPO2_INIT 0x00000000, C_USE_GPI2 0, C_GPI2_SIZE 32, C_GPI2_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPIO3_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO3_tri_o : signal is "XIL_INTERFACENAME GPIO3, C_USE_GPO3 1, C_GPO3_SIZE 32, C_GPO3_INIT 0x00000000, C_USE_GPI3 0, C_GPI3_SIZE 32, C_GPI3_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO3_BOARD_INTERFACE";
+  attribute X_INTERFACE_INFO of GPIO4_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O";
+  attribute X_INTERFACE_PARAMETER of GPIO4_tri_o : signal is "XIL_INTERFACENAME GPIO4, C_USE_GPO4 1, C_GPO4_SIZE 32, C_GPO4_INIT 0x00000000, C_USE_GPI4 0, C_GPI4_SIZE 32, C_GPI4_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO4_BOARD_INTERFACE";
 begin
 inst: entity work.microblaze_mcs_0_bd_fc5c_0
      port map (
       Clk => Clk,
       GPIO1_tri_i(7 downto 0) => GPIO1_tri_i(7 downto 0),
       GPIO1_tri_o(7 downto 0) => GPIO1_tri_o(7 downto 0),
+      GPIO2_tri_o(31 downto 0) => GPIO2_tri_o(31 downto 0),
+      GPIO3_tri_o(31 downto 0) => GPIO3_tri_o(31 downto 0),
+      GPIO4_tri_o(31 downto 0) => GPIO4_tri_o(31 downto 0),
       Reset => Reset,
       UART_rxd => UART_rxd,
       UART_txd => UART_txd

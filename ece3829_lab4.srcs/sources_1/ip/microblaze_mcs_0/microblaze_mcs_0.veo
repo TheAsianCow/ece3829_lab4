@@ -60,7 +60,10 @@ microblaze_mcs_0 your_instance_name (
   .UART_rxd(UART_rxd),        // input wire UART_rxd
   .UART_txd(UART_txd),        // output wire UART_txd
   .GPIO1_tri_i(GPIO1_tri_i),  // input wire [7 : 0] GPIO1_tri_i
-  .GPIO1_tri_o(GPIO1_tri_o)  // output wire [7 : 0] GPIO1_tri_o
+  .GPIO1_tri_o(GPIO1_tri_o),  // output wire [7 : 0] GPIO1_tri_o
+  .GPIO2_tri_o(GPIO2_tri_o),  // output wire [31 : 0] GPIO2_tri_o
+  .GPIO3_tri_o(GPIO3_tri_o),  // output wire [31 : 0] GPIO3_tri_o
+  .GPIO4_tri_o(GPIO4_tri_o)  // output wire [31 : 0] GPIO4_tri_o
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

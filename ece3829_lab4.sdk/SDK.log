@@ -4,3 +4,10 @@
 14:50:21 INFO  : Successfully done setting XSCT server connection channel  
 14:50:21 INFO  : Processing command line option -hwspec R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top.hdf.
 14:50:21 INFO  : Successfully done setting SDK workspace  
+13:22:36 INFO  : Registering command handlers for SDK TCF services
+13:22:38 INFO  : Launching XSCT server: xsct.bat -interactive R:\ECE3829_Labs\ece3829_lab4\ece3829_lab4.sdk\temp_xsdb_launch_script.tcl
+13:22:41 INFO  : XSCT server has started successfully.
+13:22:41 INFO  : Successfully done setting XSCT server connection channel  
+13:22:42 INFO  : Successfully done setting SDK workspace  
+13:22:42 INFO  : Processing command line option -hwspec R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/mcs_top.hdf.
+13:22:42 INFO  : Checking for hwspec changes in the project mcs_top_hw_platform_0.

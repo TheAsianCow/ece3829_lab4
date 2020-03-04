@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Tue Mar  3 14:47:55 2020
+// Date        : Wed Mar  4 15:22:11 2020
 // Host        : AK113-07 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
+//               R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_sim_netlist.v
 // Design      : microblaze_mcs_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,17 +20,26 @@ module microblaze_mcs_0
     UART_rxd,
     UART_txd,
     GPIO1_tri_i,
-    GPIO1_tri_o);
+    GPIO1_tri_o,
+    GPIO2_tri_o,
+    GPIO3_tri_o,
+    GPIO4_tri_o);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.Clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.Clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN bd_fc5c_0_Clk, INSERT_VIP 0, ASSOCIATED_ASYNC_RESET Reset, BOARD.ASSOCIATED_PARAM CLK_BOARD_INTERFACE" *) input Clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.Reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.Reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE" *) input Reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *) input UART_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART TxD" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME UART, BOARD.ASSOCIATED_PARAM UART_BOARD_INTERFACE" *) output UART_txd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I" *) input [7:0]GPIO1_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO1, C_USE_GPO1 1, C_GPO1_SIZE 8, C_GPO1_INIT 0x00000000, C_USE_GPI1 1, C_GPI1_SIZE 8, C_GPI1_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO1_BOARD_INTERFACE" *) output [7:0]GPIO1_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO2, C_USE_GPO2 1, C_GPO2_SIZE 32, C_GPO2_INIT 0x00000000, C_USE_GPI2 0, C_GPI2_SIZE 32, C_GPI2_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE" *) output [31:0]GPIO2_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO3, C_USE_GPO3 1, C_GPO3_SIZE 32, C_GPO3_INIT 0x00000000, C_USE_GPI3 0, C_GPI3_SIZE 32, C_GPI3_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO3_BOARD_INTERFACE" *) output [31:0]GPIO3_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO4, C_USE_GPO4 1, C_GPO4_SIZE 32, C_GPO4_INIT 0x00000000, C_USE_GPI4 0, C_GPI4_SIZE 32, C_GPI4_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO4_BOARD_INTERFACE" *) output [31:0]GPIO4_tri_o;
 
   wire Clk;
   wire [7:0]GPIO1_tri_i;
   wire [7:0]GPIO1_tri_o;
+  wire [31:0]GPIO2_tri_o;
+  wire [31:0]GPIO3_tri_o;
+  wire [31:0]GPIO4_tri_o;
   wire Reset;
   wire UART_rxd;
   wire UART_txd;
@@ -40,6 +49,9 @@ module microblaze_mcs_0
        (.Clk(Clk),
         .GPIO1_tri_i(GPIO1_tri_i),
         .GPIO1_tri_o(GPIO1_tri_o),
+        .GPIO2_tri_o(GPIO2_tri_o),
+        .GPIO3_tri_o(GPIO3_tri_o),
+        .GPIO4_tri_o(GPIO4_tri_o),
         .Reset(Reset),
         .UART_rxd(UART_rxd),
         .UART_txd(UART_txd));
@@ -55,7 +67,7 @@ module microblaze_mcs_0_Divide_part
   wire Clk;
   wire Clk_En_I_2;
 
-  microblaze_mcs_0_XIL_SRL16E_781 \One_SRL16.SRL16E_I 
+  microblaze_mcs_0_XIL_SRL16E_783 \One_SRL16.SRL16E_I 
        (.Clk(Clk),
         .Clk_En_I_2(Clk_En_I_2));
 endmodule
@@ -75,7 +87,7 @@ module microblaze_mcs_0_Divide_part__parameterized0
   wire Out1;
   wire loop_Bit;
 
-  microblaze_mcs_0_XIL_SRL16E_780 \One_SRL16.SRL16E_I 
+  microblaze_mcs_0_XIL_SRL16E_782 \One_SRL16.SRL16E_I 
        (.Clk(Clk),
         .Clk_En_I_2(Clk_En_I_2),
         .loop_Bit(loop_Bit));
@@ -112,7 +124,7 @@ module microblaze_mcs_0_Divide_part__parameterized1
   wire \not_First.Out1_reg_n_0 ;
   wire shift;
 
-  microblaze_mcs_0_XIL_SRL16E__parameterized1_779 \Two_SRL16.SRL16E_2 
+  microblaze_mcs_0_XIL_SRL16E__parameterized1_781 \Two_SRL16.SRL16E_2 
        (.Clk(Clk),
         .Clk_En_I_1(Clk_En_I_1),
         .loop_Bit(loop_Bit),
@@ -175,95 +187,93 @@ endmodule
 module microblaze_mcs_0_GPI_Module
    (\Using_GPI.GPI_In_reg[7]_0 ,
     Q,
-    \Using_GPI.GPI_In_reg[0]_0 ,
+    \Using_GPI.GPI_In_reg[7]_1 ,
     GPI1,
     Clk);
   output [7:0]\Using_GPI.GPI_In_reg[7]_0 ;
   input [4:0]Q;
-  input \Using_GPI.GPI_In_reg[0]_0 ;
+  input \Using_GPI.GPI_In_reg[7]_1 ;
   input [7:0]GPI1;
   input Clk;
 
   wire Clk;
   wire [7:0]GPI1;
   wire [4:0]Q;
-  wire \Using_GPI.GPI_In_reg[0]_0 ;
+  wire \Using_GPI.GPI_In[7]_i_1_n_0 ;
   wire [7:0]\Using_GPI.GPI_In_reg[7]_0 ;
-  wire p_0_in__0;
+  wire \Using_GPI.GPI_In_reg[7]_1 ;
 
   LUT6 #(
-    .INIT(64'hFFFEFFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFBFFFFFFFF)) 
     \Using_GPI.GPI_In[7]_i_1 
        (.I0(Q[2]),
-        .I1(Q[0]),
-        .I2(Q[1]),
+        .I1(Q[3]),
+        .I2(Q[0]),
         .I3(Q[4]),
-        .I4(Q[3]),
-        .I5(\Using_GPI.GPI_In_reg[0]_0 ),
-        .O(p_0_in__0));
+        .I4(Q[1]),
+        .I5(\Using_GPI.GPI_In_reg[7]_1 ),
+        .O(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[0] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[0]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [0]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[1] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[1]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [1]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[2] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[2]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [2]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[3] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[3]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [3]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[4] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[4]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [4]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[5] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[5]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [5]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[6] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[6]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [6]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
   FDRE \Using_GPI.GPI_In_reg[7] 
        (.C(Clk),
         .CE(1'b1),
         .D(GPI1[7]),
         .Q(\Using_GPI.GPI_In_reg[7]_0 [7]),
-        .R(p_0_in__0));
+        .R(\Using_GPI.GPI_In[7]_i_1_n_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "GPO_Module" *) 
 module microblaze_mcs_0_GPO_Module
-   (\lmb_abus_Q_reg[2] ,
-    GPO1,
-    lmb_reg_write,
+   (GPO1,
+    \TMR_No.gpo_io_i_reg[0]_0 ,
     Q,
     Rst,
     D,
     Clk);
-  output \lmb_abus_Q_reg[2] ;
   output [7:0]GPO1;
-  input lmb_reg_write;
-  input [5:0]Q;
+  input \TMR_No.gpo_io_i_reg[0]_0 ;
+  input [4:0]Q;
   input Rst;
   input [7:0]D;
   input Clk;
@@ -271,28 +281,21 @@ module microblaze_mcs_0_GPO_Module
   wire Clk;
   wire [7:0]D;
   wire [7:0]GPO1;
-  wire [5:0]Q;
+  wire [4:0]Q;
   wire Rst;
+  wire \TMR_No.gpo_io_i_reg[0]_0 ;
   wire gpo1_write;
-  wire \lmb_abus_Q_reg[2] ;
-  wire lmb_reg_write;
 
   LUT6 #(
-    .INIT(64'h0000000000200000)) 
+    .INIT(64'h0000000200000000)) 
     \TMR_No.gpo_io_i[7]_i_1 
-       (.I0(lmb_reg_write),
+       (.I0(\TMR_No.gpo_io_i_reg[0]_0 ),
         .I1(Q[3]),
-        .I2(\lmb_abus_Q_reg[2] ),
-        .I3(Q[0]),
-        .I4(Q[2]),
-        .I5(Q[5]),
+        .I2(Q[0]),
+        .I3(Q[4]),
+        .I4(Q[1]),
+        .I5(Q[2]),
         .O(gpo1_write));
-  LUT2 #(
-    .INIT(4'h1)) 
-    \TMR_No.gpo_io_i[7]_i_2 
-       (.I0(Q[4]),
-        .I1(Q[1]),
-        .O(\lmb_abus_Q_reg[2] ));
   FDRE \TMR_No.gpo_io_i_reg[0] 
        (.C(Clk),
         .CE(gpo1_write),
@@ -343,60 +346,758 @@ module microblaze_mcs_0_GPO_Module
         .R(Rst));
 endmodule
 
+(* ORIG_REF_NAME = "GPO_Module" *) 
+module microblaze_mcs_0_GPO_Module__parameterized1
+   (GPO2,
+    \TMR_No.gpo_io_i_reg[0]_0 ,
+    Q,
+    Rst,
+    D,
+    Clk);
+  output [31:0]GPO2;
+  input \TMR_No.gpo_io_i_reg[0]_0 ;
+  input [4:0]Q;
+  input Rst;
+  input [31:0]D;
+  input Clk;
+
+  wire Clk;
+  wire [31:0]D;
+  wire [31:0]GPO2;
+  wire [4:0]Q;
+  wire Rst;
+  wire \TMR_No.gpo_io_i_reg[0]_0 ;
+  wire gpo2_write;
+
+  LUT6 #(
+    .INIT(64'h0002000000000000)) 
+    \TMR_No.gpo_io_i[31]_i_1__0 
+       (.I0(\TMR_No.gpo_io_i_reg[0]_0 ),
+        .I1(Q[3]),
+        .I2(Q[4]),
+        .I3(Q[1]),
+        .I4(Q[0]),
+        .I5(Q[2]),
+        .O(gpo2_write));
+  FDRE \TMR_No.gpo_io_i_reg[0] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[0]),
+        .Q(GPO2[0]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[10] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[10]),
+        .Q(GPO2[10]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[11] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[11]),
+        .Q(GPO2[11]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[12] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[12]),
+        .Q(GPO2[12]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[13] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[13]),
+        .Q(GPO2[13]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[14] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[14]),
+        .Q(GPO2[14]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[15] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[15]),
+        .Q(GPO2[15]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[16] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[16]),
+        .Q(GPO2[16]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[17] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[17]),
+        .Q(GPO2[17]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[18] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[18]),
+        .Q(GPO2[18]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[19] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[19]),
+        .Q(GPO2[19]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[1] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[1]),
+        .Q(GPO2[1]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[20] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[20]),
+        .Q(GPO2[20]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[21] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[21]),
+        .Q(GPO2[21]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[22] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[22]),
+        .Q(GPO2[22]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[23] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[23]),
+        .Q(GPO2[23]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[24] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[24]),
+        .Q(GPO2[24]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[25] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[25]),
+        .Q(GPO2[25]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[26] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[26]),
+        .Q(GPO2[26]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[27] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[27]),
+        .Q(GPO2[27]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[28] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[28]),
+        .Q(GPO2[28]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[29] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[29]),
+        .Q(GPO2[29]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[2] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[2]),
+        .Q(GPO2[2]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[30] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[30]),
+        .Q(GPO2[30]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[31] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[31]),
+        .Q(GPO2[31]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[3] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[3]),
+        .Q(GPO2[3]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[4] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[4]),
+        .Q(GPO2[4]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[5] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[5]),
+        .Q(GPO2[5]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[6] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[6]),
+        .Q(GPO2[6]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[7] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[7]),
+        .Q(GPO2[7]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[8] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[8]),
+        .Q(GPO2[8]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[9] 
+       (.C(Clk),
+        .CE(gpo2_write),
+        .D(D[9]),
+        .Q(GPO2[9]),
+        .R(Rst));
+endmodule
+
+(* ORIG_REF_NAME = "GPO_Module" *) 
+module microblaze_mcs_0_GPO_Module__parameterized1_767
+   (lmb_reg_write_reg,
+    GPO3,
+    Q,
+    lmb_reg_write,
+    Rst,
+    D,
+    Clk);
+  output lmb_reg_write_reg;
+  output [31:0]GPO3;
+  input [5:0]Q;
+  input lmb_reg_write;
+  input Rst;
+  input [31:0]D;
+  input Clk;
+
+  wire Clk;
+  wire [31:0]D;
+  wire [31:0]GPO3;
+  wire [5:0]Q;
+  wire Rst;
+  wire gpo3_write;
+  wire lmb_reg_write;
+  wire lmb_reg_write_reg;
+
+  LUT6 #(
+    .INIT(64'h0000020000000000)) 
+    \TMR_No.gpo_io_i[31]_i_1__1 
+       (.I0(lmb_reg_write_reg),
+        .I1(Q[3]),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(Q[4]),
+        .I5(Q[2]),
+        .O(gpo3_write));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \TMR_No.gpo_io_i[7]_i_2 
+       (.I0(lmb_reg_write),
+        .I1(Q[5]),
+        .O(lmb_reg_write_reg));
+  FDRE \TMR_No.gpo_io_i_reg[0] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[0]),
+        .Q(GPO3[0]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[10] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[10]),
+        .Q(GPO3[10]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[11] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[11]),
+        .Q(GPO3[11]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[12] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[12]),
+        .Q(GPO3[12]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[13] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[13]),
+        .Q(GPO3[13]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[14] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[14]),
+        .Q(GPO3[14]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[15] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[15]),
+        .Q(GPO3[15]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[16] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[16]),
+        .Q(GPO3[16]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[17] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[17]),
+        .Q(GPO3[17]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[18] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[18]),
+        .Q(GPO3[18]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[19] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[19]),
+        .Q(GPO3[19]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[1] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[1]),
+        .Q(GPO3[1]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[20] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[20]),
+        .Q(GPO3[20]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[21] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[21]),
+        .Q(GPO3[21]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[22] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[22]),
+        .Q(GPO3[22]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[23] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[23]),
+        .Q(GPO3[23]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[24] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[24]),
+        .Q(GPO3[24]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[25] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[25]),
+        .Q(GPO3[25]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[26] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[26]),
+        .Q(GPO3[26]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[27] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[27]),
+        .Q(GPO3[27]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[28] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[28]),
+        .Q(GPO3[28]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[29] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[29]),
+        .Q(GPO3[29]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[2] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[2]),
+        .Q(GPO3[2]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[30] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[30]),
+        .Q(GPO3[30]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[31] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[31]),
+        .Q(GPO3[31]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[3] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[3]),
+        .Q(GPO3[3]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[4] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[4]),
+        .Q(GPO3[4]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[5] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[5]),
+        .Q(GPO3[5]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[6] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[6]),
+        .Q(GPO3[6]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[7] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[7]),
+        .Q(GPO3[7]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[8] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[8]),
+        .Q(GPO3[8]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[9] 
+       (.C(Clk),
+        .CE(gpo3_write),
+        .D(D[9]),
+        .Q(GPO3[9]),
+        .R(Rst));
+endmodule
+
+(* ORIG_REF_NAME = "GPO_Module" *) 
+module microblaze_mcs_0_GPO_Module__parameterized1_768
+   (GPO4,
+    \TMR_No.gpo_io_i_reg[0]_0 ,
+    Q,
+    Rst,
+    D,
+    Clk);
+  output [31:0]GPO4;
+  input \TMR_No.gpo_io_i_reg[0]_0 ;
+  input [4:0]Q;
+  input Rst;
+  input [31:0]D;
+  input Clk;
+
+  wire Clk;
+  wire [31:0]D;
+  wire [31:0]GPO4;
+  wire [4:0]Q;
+  wire Rst;
+  wire \TMR_No.gpo_io_i_reg[0]_0 ;
+  wire gpo4_write;
+
+  LUT6 #(
+    .INIT(64'h0020000000000000)) 
+    \TMR_No.gpo_io_i[31]_i_1 
+       (.I0(\TMR_No.gpo_io_i_reg[0]_0 ),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[4]),
+        .I4(Q[0]),
+        .I5(Q[2]),
+        .O(gpo4_write));
+  FDRE \TMR_No.gpo_io_i_reg[0] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[0]),
+        .Q(GPO4[0]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[10] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[10]),
+        .Q(GPO4[10]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[11] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[11]),
+        .Q(GPO4[11]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[12] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[12]),
+        .Q(GPO4[12]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[13] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[13]),
+        .Q(GPO4[13]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[14] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[14]),
+        .Q(GPO4[14]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[15] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[15]),
+        .Q(GPO4[15]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[16] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[16]),
+        .Q(GPO4[16]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[17] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[17]),
+        .Q(GPO4[17]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[18] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[18]),
+        .Q(GPO4[18]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[19] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[19]),
+        .Q(GPO4[19]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[1] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[1]),
+        .Q(GPO4[1]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[20] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[20]),
+        .Q(GPO4[20]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[21] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[21]),
+        .Q(GPO4[21]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[22] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[22]),
+        .Q(GPO4[22]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[23] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[23]),
+        .Q(GPO4[23]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[24] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[24]),
+        .Q(GPO4[24]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[25] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[25]),
+        .Q(GPO4[25]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[26] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[26]),
+        .Q(GPO4[26]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[27] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[27]),
+        .Q(GPO4[27]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[28] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[28]),
+        .Q(GPO4[28]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[29] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[29]),
+        .Q(GPO4[29]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[2] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[2]),
+        .Q(GPO4[2]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[30] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[30]),
+        .Q(GPO4[30]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[31] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[31]),
+        .Q(GPO4[31]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[3] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[3]),
+        .Q(GPO4[3]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[4] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[4]),
+        .Q(GPO4[4]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[5] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[5]),
+        .Q(GPO4[5]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[6] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[6]),
+        .Q(GPO4[6]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[7] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[7]),
+        .Q(GPO4[7]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[8] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[8]),
+        .Q(GPO4[8]),
+        .R(Rst));
+  FDRE \TMR_No.gpo_io_i_reg[9] 
+       (.C(Clk),
+        .CE(gpo4_write),
+        .D(D[9]),
+        .Q(GPO4[9]),
+        .R(Rst));
+endmodule
+
 (* ORIG_REF_NAME = "Iomodule_core" *) 
 module microblaze_mcs_0_Iomodule_core
    (UART_Tx,
-    \lmb_abus_Q_reg[2] ,
+    lmb_reg_write_reg,
     UART_Interrupt,
     Sl_DBus,
     GPO1,
+    GPO2,
+    GPO3,
+    GPO4,
     Clk,
     Rst,
     UART_Rx,
-    Q,
-    \TMR_No.RX_Data_reg[0] ,
-    lmb_reg_write,
     E,
+    Q,
+    lmb_reg_write,
+    \TMR_No.RX_Data_reg[0] ,
     D,
     GPI1);
   output UART_Tx;
-  output \lmb_abus_Q_reg[2] ;
+  output lmb_reg_write_reg;
   output UART_Interrupt;
   output [7:0]Sl_DBus;
   output [7:0]GPO1;
+  output [31:0]GPO2;
+  output [31:0]GPO3;
+  output [31:0]GPO4;
   input Clk;
   input Rst;
   input UART_Rx;
-  input [5:0]Q;
-  input \TMR_No.RX_Data_reg[0] ;
-  input lmb_reg_write;
   input [0:0]E;
-  input [7:0]D;
+  input [5:0]Q;
+  input lmb_reg_write;
+  input \TMR_No.RX_Data_reg[0] ;
+  input [31:0]D;
   input [7:0]GPI1;
 
   wire Clk;
-  wire [7:0]D;
+  wire [31:0]D;
   wire [0:0]E;
   wire [7:0]GPI1;
   wire [7:0]GPI_In;
   wire [7:0]GPO1;
+  wire [31:0]GPO2;
+  wire [31:0]GPO3;
+  wire [31:0]GPO4;
   wire [5:0]Q;
   wire [7:0]RX_Data;
   wire Rst;
   wire [7:0]Sl_DBus;
   wire \TMR_No.RX_Data_reg[0] ;
-  wire UART_Error_Interrupt;
   wire UART_Interrupt;
   wire UART_Rx;
   wire [6:0]UART_Status;
+  wire UART_Status_Read;
   wire UART_Tx;
-  wire \Using_UART.Uart_Control_Status_I1_n_2 ;
+  wire \Using_UART_RX.UART_RX_I1_n_3 ;
   wire \Using_UART_RX.UART_RX_I1_n_4 ;
-  wire \Using_UART_RX.UART_RX_I1_n_5 ;
   wire en_16x_baud;
   wire frame_error;
-  wire \lmb_abus_Q_reg[2] ;
   wire lmb_reg_write;
+  wire lmb_reg_write_reg;
   wire overrun_error;
   wire [3:3]p_0_out;
   wire rx_data_exists;
@@ -408,16 +1109,37 @@ module microblaze_mcs_0_Iomodule_core
        (.Clk(Clk),
         .GPI1(GPI1),
         .Q(Q[4:0]),
-        .\Using_GPI.GPI_In_reg[0]_0 (\TMR_No.RX_Data_reg[0] ),
-        .\Using_GPI.GPI_In_reg[7]_0 (GPI_In));
+        .\Using_GPI.GPI_In_reg[7]_0 (GPI_In),
+        .\Using_GPI.GPI_In_reg[7]_1 (\TMR_No.RX_Data_reg[0] ));
   microblaze_mcs_0_GPO_Module GPO_I1
        (.Clk(Clk),
-        .D(D),
+        .D(D[7:0]),
         .GPO1(GPO1),
+        .Q(Q[4:0]),
+        .Rst(Rst),
+        .\TMR_No.gpo_io_i_reg[0]_0 (lmb_reg_write_reg));
+  microblaze_mcs_0_GPO_Module__parameterized1 GPO_I2
+       (.Clk(Clk),
+        .D(D),
+        .GPO2(GPO2),
+        .Q(Q[4:0]),
+        .Rst(Rst),
+        .\TMR_No.gpo_io_i_reg[0]_0 (lmb_reg_write_reg));
+  microblaze_mcs_0_GPO_Module__parameterized1_767 GPO_I3
+       (.Clk(Clk),
+        .D(D),
+        .GPO3(GPO3),
         .Q(Q),
         .Rst(Rst),
-        .\lmb_abus_Q_reg[2] (\lmb_abus_Q_reg[2] ),
-        .lmb_reg_write(lmb_reg_write));
+        .lmb_reg_write(lmb_reg_write),
+        .lmb_reg_write_reg(lmb_reg_write_reg));
+  microblaze_mcs_0_GPO_Module__parameterized1_768 GPO_I4
+       (.Clk(Clk),
+        .D(D),
+        .GPO4(GPO4),
+        .Q(Q[4:0]),
+        .Rst(Rst),
+        .\TMR_No.gpo_io_i_reg[0]_0 (lmb_reg_write_reg));
   LUT2 #(
     .INIT(4'hE)) 
     \Sl_DBus[24]_INST_0 
@@ -478,15 +1200,16 @@ module microblaze_mcs_0_Iomodule_core
         .D({frame_error,overrun_error}),
         .Q(Q[4:0]),
         .Rst(Rst),
-        .\TMR_No.error_interrupt_reg_0 (UART_Error_Interrupt),
-        .\TMR_No.error_interrupt_reg_1 (rx_data_received),
-        .\TMR_No.frame_error_reg_0 (\Using_UART_RX.UART_RX_I1_n_5 ),
-        .\TMR_No.overrun_error_reg_0 (\Using_UART_RX.UART_RX_I1_n_4 ),
+        .\TMR_No.error_interrupt_reg_0 (rx_frame_error),
+        .\TMR_No.frame_error_reg_0 (\Using_UART_RX.UART_RX_I1_n_4 ),
+        .\TMR_No.overrun_error_reg_0 (\Using_UART_RX.UART_RX_I1_n_3 ),
+        .UART_Interrupt(UART_Interrupt),
+        .UART_Status_Read(UART_Status_Read),
         .\UART_Status_reg[0]_0 (\TMR_No.RX_Data_reg[0] ),
         .\UART_Status_reg[3]_0 ({p_0_out,rx_data_exists}),
         .\UART_Status_reg[6]_0 ({UART_Status[6:5],UART_Status[3],UART_Status[0]}),
-        .\lmb_abus_Q_reg[4] (\Using_UART.Uart_Control_Status_I1_n_2 ),
-        .out(rx_frame_error));
+        .out(rx_data_received),
+        .tx_data_transmitted(tx_data_transmitted));
   microblaze_mcs_0_UART_Receive \Using_UART_RX.UART_RX_I1 
        (.Clk(Clk),
         .D({frame_error,overrun_error}),
@@ -494,20 +1217,17 @@ module microblaze_mcs_0_Iomodule_core
         .Rst(Rst),
         .\TMR_No.RX_Data_reg[0]_0 (\TMR_No.RX_Data_reg[0] ),
         .\TMR_No.RX_Data_reg[7]_0 (RX_Data),
-        .\TMR_No.frame_error_reg (\Using_UART_RX.UART_RX_I1_n_5 ),
-        .\TMR_No.overrun_error_reg (\Using_UART.Uart_Control_Status_I1_n_2 ),
+        .\TMR_No.frame_error_reg (\Using_UART_RX.UART_RX_I1_n_4 ),
         .\TMR_No.rx_data_exists_i_reg_0 (rx_data_exists),
-        .\TMR_No.rx_data_exists_i_reg_1 (\Using_UART_RX.UART_RX_I1_n_4 ),
-        .UART_Interrupt(UART_Interrupt),
-        .UART_Interrupt_INST_0_0(UART_Error_Interrupt),
+        .\TMR_No.rx_data_exists_i_reg_1 (\Using_UART_RX.UART_RX_I1_n_3 ),
         .UART_Rx(UART_Rx),
+        .UART_Status_Read(UART_Status_Read),
         .en_16x_baud(en_16x_baud),
         .\not_First.Clk_En_Out_i_reg (rx_frame_error),
-        .out(rx_data_received),
-        .tx_data_transmitted(tx_data_transmitted));
+        .out(rx_data_received));
   microblaze_mcs_0_UART_Transmit \Using_UART_TX.UART_TX_I1 
        (.Clk(Clk),
-        .D(D),
+        .D(D[7:0]),
         .E(E),
         .Rst(Rst),
         .\TMR_No.tx_buffer_empty_i_reg_0 (p_0_out),
@@ -541,15 +1261,15 @@ module microblaze_mcs_0_MB_MUXF5
         .I1(I1),
         .I2(Q[1]),
         .O(mux_0123));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \Using_FPGA.Native_i_1__1 
+    \Using_FPGA.Native_i_1 
        (.I0(\Using_FPGA.Native_0 [2]),
         .I1(Q[0]),
         .I2(\Using_FPGA.Native_0 [3]),
         .O(I0));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_2 
@@ -560,7 +1280,7 @@ module microblaze_mcs_0_MB_MUXF5
 endmodule
 
 (* ORIG_REF_NAME = "MB_MUXF5" *) 
-module microblaze_mcs_0_MB_MUXF5_770
+module microblaze_mcs_0_MB_MUXF5_772
    (mux_4567,
     Q,
     \Using_FPGA.Native_0 );
@@ -570,7 +1290,7 @@ module microblaze_mcs_0_MB_MUXF5_770
 
   wire [1:0]Q;
   wire [3:0]\Using_FPGA.Native_0 ;
-  wire \Using_FPGA.Native_i_1__2_n_0 ;
+  wire \Using_FPGA.Native_i_1__0_n_0 ;
   wire \Using_FPGA.Native_i_2__0_n_0 ;
   wire mux_4567;
 
@@ -580,19 +1300,19 @@ module microblaze_mcs_0_MB_MUXF5_770
   LUT3 #(
     .INIT(8'hCA)) 
     \Using_FPGA.Native 
-       (.I0(\Using_FPGA.Native_i_1__2_n_0 ),
+       (.I0(\Using_FPGA.Native_i_1__0_n_0 ),
         .I1(\Using_FPGA.Native_i_2__0_n_0 ),
         .I2(Q[1]),
         .O(mux_4567));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \Using_FPGA.Native_i_1__2 
+    \Using_FPGA.Native_i_1__0 
        (.I0(\Using_FPGA.Native_0 [2]),
         .I1(Q[0]),
         .I2(\Using_FPGA.Native_0 [3]),
-        .O(\Using_FPGA.Native_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+        .O(\Using_FPGA.Native_i_1__0_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_2__0 
@@ -635,7 +1355,6 @@ module microblaze_mcs_0_UART_Receive
    (out,
     \not_First.Clk_En_Out_i_reg ,
     \TMR_No.rx_data_exists_i_reg_0 ,
-    UART_Interrupt,
     \TMR_No.rx_data_exists_i_reg_1 ,
     \TMR_No.frame_error_reg ,
     \TMR_No.RX_Data_reg[7]_0 ,
@@ -643,16 +1362,13 @@ module microblaze_mcs_0_UART_Receive
     Clk,
     Rst,
     UART_Rx,
-    Q,
     \TMR_No.RX_Data_reg[0]_0 ,
-    tx_data_transmitted,
-    UART_Interrupt_INST_0_0,
-    \TMR_No.overrun_error_reg ,
+    Q,
+    UART_Status_Read,
     D);
   output out;
   output \not_First.Clk_En_Out_i_reg ;
   output [0:0]\TMR_No.rx_data_exists_i_reg_0 ;
-  output UART_Interrupt;
   output \TMR_No.rx_data_exists_i_reg_1 ;
   output \TMR_No.frame_error_reg ;
   output [7:0]\TMR_No.RX_Data_reg[7]_0 ;
@@ -660,11 +1376,9 @@ module microblaze_mcs_0_UART_Receive
   input Clk;
   input Rst;
   input UART_Rx;
-  input [4:0]Q;
   input \TMR_No.RX_Data_reg[0]_0 ;
-  input tx_data_transmitted;
-  input UART_Interrupt_INST_0_0;
-  input \TMR_No.overrun_error_reg ;
+  input [4:0]Q;
+  input UART_Status_Read;
   input [1:0]D;
 
   wire Clk;
@@ -685,7 +1399,6 @@ module microblaze_mcs_0_UART_Receive
   wire \TMR_No.RX_Data_reg[0]_0 ;
   wire [7:0]\TMR_No.RX_Data_reg[7]_0 ;
   wire \TMR_No.frame_error_reg ;
-  wire \TMR_No.overrun_error_reg ;
   wire \TMR_No.previous_RX_i_1_n_0 ;
   wire \TMR_No.running_reg_n_0 ;
   wire \TMR_No.rx_data_exists_i_i_1_n_0 ;
@@ -694,9 +1407,9 @@ module microblaze_mcs_0_UART_Receive
   wire \TMR_No.start_Edge_Detected_i_1_n_0 ;
   wire \TMR_No.start_Edge_Detected_reg_n_0 ;
   wire \TMR_No.stop_Bit_Position_reg_n_0 ;
-  wire UART_Interrupt;
-  wire UART_Interrupt_INST_0_0;
   wire UART_Rx;
+  wire UART_Rx_Read;
+  wire UART_Status_Read;
   wire en_16x_baud;
   wire mid_Start_Bit;
   (* RTL_KEEP = "true" *) wire [0:8]new_rx_data;
@@ -708,7 +1421,6 @@ module microblaze_mcs_0_UART_Receive
   (* RTL_KEEP = "true" *) wire rx_frame_error_i;
   (* RTL_KEEP = "true" *) wire rx_parity_error_i;
   wire sample_Point;
-  wire tx_data_transmitted;
 
   assign \not_First.Clk_En_Out_i_reg  = rx_frame_error_i;
   assign out = new_rx_data_write;
@@ -718,43 +1430,43 @@ module microblaze_mcs_0_UART_Receive
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[1]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771 \TMR_No.Convert_Serial_To_Parallel[2].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 \TMR_No.Convert_Serial_To_Parallel[2].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[2]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772 \TMR_No.Convert_Serial_To_Parallel[3].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 \TMR_No.Convert_Serial_To_Parallel[3].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[3]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773 \TMR_No.Convert_Serial_To_Parallel[4].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 \TMR_No.Convert_Serial_To_Parallel[4].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[4]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774 \TMR_No.Convert_Serial_To_Parallel[5].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 \TMR_No.Convert_Serial_To_Parallel[5].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[5]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775 \TMR_No.Convert_Serial_To_Parallel[6].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 \TMR_No.Convert_Serial_To_Parallel[6].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[6]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776 \TMR_No.Convert_Serial_To_Parallel[7].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778 \TMR_No.Convert_Serial_To_Parallel[7].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
         .in0(new_rx_data[7]),
         .mid_Start_Bit(mid_Start_Bit));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777 \TMR_No.Convert_Serial_To_Parallel[8].Rest_Bits.Others_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779 \TMR_No.Convert_Serial_To_Parallel[8].Rest_Bits.Others_I 
        (.Clk(Clk),
         .\TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg (\TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg ),
         .en_16x_baud(en_16x_baud),
@@ -779,20 +1491,20 @@ module microblaze_mcs_0_UART_Receive
         .mid_Start_Bit(mid_Start_Bit),
         .out({new_rx_data[0],new_rx_data[1],new_rx_data[2],new_rx_data[3],new_rx_data[4],new_rx_data[5],new_rx_data[6],new_rx_data[7],new_rx_data[8]}),
         .sample_Point(sample_Point));
-  microblaze_mcs_0_XIL_SRL16E__parameterized1_778 \TMR_No.Mid_Start_Bit_SRL16 
+  microblaze_mcs_0_XIL_SRL16E__parameterized1_780 \TMR_No.Mid_Start_Bit_SRL16 
        (.Clk(Clk),
         .\Using_FPGA.Native (\TMR_No.start_Edge_Detected_reg_n_0 ),
         .en_16x_baud(en_16x_baud),
         .mid_Start_Bit(mid_Start_Bit));
   LUT6 #(
-    .INIT(64'hFFFFFFFEFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFFFFFD)) 
     \TMR_No.RX_Data[7]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[4]),
+       (.I0(\TMR_No.RX_Data_reg[0]_0 ),
+        .I1(Q[1]),
+        .I2(Q[4]),
+        .I3(Q[0]),
         .I4(Q[3]),
-        .I5(\TMR_No.RX_Data_reg[0]_0 ),
+        .I5(Q[2]),
         .O(\TMR_No.RX_Data[7]_i_1_n_0 ));
   FDRE \TMR_No.RX_Data_reg[0] 
        (.C(Clk),
@@ -843,10 +1555,10 @@ module microblaze_mcs_0_UART_Receive
         .Q(\TMR_No.RX_Data_reg[7]_0 [7]),
         .R(\TMR_No.RX_Data[7]_i_1_n_0 ));
   LUT3 #(
-    .INIT(8'hDC)) 
+    .INIT(8'hBA)) 
     \TMR_No.frame_error_i_1 
-       (.I0(\TMR_No.overrun_error_reg ),
-        .I1(rx_frame_error_i),
+       (.I0(rx_frame_error_i),
+        .I1(UART_Status_Read),
         .I2(D[1]),
         .O(\TMR_No.frame_error_reg ));
   (* KEEP = "yes" *) 
@@ -862,10 +1574,10 @@ module microblaze_mcs_0_UART_Receive
     \TMR_No.overrun_error_i_1 
        (.I0(\TMR_No.rx_data_exists_i_reg_0 ),
         .I1(new_rx_data_write),
-        .I2(\TMR_No.overrun_error_reg ),
+        .I2(UART_Status_Read),
         .I3(D[0]),
         .O(\TMR_No.rx_data_exists_i_reg_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \TMR_No.previous_RX_i_1 
@@ -898,13 +1610,23 @@ module microblaze_mcs_0_UART_Receive
         .Q(new_rx_data[0]),
         .S(Rst));
   LUT4 #(
-    .INIT(16'h4440)) 
+    .INIT(16'h000E)) 
     \TMR_No.rx_data_exists_i_i_1 
-       (.I0(Rst),
-        .I1(\TMR_No.RX_Data[7]_i_1_n_0 ),
-        .I2(\TMR_No.rx_data_exists_i_reg_0 ),
-        .I3(new_rx_data_write),
+       (.I0(\TMR_No.rx_data_exists_i_reg_0 ),
+        .I1(new_rx_data_write),
+        .I2(UART_Rx_Read),
+        .I3(Rst),
         .O(\TMR_No.rx_data_exists_i_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000100000000)) 
+    \TMR_No.rx_data_exists_i_i_2 
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[0]),
+        .I3(Q[4]),
+        .I4(Q[1]),
+        .I5(\TMR_No.RX_Data_reg[0]_0 ),
+        .O(UART_Rx_Read));
   FDRE \TMR_No.rx_data_exists_i_reg 
        (.C(Clk),
         .CE(1'b1),
@@ -959,7 +1681,7 @@ module microblaze_mcs_0_UART_Receive
         .D(new_rx_data[1]),
         .Q(rx_data_i[7]),
         .R(Rst));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h02FF0200)) 
     \TMR_No.start_Edge_Detected_i_1 
@@ -981,13 +1703,6 @@ module microblaze_mcs_0_UART_Receive
         .D(\TMR_No.Delay_16_n_1 ),
         .Q(\TMR_No.stop_Bit_Position_reg_n_0 ),
         .R(Rst));
-  LUT3 #(
-    .INIT(8'hFE)) 
-    UART_Interrupt_INST_0
-       (.I0(new_rx_data_write),
-        .I1(tx_data_transmitted),
-        .I2(UART_Interrupt_INST_0_0),
-        .O(UART_Interrupt));
   LUT1 #(
     .INIT(2'h2)) 
     i_0
@@ -1034,10 +1749,11 @@ module microblaze_mcs_0_UART_Transmit
   wire Clk;
   wire [7:0]D;
   wire [0:0]E;
-  wire LI;
   wire Rst;
   wire S;
+  wire \TMR_No.Counter[1].XORCY_I_n_1 ;
   wire \TMR_No.Counter[2].h_Cnt_reg ;
+  wire \TMR_No.FDRE_I_n_3 ;
   wire \TMR_No.fifo_DOut_reg_n_0_[1] ;
   wire \TMR_No.fifo_DOut_reg_n_0_[2] ;
   wire \TMR_No.fifo_DOut_reg_n_0_[3] ;
@@ -1060,7 +1776,6 @@ module microblaze_mcs_0_UART_Transmit
   wire mux_4567;
   wire mux_Out;
   wire p_0_in;
-  wire p_11_out;
   wire p_2_out;
   wire p_3_out;
   wire p_7_out;
@@ -1081,27 +1796,28 @@ module microblaze_mcs_0_UART_Transmit
         .lopt(lopt_1),
         .lopt_1(lopt_2));
   microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY \TMR_No.Counter[1].Used_MuxCY.MUXCY_L_I 
-       (.LI(LI),
-        .Q(S),
+       (.Q(S),
+        .\TMR_No.mux_sel_reg[0] (\TMR_No.Counter[1].XORCY_I_n_1 ),
         .cnt_cy_1(cnt_cy_1),
         .cnt_cy_2(cnt_cy_2),
         .lopt(lopt));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767 \TMR_No.Counter[1].XORCY_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 \TMR_No.Counter[1].XORCY_I 
        (.D(sum_cnt[1]),
-        .LI(LI),
+        .Q(S),
+        .\TMR_No.mux_sel_reg[1] (\TMR_No.Counter[1].XORCY_I_n_1 ),
         .cnt_cy_1(cnt_cy_1));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768 \TMR_No.Counter[2].Used_MuxCY.MUXCY_L_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770 \TMR_No.Counter[2].Used_MuxCY.MUXCY_L_I 
        (.CI(CI),
         .Q(\TMR_No.mux_sel_reg_n_0_[2] ),
         .\TMR_No.Counter[2].h_Cnt_reg (\TMR_No.Counter[2].h_Cnt_reg ),
         .cnt_cy_1(cnt_cy_1),
         .lopt(lopt),
         .lopt_1(S),
-        .lopt_2(LI),
+        .lopt_2(\TMR_No.Counter[1].XORCY_I_n_1 ),
         .lopt_3(lopt_1),
         .lopt_4(lopt_2),
         .tx_DataBits(tx_DataBits));
-  microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769 \TMR_No.Counter[2].XORCY_I 
+  microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771 \TMR_No.Counter[2].XORCY_I 
        (.CI(CI),
         .D(sum_cnt[2]),
         .\TMR_No.Counter[2].h_Cnt_reg (\TMR_No.Counter[2].h_Cnt_reg ));
@@ -1112,10 +1828,10 @@ module microblaze_mcs_0_UART_Transmit
   microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE \TMR_No.FDRE_I 
        (.Clk(Clk),
         .Q({\TMR_No.mux_sel_reg_n_0_[0] ,S,\TMR_No.mux_sel_reg_n_0_[2] }),
+        .\Using_FPGA.Native_0 (\TMR_No.FDRE_I_n_3 ),
         .div16(div16),
         .en_16x_baud(en_16x_baud),
         .out(tx_buffer_empty_i),
-        .p_11_out(p_11_out),
         .p_3_out(p_3_out),
         .p_7_out(p_7_out),
         .tx_DataBits(tx_DataBits),
@@ -1131,7 +1847,7 @@ module microblaze_mcs_0_UART_Transmit
        (.Q({S,\TMR_No.mux_sel_reg_n_0_[2] }),
         .\Using_FPGA.Native_0 ({p_0_in,\TMR_No.fifo_DOut_reg_n_0_[1] ,\TMR_No.fifo_DOut_reg_n_0_[2] ,\TMR_No.fifo_DOut_reg_n_0_[3] }),
         .mux_0123(mux_0123));
-  microblaze_mcs_0_MB_MUXF5_770 \TMR_No.MUX_F5_2 
+  microblaze_mcs_0_MB_MUXF5_772 \TMR_No.MUX_F5_2 
        (.Q({S,\TMR_No.mux_sel_reg_n_0_[2] }),
         .\Using_FPGA.Native_0 ({\TMR_No.fifo_DOut_reg_n_0_[4] ,\TMR_No.fifo_DOut_reg_n_0_[5] ,\TMR_No.fifo_DOut_reg_n_0_[6] ,\TMR_No.fifo_DOut_reg_n_0_[7] }),
         .mux_4567(mux_4567));
@@ -1222,16 +1938,16 @@ module microblaze_mcs_0_UART_Transmit
   FDRE \TMR_No.tx_Start_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(p_11_out),
+        .D(\TMR_No.FDRE_I_n_3 ),
         .Q(tx_Start),
         .R(Rst));
   LUT4 #(
-    .INIT(16'hEFEE)) 
+    .INIT(16'hFFF4)) 
     \TMR_No.tx_buffer_empty_i_i_1 
-       (.I0(Rst),
-        .I1(tx_data_transmitted),
-        .I2(E),
-        .I3(tx_buffer_empty_i),
+       (.I0(E),
+        .I1(tx_buffer_empty_i),
+        .I2(tx_data_transmitted),
+        .I3(Rst),
         .O(\TMR_No.tx_buffer_empty_i_i_1_n_0 ));
   (* KEEP = "yes" *) 
   (* equivalent_register_removal = "no" *) 
@@ -1242,11 +1958,11 @@ module microblaze_mcs_0_UART_Transmit
         .Q(tx_buffer_empty_i),
         .R(1'b0));
   LUT3 #(
-    .INIT(8'h23)) 
+    .INIT(8'h0D)) 
     \TMR_No.tx_i_i_1 
-       (.I0(serial_Data),
-        .I1(tx_Start),
-        .I2(tx_DataBits),
+       (.I0(tx_DataBits),
+        .I1(serial_Data),
+        .I2(tx_Start),
         .O(p_2_out));
   (* KEEP = "yes" *) 
   (* equivalent_register_removal = "no" *) 
@@ -1266,31 +1982,33 @@ endmodule
 (* ORIG_REF_NAME = "Uart_Control_Status" *) 
 module microblaze_mcs_0_Uart_Control_Status
    (D,
-    \lmb_abus_Q_reg[4] ,
+    UART_Status_Read,
+    UART_Interrupt,
     \UART_Status_reg[6]_0 ,
-    \TMR_No.error_interrupt_reg_0 ,
     Rst,
     \TMR_No.overrun_error_reg_0 ,
     Clk,
     \TMR_No.frame_error_reg_0 ,
     Q,
     \UART_Status_reg[0]_0 ,
-    \UART_Status_reg[3]_0 ,
     out,
-    \TMR_No.error_interrupt_reg_1 );
+    tx_data_transmitted,
+    \UART_Status_reg[3]_0 ,
+    \TMR_No.error_interrupt_reg_0 );
   output [1:0]D;
-  output \lmb_abus_Q_reg[4] ;
+  output UART_Status_Read;
+  output UART_Interrupt;
   output [3:0]\UART_Status_reg[6]_0 ;
-  output \TMR_No.error_interrupt_reg_0 ;
   input Rst;
   input \TMR_No.overrun_error_reg_0 ;
   input Clk;
   input \TMR_No.frame_error_reg_0 ;
   input [4:0]Q;
   input \UART_Status_reg[0]_0 ;
-  input [1:0]\UART_Status_reg[3]_0 ;
   input out;
-  input \TMR_No.error_interrupt_reg_1 ;
+  input tx_data_transmitted;
+  input [1:0]\UART_Status_reg[3]_0 ;
+  input \TMR_No.error_interrupt_reg_0 ;
 
   wire Clk;
   wire [1:0]D;
@@ -1298,28 +2016,31 @@ module microblaze_mcs_0_Uart_Control_Status
   wire Rst;
   wire \TMR_No.error_interrupt_i_1_n_0 ;
   wire \TMR_No.error_interrupt_reg_0 ;
-  wire \TMR_No.error_interrupt_reg_1 ;
   wire \TMR_No.frame_error_reg_0 ;
   wire \TMR_No.overrun_error_reg_0 ;
+  wire UART_Error_Interrupt;
+  wire UART_Interrupt;
   wire \UART_Status[6]_i_1_n_0 ;
+  wire UART_Status_Read;
   wire \UART_Status_reg[0]_0 ;
   wire [1:0]\UART_Status_reg[3]_0 ;
   wire [3:0]\UART_Status_reg[6]_0 ;
-  wire \lmb_abus_Q_reg[4] ;
   wire out;
+  wire tx_data_transmitted;
 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'hEA)) 
     \TMR_No.error_interrupt_i_1 
-       (.I0(out),
-        .I1(\TMR_No.error_interrupt_reg_1 ),
-        .I2(\UART_Status_reg[3]_0 [0]),
+       (.I0(\TMR_No.error_interrupt_reg_0 ),
+        .I1(\UART_Status_reg[3]_0 [0]),
+        .I2(out),
         .O(\TMR_No.error_interrupt_i_1_n_0 ));
   FDRE \TMR_No.error_interrupt_reg 
        (.C(Clk),
         .CE(1'b1),
         .D(\TMR_No.error_interrupt_i_1_n_0 ),
-        .Q(\TMR_No.error_interrupt_reg_0 ),
+        .Q(UART_Error_Interrupt),
         .R(Rst));
   FDRE \TMR_No.frame_error_reg 
        (.C(Clk),
@@ -1328,29 +2049,37 @@ module microblaze_mcs_0_Uart_Control_Status
         .Q(D[1]),
         .R(Rst));
   LUT6 #(
-    .INIT(64'h0000001000000000)) 
+    .INIT(64'h0000000000020000)) 
     \TMR_No.overrun_error_i_2 
-       (.I0(Q[2]),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[4]),
-        .I4(Q[3]),
-        .I5(\UART_Status_reg[0]_0 ),
-        .O(\lmb_abus_Q_reg[4] ));
+       (.I0(\UART_Status_reg[0]_0 ),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[0]),
+        .I4(Q[1]),
+        .I5(Q[4]),
+        .O(UART_Status_Read));
   FDRE \TMR_No.overrun_error_reg 
        (.C(Clk),
         .CE(1'b1),
         .D(\TMR_No.overrun_error_reg_0 ),
         .Q(D[0]),
         .R(Rst));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    UART_Interrupt_INST_0
+       (.I0(UART_Error_Interrupt),
+        .I1(out),
+        .I2(tx_data_transmitted),
+        .O(UART_Interrupt));
   LUT6 #(
-    .INIT(64'hFFFFFEFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFBFFFFFFFF)) 
     \UART_Status[6]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[0]),
-        .I2(Q[4]),
-        .I3(Q[1]),
-        .I4(Q[3]),
+       (.I0(Q[4]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(Q[3]),
+        .I4(Q[2]),
         .I5(\UART_Status_reg[0]_0 ),
         .O(\UART_Status[6]_i_1_n_0 ));
   FDRE \UART_Status_reg[0] 
@@ -1409,7 +2138,7 @@ module microblaze_mcs_0_XIL_SRL16E
 endmodule
 
 (* ORIG_REF_NAME = "XIL_SRL16E" *) 
-module microblaze_mcs_0_XIL_SRL16E_780
+module microblaze_mcs_0_XIL_SRL16E_782
    (loop_Bit,
     Clk_En_I_2,
     Clk);
@@ -1439,7 +2168,7 @@ module microblaze_mcs_0_XIL_SRL16E_780
 endmodule
 
 (* ORIG_REF_NAME = "XIL_SRL16E" *) 
-module microblaze_mcs_0_XIL_SRL16E_781
+module microblaze_mcs_0_XIL_SRL16E_783
    (Clk_En_I_2,
     Clk);
   output Clk_En_I_2;
@@ -1533,7 +2262,7 @@ module microblaze_mcs_0_XIL_SRL16E__parameterized1
         .I3(en_16x_baud),
         .I4(\TMR_No.running_reg_0 ),
         .O(\TMR_No.stop_Bit_Position_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h2CCC)) 
     \TMR_No.stop_Bit_Position_i_1 
@@ -1556,7 +2285,7 @@ module microblaze_mcs_0_XIL_SRL16E__parameterized1
         .CLK(Clk),
         .D(\Use_unisim.XIL_SRL16E_I1_i_1_n_0 ),
         .Q(sample_Point));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h0E)) 
     \Use_unisim.XIL_SRL16E_I1_i_1 
@@ -1564,82 +2293,82 @@ module microblaze_mcs_0_XIL_SRL16E__parameterized1
         .I1(mid_Start_Bit),
         .I2(\TMR_No.stop_Bit_Position_reg_0 ),
         .O(\Use_unisim.XIL_SRL16E_I1_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__10 
-       (.I0(out[6]),
-        .I1(\TMR_No.stop_Bit_Position_reg_0 ),
-        .I2(sample_Point),
-        .I3(out[7]),
-        .O(\TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__11 
-       (.I0(out[7]),
-        .I1(\TMR_No.stop_Bit_Position_reg_0 ),
-        .I2(sample_Point),
-        .I3(out[8]),
-        .O(D_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__4 
+    \Using_FPGA.Native_i_1__2 
        (.I0(out[0]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[1]),
         .O(\TMR_No.Convert_Serial_To_Parallel[8].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__5 
+    \Using_FPGA.Native_i_1__3 
        (.I0(out[1]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[2]),
         .O(\TMR_No.Convert_Serial_To_Parallel[7].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__6 
+    \Using_FPGA.Native_i_1__4 
        (.I0(out[2]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[3]),
         .O(\TMR_No.Convert_Serial_To_Parallel[6].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__7 
+    \Using_FPGA.Native_i_1__5 
        (.I0(out[3]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[4]),
         .O(\TMR_No.Convert_Serial_To_Parallel[5].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__8 
+    \Using_FPGA.Native_i_1__6 
        (.I0(out[4]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[5]),
         .O(\TMR_No.Convert_Serial_To_Parallel[4].serial_to_parallel_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'hBA8A)) 
-    \Using_FPGA.Native_i_1__9 
+    \Using_FPGA.Native_i_1__7 
        (.I0(out[5]),
         .I1(\TMR_No.stop_Bit_Position_reg_0 ),
         .I2(sample_Point),
         .I3(out[6]),
         .O(\TMR_No.Convert_Serial_To_Parallel[3].serial_to_parallel_reg ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'hBA8A)) 
+    \Using_FPGA.Native_i_1__8 
+       (.I0(out[6]),
+        .I1(\TMR_No.stop_Bit_Position_reg_0 ),
+        .I2(sample_Point),
+        .I3(out[7]),
+        .O(\TMR_No.Convert_Serial_To_Parallel[2].serial_to_parallel_reg ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'hBA8A)) 
+    \Using_FPGA.Native_i_1__9 
+       (.I0(out[7]),
+        .I1(\TMR_No.stop_Bit_Position_reg_0 ),
+        .I2(sample_Point),
+        .I3(out[8]),
+        .O(D_0));
 endmodule
 
 (* ORIG_REF_NAME = "XIL_SRL16E" *) 
-module microblaze_mcs_0_XIL_SRL16E__parameterized1_778
+module microblaze_mcs_0_XIL_SRL16E__parameterized1_780
    (mid_Start_Bit,
     en_16x_baud,
     \Using_FPGA.Native ,
@@ -1671,7 +2400,7 @@ module microblaze_mcs_0_XIL_SRL16E__parameterized1_778
 endmodule
 
 (* ORIG_REF_NAME = "XIL_SRL16E" *) 
-module microblaze_mcs_0_XIL_SRL16E__parameterized1_779
+module microblaze_mcs_0_XIL_SRL16E__parameterized1_781
    (loop_Bit,
     Clk_En_I_1,
     shift,
@@ -1729,12 +2458,18 @@ module microblaze_mcs_0_bd_fc5c_0
    (Clk,
     GPIO1_tri_i,
     GPIO1_tri_o,
+    GPIO2_tri_o,
+    GPIO3_tri_o,
+    GPIO4_tri_o,
     Reset,
     UART_rxd,
     UART_txd);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_ASYNC_RESET Reset, CLK_DOMAIN bd_fc5c_0_Clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input Clk;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO1, C_GPI1_INTERRUPT 0, C_GPI1_SIZE 8, C_GPO1_INIT 0x00000000, C_GPO1_SIZE 8, C_USE_GPI1 1, C_USE_GPO1 1" *) input [7:0]GPIO1_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O" *) output [7:0]GPIO1_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO2, C_GPI2_INTERRUPT 0, C_GPI2_SIZE 32, C_GPO2_INIT 0x00000000, C_GPO2_SIZE 32, C_USE_GPI2 0, C_USE_GPO2 1" *) output [31:0]GPIO2_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO3, C_GPI3_INTERRUPT 0, C_GPI3_SIZE 32, C_GPO3_INIT 0x00000000, C_GPO3_SIZE 32, C_USE_GPI3 0, C_USE_GPO3 1" *) output [31:0]GPIO3_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO4, C_GPI4_INTERRUPT 0, C_GPI4_SIZE 32, C_GPO4_INIT 0x00000000, C_GPO4_SIZE 32, C_USE_GPI4 0, C_USE_GPO4 1" *) output [31:0]GPIO4_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input Reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *) input UART_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART TxD" *) output UART_txd;
@@ -1742,6 +2477,9 @@ module microblaze_mcs_0_bd_fc5c_0
   wire Clk;
   wire [7:0]GPIO1_tri_i;
   wire [7:0]GPIO1_tri_o;
+  wire [31:0]GPIO2_tri_o;
+  wire [31:0]GPIO3_tri_o;
+  wire [31:0]GPIO4_tri_o;
   wire IO_Rst;
   wire LMB_Rst1;
   wire MB_Reset;
@@ -1930,6 +2668,9 @@ module microblaze_mcs_0_bd_fc5c_0
        (.Clk(Clk),
         .GPI1(GPIO1_tri_i),
         .GPO1(GPIO1_tri_o),
+        .GPO2(GPIO2_tri_o),
+        .GPO3(GPIO3_tri_o),
+        .GPO4(GPIO4_tri_o),
         .LMB_ABus(dlmb_sl_0_ABUS),
         .LMB_AddrStrobe(dlmb_sl_0_ADDRSTROBE),
         .LMB_BE(dlmb_sl_0_BE),
@@ -2397,6 +3138,9 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
     UART_Rx,
     UART_Tx,
     GPO1,
+    GPO2,
+    GPO3,
+    GPO4,
     GPI1,
     LMB_ABus,
     LMB_WriteDBus,
@@ -2414,6 +3158,9 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME UART, BOARD.ASSOCIATED_PARAM UART_BOARD_INTERFACE" *) input UART_Rx;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART TxD" *) output UART_Tx;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO1, C_USE_GPO1 1, C_GPO1_SIZE 8, C_GPO1_INIT 0x00000000, C_USE_GPI1 1, C_GPI1_SIZE 8, C_GPI1_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO1_BOARD_INTERFACE" *) output [7:0]GPO1;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO2, C_USE_GPO2 1, C_GPO2_SIZE 32, C_GPO2_INIT 0x00000000, C_USE_GPI2 0, C_GPI2_SIZE 32, C_GPI2_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE" *) output [31:0]GPO2;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO3, C_USE_GPO3 1, C_GPO3_SIZE 32, C_GPO3_INIT 0x00000000, C_USE_GPI3 0, C_GPI3_SIZE 32, C_GPI3_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO3_BOARD_INTERFACE" *) output [31:0]GPO3;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO4, C_USE_GPO4 1, C_GPO4_SIZE 32, C_GPO4_INIT 0x00000000, C_USE_GPI4 0, C_GPI4_SIZE 32, C_GPI4_INTERRUPT 0, BOARD.ASSOCIATED_PARAM GPIO4_BOARD_INTERFACE" *) output [31:0]GPO4;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I" *) input [7:0]GPI1;
   (* X_INTERFACE_INFO = "xilinx.com:interface:lmb:1.0 SLMB ABUS" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE" *) input [0:31]LMB_ABus;
   (* X_INTERFACE_INFO = "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS" *) input [0:31]LMB_WriteDBus;
@@ -2430,6 +3177,9 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
   wire Clk;
   wire [7:0]GPI1;
   wire [7:0]GPO1;
+  wire [31:0]GPO2;
+  wire [31:0]GPO3;
+  wire [31:0]GPO4;
   wire [0:31]LMB_ABus;
   wire LMB_AddrStrobe;
   wire [0:3]LMB_BE;
@@ -2470,9 +3220,6 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
   wire NLW_U0_PIT4_Interrupt_UNCONNECTED;
   wire NLW_U0_PIT4_Toggle_UNCONNECTED;
   wire NLW_U0_UART_Interrupt_UNCONNECTED;
-  wire [31:0]NLW_U0_GPO2_UNCONNECTED;
-  wire [31:0]NLW_U0_GPO3_UNCONNECTED;
-  wire [31:0]NLW_U0_GPO4_UNCONNECTED;
   wire [31:0]NLW_U0_INTC_Interrupt_Address_UNCONNECTED;
   wire [31:0]NLW_U0_IO_Address_UNCONNECTED;
   wire [3:0]NLW_U0_IO_Byte_Enable_UNCONNECTED;
@@ -2559,9 +3306,9 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
   (* C_USE_GPI3 = "0" *) 
   (* C_USE_GPI4 = "0" *) 
   (* C_USE_GPO1 = "1" *) 
-  (* C_USE_GPO2 = "0" *) 
-  (* C_USE_GPO3 = "0" *) 
-  (* C_USE_GPO4 = "0" *) 
+  (* C_USE_GPO2 = "1" *) 
+  (* C_USE_GPO3 = "1" *) 
+  (* C_USE_GPO4 = "1" *) 
   (* C_USE_IO_BUS = "0" *) 
   (* C_USE_PIT1 = "0" *) 
   (* C_USE_PIT2 = "0" *) 
@@ -2592,9 +3339,9 @@ module microblaze_mcs_0_bd_fc5c_0_iomodule_0_0
         .GPI4({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .GPI4_Interrupt(NLW_U0_GPI4_Interrupt_UNCONNECTED),
         .GPO1(GPO1),
-        .GPO2(NLW_U0_GPO2_UNCONNECTED[31:0]),
-        .GPO3(NLW_U0_GPO3_UNCONNECTED[31:0]),
-        .GPO4(NLW_U0_GPO4_UNCONNECTED[31:0]),
+        .GPO2(GPO2),
+        .GPO3(GPO3),
+        .GPO4(GPO4),
         .INTC_IRQ(NLW_U0_INTC_IRQ_UNCONNECTED),
         .INTC_IRQ_OUT(NLW_U0_INTC_IRQ_OUT_UNCONNECTED),
         .INTC_Interrupt(1'b0),
@@ -4061,8 +4808,8 @@ endmodule
 (* C_UART_USE_PARITY = "0" *) (* C_USE_CONFIG_RESET = "0" *) (* C_USE_FIT1 = "0" *) 
 (* C_USE_FIT2 = "0" *) (* C_USE_FIT3 = "0" *) (* C_USE_FIT4 = "0" *) 
 (* C_USE_GPI1 = "1" *) (* C_USE_GPI2 = "0" *) (* C_USE_GPI3 = "0" *) 
-(* C_USE_GPI4 = "0" *) (* C_USE_GPO1 = "1" *) (* C_USE_GPO2 = "0" *) 
-(* C_USE_GPO3 = "0" *) (* C_USE_GPO4 = "0" *) (* C_USE_IO_BUS = "0" *) 
+(* C_USE_GPI4 = "0" *) (* C_USE_GPO1 = "1" *) (* C_USE_GPO2 = "1" *) 
+(* C_USE_GPO3 = "1" *) (* C_USE_GPO4 = "1" *) (* C_USE_IO_BUS = "0" *) 
 (* C_USE_PIT1 = "0" *) (* C_USE_PIT2 = "0" *) (* C_USE_PIT3 = "0" *) 
 (* C_USE_PIT4 = "0" *) (* C_USE_TMR_DISABLE = "0" *) (* C_USE_UART_RX = "1" *) 
 (* C_USE_UART_TX = "1" *) (* ORIG_REF_NAME = "iomodule" *) 
@@ -4207,6 +4954,9 @@ module microblaze_mcs_0_iomodule
   wire Clk;
   wire [7:0]GPI1;
   wire [7:0]GPO1;
+  wire [31:0]GPO2;
+  wire [31:0]GPO3;
+  wire [31:0]GPO4;
   wire IOModule_Core_I1_n_1;
   wire [0:31]LMB_ABus;
   wire LMB_AddrStrobe;
@@ -4245,102 +4995,6 @@ module microblaze_mcs_0_iomodule
   assign GPI2_Interrupt = \<const0> ;
   assign GPI3_Interrupt = \<const0> ;
   assign GPI4_Interrupt = \<const0> ;
-  assign GPO2[31] = \<const0> ;
-  assign GPO2[30] = \<const0> ;
-  assign GPO2[29] = \<const0> ;
-  assign GPO2[28] = \<const0> ;
-  assign GPO2[27] = \<const0> ;
-  assign GPO2[26] = \<const0> ;
-  assign GPO2[25] = \<const0> ;
-  assign GPO2[24] = \<const0> ;
-  assign GPO2[23] = \<const0> ;
-  assign GPO2[22] = \<const0> ;
-  assign GPO2[21] = \<const0> ;
-  assign GPO2[20] = \<const0> ;
-  assign GPO2[19] = \<const0> ;
-  assign GPO2[18] = \<const0> ;
-  assign GPO2[17] = \<const0> ;
-  assign GPO2[16] = \<const0> ;
-  assign GPO2[15] = \<const0> ;
-  assign GPO2[14] = \<const0> ;
-  assign GPO2[13] = \<const0> ;
-  assign GPO2[12] = \<const0> ;
-  assign GPO2[11] = \<const0> ;
-  assign GPO2[10] = \<const0> ;
-  assign GPO2[9] = \<const0> ;
-  assign GPO2[8] = \<const0> ;
-  assign GPO2[7] = \<const0> ;
-  assign GPO2[6] = \<const0> ;
-  assign GPO2[5] = \<const0> ;
-  assign GPO2[4] = \<const0> ;
-  assign GPO2[3] = \<const0> ;
-  assign GPO2[2] = \<const0> ;
-  assign GPO2[1] = \<const0> ;
-  assign GPO2[0] = \<const0> ;
-  assign GPO3[31] = \<const0> ;
-  assign GPO3[30] = \<const0> ;
-  assign GPO3[29] = \<const0> ;
-  assign GPO3[28] = \<const0> ;
-  assign GPO3[27] = \<const0> ;
-  assign GPO3[26] = \<const0> ;
-  assign GPO3[25] = \<const0> ;
-  assign GPO3[24] = \<const0> ;
-  assign GPO3[23] = \<const0> ;
-  assign GPO3[22] = \<const0> ;
-  assign GPO3[21] = \<const0> ;
-  assign GPO3[20] = \<const0> ;
-  assign GPO3[19] = \<const0> ;
-  assign GPO3[18] = \<const0> ;
-  assign GPO3[17] = \<const0> ;
-  assign GPO3[16] = \<const0> ;
-  assign GPO3[15] = \<const0> ;
-  assign GPO3[14] = \<const0> ;
-  assign GPO3[13] = \<const0> ;
-  assign GPO3[12] = \<const0> ;
-  assign GPO3[11] = \<const0> ;
-  assign GPO3[10] = \<const0> ;
-  assign GPO3[9] = \<const0> ;
-  assign GPO3[8] = \<const0> ;
-  assign GPO3[7] = \<const0> ;
-  assign GPO3[6] = \<const0> ;
-  assign GPO3[5] = \<const0> ;
-  assign GPO3[4] = \<const0> ;
-  assign GPO3[3] = \<const0> ;
-  assign GPO3[2] = \<const0> ;
-  assign GPO3[1] = \<const0> ;
-  assign GPO3[0] = \<const0> ;
-  assign GPO4[31] = \<const0> ;
-  assign GPO4[30] = \<const0> ;
-  assign GPO4[29] = \<const0> ;
-  assign GPO4[28] = \<const0> ;
-  assign GPO4[27] = \<const0> ;
-  assign GPO4[26] = \<const0> ;
-  assign GPO4[25] = \<const0> ;
-  assign GPO4[24] = \<const0> ;
-  assign GPO4[23] = \<const0> ;
-  assign GPO4[22] = \<const0> ;
-  assign GPO4[21] = \<const0> ;
-  assign GPO4[20] = \<const0> ;
-  assign GPO4[19] = \<const0> ;
-  assign GPO4[18] = \<const0> ;
-  assign GPO4[17] = \<const0> ;
-  assign GPO4[16] = \<const0> ;
-  assign GPO4[15] = \<const0> ;
-  assign GPO4[14] = \<const0> ;
-  assign GPO4[13] = \<const0> ;
-  assign GPO4[12] = \<const0> ;
-  assign GPO4[11] = \<const0> ;
-  assign GPO4[10] = \<const0> ;
-  assign GPO4[9] = \<const0> ;
-  assign GPO4[8] = \<const0> ;
-  assign GPO4[7] = \<const0> ;
-  assign GPO4[6] = \<const0> ;
-  assign GPO4[5] = \<const0> ;
-  assign GPO4[4] = \<const0> ;
-  assign GPO4[3] = \<const0> ;
-  assign GPO4[2] = \<const0> ;
-  assign GPO4[1] = \<const0> ;
-  assign GPO4[0] = \<const0> ;
   assign INTC_IRQ = \<const0> ;
   assign INTC_IRQ_OUT = \<const0> ;
   assign INTC_Interrupt_Address[31] = \<const0> ;
@@ -5509,10 +6163,13 @@ module microblaze_mcs_0_iomodule
        (.G(\<const0> ));
   microblaze_mcs_0_Iomodule_core IOModule_Core_I1
        (.Clk(Clk),
-        .D(write_data[7:0]),
+        .D(write_data),
         .E(uart_tx_write),
         .GPI1(GPI1),
         .GPO1(GPO1),
+        .GPO2(GPO2),
+        .GPO3(GPO3),
+        .GPO4(GPO4),
         .Q({p_0_in16_in,\lmb_abus_Q_reg_n_0_[2] ,\lmb_abus_Q_reg_n_0_[3] ,\lmb_abus_Q_reg_n_0_[4] ,\lmb_abus_Q_reg_n_0_[5] ,\lmb_abus_Q_reg_n_0_[6] }),
         .Rst(Rst),
         .Sl_DBus({\^Sl_DBus [24],\^Sl_DBus [25],\^Sl_DBus [26],\^Sl_DBus [27],\^Sl_DBus [28],\^Sl_DBus [29],\^Sl_DBus [30],\^Sl_DBus [31]}),
@@ -5520,8 +6177,8 @@ module microblaze_mcs_0_iomodule
         .UART_Interrupt(UART_Interrupt),
         .UART_Rx(UART_Rx),
         .UART_Tx(UART_Tx),
-        .\lmb_abus_Q_reg[2] (IOModule_Core_I1_n_1),
-        .lmb_reg_write(lmb_reg_write));
+        .lmb_reg_write(lmb_reg_write),
+        .lmb_reg_write_reg(IOModule_Core_I1_n_1));
   LUT2 #(
     .INIT(4'hE)) 
     Sl_Ready_INST_0
@@ -5572,7 +6229,7 @@ module microblaze_mcs_0_iomodule
         .D(Sl_Wait),
         .Q(lmb_reg_read_Q),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h2000)) 
     lmb_reg_read_i_1
@@ -5587,7 +6244,7 @@ module microblaze_mcs_0_iomodule
         .D(lmb_reg_read0),
         .Q(Sl_Wait),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h2000)) 
     lmb_reg_write_i_1
@@ -5603,14 +6260,14 @@ module microblaze_mcs_0_iomodule
         .Q(lmb_reg_write),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h0000000200000000)) 
     uart_tx_write_inferred_i_1
-       (.I0(lmb_reg_write),
-        .I1(\lmb_abus_Q_reg_n_0_[3] ),
-        .I2(IOModule_Core_I1_n_1),
-        .I3(\lmb_abus_Q_reg_n_0_[6] ),
-        .I4(\lmb_abus_Q_reg_n_0_[4] ),
-        .I5(p_0_in16_in),
+       (.I0(IOModule_Core_I1_n_1),
+        .I1(\lmb_abus_Q_reg_n_0_[4] ),
+        .I2(\lmb_abus_Q_reg_n_0_[3] ),
+        .I3(\lmb_abus_Q_reg_n_0_[2] ),
+        .I4(\lmb_abus_Q_reg_n_0_[5] ),
+        .I5(\lmb_abus_Q_reg_n_0_[6] ),
         .O(uart_tx_write));
   (* KEEP = "yes" *) 
   (* equivalent_register_removal = "no" *) 
@@ -5875,34 +6532,34 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE
    (tx_Data_Enable,
     p_3_out,
     p_7_out,
-    p_11_out,
+    \Using_FPGA.Native_0 ,
     en_16x_baud,
     div16,
     Clk,
     Q,
-    tx_DataBits,
     tx_Start,
+    tx_DataBits,
     tx_data_transmitted,
     out);
   output tx_Data_Enable;
   output p_3_out;
   output p_7_out;
-  output p_11_out;
+  output \Using_FPGA.Native_0 ;
   input en_16x_baud;
   input div16;
   input Clk;
   input [2:0]Q;
-  input tx_DataBits;
   input tx_Start;
+  input tx_DataBits;
   input tx_data_transmitted;
   input out;
 
   wire Clk;
   wire [2:0]Q;
+  wire \Using_FPGA.Native_0 ;
   wire div16;
   wire en_16x_baud;
   wire out;
-  wire p_11_out;
   wire p_3_out;
   wire p_7_out;
   wire tx_DataBits;
@@ -5911,31 +6568,31 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE
   wire tx_data_transmitted;
 
   LUT4 #(
-    .INIT(16'h0100)) 
+    .INIT(16'h0002)) 
     \TMR_No.data_is_sent_i_1 
-       (.I0(Q[1]),
+       (.I0(tx_Data_Enable),
         .I1(Q[2]),
         .I2(Q[0]),
-        .I3(tx_Data_Enable),
+        .I3(Q[1]),
         .O(p_3_out));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
-    .INIT(16'h00EA)) 
+    .INIT(16'h00F8)) 
     \TMR_No.tx_DataBits_i_1 
-       (.I0(tx_DataBits),
-        .I1(tx_Data_Enable),
-        .I2(tx_Start),
-        .I3(tx_data_transmitted),
-        .O(p_7_out));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h00AE)) 
-    \TMR_No.tx_Start_i_1 
        (.I0(tx_Start),
         .I1(tx_Data_Enable),
-        .I2(out),
+        .I2(tx_DataBits),
+        .I3(tx_data_transmitted),
+        .O(p_7_out));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT4 #(
+    .INIT(16'h00F2)) 
+    \TMR_No.tx_Start_i_1 
+       (.I0(tx_Data_Enable),
+        .I1(out),
+        .I2(tx_Start),
         .I3(tx_DataBits),
-        .O(p_11_out));
+        .O(\Using_FPGA.Native_0 ));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
     .INIT(1'b0),
@@ -5951,7 +6608,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -5984,7 +6641,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_771
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6017,7 +6674,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_772
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6050,7 +6707,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_773
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6083,7 +6740,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_774
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6116,7 +6773,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_775
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_778
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6149,7 +6806,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_776
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_FDRE" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_777
+module microblaze_mcs_0_iomodule_v3_1_4_MB_FDRE_779
    (in0,
     mid_Start_Bit,
     en_16x_baud,
@@ -6217,31 +6874,26 @@ endmodule
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_MUXCY" *) 
 module microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY
    (cnt_cy_2,
-    LI,
+    \TMR_No.mux_sel_reg[0] ,
     Q,
     cnt_cy_1,
     lopt);
   output cnt_cy_2;
-  output LI;
+  input \TMR_No.mux_sel_reg[0] ;
   input [0:0]Q;
   input cnt_cy_1;
   input lopt;
 
-  wire LI;
   wire [0:0]Q;
+  wire \TMR_No.mux_sel_reg[0] ;
   wire cnt_cy_1;
   wire cnt_cy_2;
 
   assign cnt_cy_2 = lopt;
-  LUT1 #(
-    .INIT(2'h1)) 
-    \Using_FPGA.Native_i_1__0 
-       (.I0(Q),
-        .O(LI));
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_MUXCY" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768
+module microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_770
    (cnt_cy_1,
     \TMR_No.Counter[2].h_Cnt_reg ,
     CI,
@@ -6296,7 +6948,7 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_MUXCY_768
         .S({\NLW_Using_FPGA.Native_CARRY4_S_UNCONNECTED [3],lopt_5,\^lopt_3 ,\TMR_No.Counter[2].h_Cnt_reg }));
   LUT1 #(
     .INIT(2'h1)) 
-    \Using_FPGA.Native_i_1__3 
+    \Using_FPGA.Native_i_1__1 
        (.I0(Q),
         .O(\TMR_No.Counter[2].h_Cnt_reg ));
   LUT1 #(
@@ -6321,29 +6973,32 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY
 
   wire [0:0]D;
   wire [0:0]Q;
-  wire \TMR_No.Counter[0].h_Cnt_reg ;
+  wire \Using_FPGA.Native_i_1__10_n_0 ;
   wire cnt_cy_2;
 
   assign D = lopt;
-  assign lopt_1 = \TMR_No.Counter[0].h_Cnt_reg ;
+  assign lopt_1 = \Using_FPGA.Native_i_1__10_n_0 ;
   LUT1 #(
     .INIT(2'h1)) 
-    \Using_FPGA.Native_i_1 
+    \Using_FPGA.Native_i_1__10 
        (.I0(Q),
-        .O(\TMR_No.Counter[0].h_Cnt_reg ));
+        .O(\Using_FPGA.Native_i_1__10_n_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_XORCY" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767
+module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769
    (D,
-    LI,
-    cnt_cy_1);
+    \TMR_No.mux_sel_reg[1] ,
+    cnt_cy_1,
+    Q);
   output [0:0]D;
-  input LI;
+  output \TMR_No.mux_sel_reg[1] ;
   input cnt_cy_1;
+  input [0:0]Q;
 
   wire [0:0]D;
-  wire LI;
+  wire [0:0]Q;
+  wire \TMR_No.mux_sel_reg[1] ;
   wire cnt_cy_1;
   wire [3:0]\NLW_Using_FPGA.Native_CARRY4_CO_UNCONNECTED ;
   wire [3:0]\NLW_Using_FPGA.Native_CARRY4_DI_UNCONNECTED ;
@@ -6359,11 +7014,16 @@ module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_767
         .CYINIT(cnt_cy_1),
         .DI(\NLW_Using_FPGA.Native_CARRY4_DI_UNCONNECTED [3:0]),
         .O({\NLW_Using_FPGA.Native_CARRY4_O_UNCONNECTED [3:1],D}),
-        .S({\NLW_Using_FPGA.Native_CARRY4_S_UNCONNECTED [3:1],LI}));
+        .S({\NLW_Using_FPGA.Native_CARRY4_S_UNCONNECTED [3:1],\TMR_No.mux_sel_reg[1] }));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \Using_FPGA.Native_i_1__11 
+       (.I0(Q),
+        .O(\TMR_No.mux_sel_reg[1] ));
 endmodule
 
 (* ORIG_REF_NAME = "iomodule_v3_1_4_MB_XORCY" *) 
-module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_769
+module microblaze_mcs_0_iomodule_v3_1_4_MB_XORCY_771
    (D,
     \TMR_No.Counter[2].h_Cnt_reg ,
     CI);
@@ -7338,19 +7998,19 @@ module microblaze_mcs_0_sequence_psr
   wire seq_cnt_en;
   wire slowest_sync_clk;
 
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1 
        (.I0(Bsr_out),
         .O(bsr_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1 
        (.I0(Pr_out),
         .O(pr_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h2)) 
     Core_i_1
@@ -7378,7 +8038,7 @@ module microblaze_mcs_0_sequence_psr
         .I2(seq_cnt[3]),
         .I3(seq_cnt[5]),
         .O(p_5_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bsr_dec[2]_i_1 
@@ -7401,7 +8061,7 @@ module microblaze_mcs_0_sequence_psr
         .D(p_5_out[2]),
         .Q(\bsr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT2 #(
     .INIT(4'h2)) 
     bsr_i_1
@@ -7416,7 +8076,7 @@ module microblaze_mcs_0_sequence_psr
         .D(bsr_i_1_n_0),
         .Q(Bsr_out),
         .S(lpf_int));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h9000)) 
     \core_dec[0]_i_1 
@@ -7425,7 +8085,7 @@ module microblaze_mcs_0_sequence_psr
         .I2(seq_cnt[3]),
         .I3(seq_cnt[5]),
         .O(\core_dec[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \core_dec[2]_i_1 
@@ -7456,7 +8116,7 @@ module microblaze_mcs_0_sequence_psr
         .D(\core_dec[2]_i_1_n_0 ),
         .Q(p_0_in),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h8)) 
     from_sys_i_1
@@ -7479,7 +8139,7 @@ module microblaze_mcs_0_sequence_psr
         .I2(seq_cnt[2]),
         .I3(seq_cnt[1]),
         .O(pr_dec0__0));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h0480)) 
     \pr_dec[0]_i_1 
@@ -7510,7 +8170,7 @@ module microblaze_mcs_0_sequence_psr
         .D(p_3_out[2]),
         .Q(\pr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'h2)) 
     pr_i_1
@@ -7558,14 +8218,14 @@ module microblaze_mcs_0_upcnt_n
     \q_int[0]_i_1 
        (.I0(Q[0]),
         .O(q_int0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \q_int[1]_i_1 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(q_int0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \q_int[2]_i_1 
@@ -7573,7 +8233,7 @@ module microblaze_mcs_0_upcnt_n
         .I1(Q[1]),
         .I2(Q[2]),
         .O(q_int0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \q_int[3]_i_1 
@@ -7582,7 +8242,7 @@ module microblaze_mcs_0_upcnt_n
         .I2(Q[2]),
         .I3(Q[3]),
         .O(q_int0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \q_int[4]_i_1 
@@ -12077,7 +12737,7 @@ module microblaze_mcs_0_Decode
         .D(PreFetch_Buffer_I_n_118),
         .Q(compare_Instr),
         .R(\Using_FPGA.of_PipeRun_MuxCY_1_n_9 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     D_AS_INST_0
@@ -12266,7 +12926,7 @@ module microblaze_mcs_0_Decode
         .use_Imm_Reg(use_Imm_Reg),
         .use_Reg_Neg_DI_i27_out(use_Reg_Neg_DI_i27_out),
         .use_Reg_Neg_S_i29_out(use_Reg_Neg_S_i29_out));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'h40)) 
     Read_Strobe_INST_0
@@ -12338,7 +12998,7 @@ module microblaze_mcs_0_Decode
         .D(\Using_FPGA.MUXCY_JUMP_CARRY3_n_1 ),
         .Q(Trace_Delay_Slot_early),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT5 #(
     .INIT(32'hAAA82220)) 
     Trace_Reg_Write_INST_0
@@ -12348,7 +13008,7 @@ module microblaze_mcs_0_Decode
         .I3(mul_Executing_done),
         .I4(Blocked_Valid_Instr),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT4 #(
     .INIT(16'hAAFC)) 
     Trace_Valid_Instr
@@ -12496,7 +13156,7 @@ module microblaze_mcs_0_Decode
         .I4(ex_Valid),
         .I5(\Using_FPGA.Native_i_2__5_n_0 ),
         .O(Reg_Write));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT3 #(
     .INIT(8'hEA)) 
     \Using_FPGA.Native_i_1__65 
@@ -12537,7 +13197,7 @@ module microblaze_mcs_0_Decode
         .I4(\Using_FPGA.Native_i_5_n_0 ),
         .I5(Op1_Low[0]),
         .O(\Using_FPGA.Native ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'hFECCAECC)) 
     \Using_FPGA.Native_i_2__39 
@@ -12562,7 +13222,7 @@ module microblaze_mcs_0_Decode
        (.I0(ex_Valid),
         .I1(write_Carry_I_reg_n_0),
         .O(write_Carry));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT4 #(
     .INIT(16'h3F7F)) 
     \Using_FPGA.Native_i_4__0 
@@ -12571,7 +13231,7 @@ module microblaze_mcs_0_Decode
         .I2(load_Store_i),
         .I3(is_lwx_I),
         .O(\Using_FPGA.Native_i_4__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \Using_FPGA.Native_i_5 
@@ -12857,14 +13517,14 @@ module microblaze_mcs_0_Decode
         .D(inHibit_EX1),
         .Q(exception_kind),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \Using_LWX_SWX_instr.reservation_i_2 
        (.I0(ex_Valid),
         .I1(load_Store_i),
         .O(\Using_LWX_SWX_instr.reservation_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \Using_LWX_SWX_instr.reservation_i_5 
@@ -12878,7 +13538,7 @@ module microblaze_mcs_0_Decode
         .D(\Using_FPGA.of_PipeRun_MuxCY_1_n_7 ),
         .Q(\Using_LWX_SWX_instr.reservation_reg_n_0 ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
     .INIT(8'hBA)) 
     \Using_dynamic_instr_Address.Interrupt_Ack[0]_i_1 
@@ -12886,7 +13546,7 @@ module microblaze_mcs_0_Decode
         .I1(old_IE_value),
         .I2(MSR[0]),
         .O(\Using_dynamic_instr_Address.Interrupt_Ack[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h4F44)) 
     \Using_dynamic_instr_Address.Interrupt_Ack[1]_i_1 
@@ -12913,7 +13573,7 @@ module microblaze_mcs_0_Decode
         .D(MSR[0]),
         .Q(old_IE_value),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'h88080000)) 
     Write_Strobe_INST_0
@@ -12938,7 +13598,7 @@ module microblaze_mcs_0_Decode
         .D(active_wakeup0),
         .Q(active_wakeup),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT2 #(
     .INIT(4'h8)) 
     break_Pipe_i_i_2
@@ -13012,7 +13672,7 @@ module microblaze_mcs_0_Decode
         .I4(\instr_EX_i_reg[0]_0 [23]),
         .I5(sleep_i0),
         .O(hibernate_i_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'hE)) 
     hibernate_i_i_2
@@ -13271,7 +13931,7 @@ module microblaze_mcs_0_Decode
         .D(of_mbar_decode),
         .Q(mbar_decode_I),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'hAAAAAA08)) 
     mbar_first_i_3
@@ -13420,7 +14080,7 @@ module microblaze_mcs_0_Decode
         .I4(active_wakeup),
         .I5(sync_reset),
         .O(suspend_i_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     suspend_i_i_2
@@ -13452,7 +14112,7 @@ module microblaze_mcs_0_Decode
         .D(take_intr_2nd_cycle_reg_n_0),
         .Q(take_intr_Done),
         .R(sync_reset));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT4 #(
     .INIT(16'hB000)) 
     trace_data_access_i_i_1
@@ -14942,14 +15602,14 @@ module microblaze_mcs_0_MB_FDRSE_659
         .D(\Using_FPGA.Native_1 ),
         .Q(MSR),
         .R(\Using_FPGA.Native_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Using_FPGA.Native_i_1__16 
        (.I0(MSR),
         .I1(\Using_FPGA.Native_2 ),
         .O(I3_2));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__9__0 
@@ -25386,7 +26046,7 @@ module microblaze_mcs_0_MB_SRL16E
         .I2(\Using_FPGA.Native_2 ),
         .I3(take_Intr_Now_III),
         .O(D_32));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT5 #(
     .INIT(32'h00200000)) 
     \Using_FPGA.Native_i_2__1 
@@ -25405,7 +26065,7 @@ module microblaze_mcs_0_MB_SRL16E
         .I3(take_Intr_Now_III),
         .I4(sync_reset),
         .O(\Use_Async_Reset.sync_reset_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h8AAA)) 
     doublet_Read_i_i_2
@@ -25433,7 +26093,7 @@ module microblaze_mcs_0_MB_SRL16E
         .I3(inHibit_EX),
         .I4(load_Store_i_reg),
         .O(load_Store_i058_out));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT1 #(
     .INIT(2'h1)) 
     select_ALU_Carry_i_1
@@ -25449,7 +26109,7 @@ module microblaze_mcs_0_MB_SRL16E
         .I4(write_Carry_I_reg_2),
         .I5(write_Carry_I_reg_3),
         .O(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     writing_i_1
@@ -25536,7 +26196,7 @@ module microblaze_mcs_0_MB_SRL16E_37
         .I3(take_Intr_Now_III),
         .I4(\Using_FPGA.Native_1 ),
         .O(Reg_Test_Equal_i));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \Using_FPGA.enable_Interrupts_I_i_1 
@@ -25544,7 +26204,7 @@ module microblaze_mcs_0_MB_SRL16E_37
         .I1(\Using_FPGA.enable_Interrupts_I_reg ),
         .I2(take_Intr_Now_III),
         .O(enable_Interrupts_I));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \write_Addr_I[4]_i_1 
@@ -26351,7 +27011,7 @@ module microblaze_mcs_0_MB_SRL16E_44
         .CLK(Clk),
         .D(Instr),
         .Q(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__34 
@@ -26359,7 +27019,7 @@ module microblaze_mcs_0_MB_SRL16E_44
         .I1(\Using_FPGA.Native ),
         .I2(\Using_FPGA.Native_0 ),
         .O(D_17));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h7)) 
     mtsmsr_write_i_i_2
@@ -27704,7 +28364,7 @@ module microblaze_mcs_0_MB_SRL16E_58
         .I4(D[2]),
         .I5(take_Intr_Now_III),
         .O(of_mbar_decode));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'hFFFFDFFF)) 
     using_Imm_i_2
@@ -27723,7 +28383,7 @@ module microblaze_mcs_0_MB_SRL16E_58
         .I3(write_Reg_reg_0),
         .I4(D[3]),
         .O(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'hF0C0E0C0)) 
     write_Reg_i_4
@@ -27998,7 +28658,7 @@ module microblaze_mcs_0_MB_SRL16E_61
         .CLK(Clk),
         .D(Instr),
         .Q(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h00020200)) 
     \Using_FPGA.Native_i_1__52 
@@ -28008,7 +28668,7 @@ module microblaze_mcs_0_MB_SRL16E_61
         .I3(\Using_FPGA.Native_2 ),
         .I4(\Using_FPGA.Native_3 ),
         .O(Reg_Test_Equal_N_i7_out));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h0002)) 
     \Using_FPGA.Native_i_2__4 
@@ -28200,7 +28860,7 @@ module microblaze_mcs_0_MB_SRL16E_62
         .I4(\Using_FPGA.Native_i_1__10__0 ),
         .I5(\Using_FPGA.Native_i_1__10__0_0 ),
         .O(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \Using_FPGA.Native_i_3__1 
@@ -28238,7 +28898,7 @@ module microblaze_mcs_0_MB_SRL16E_62
         .I4(write_Carry_I_reg_2),
         .I5(write_Carry_I_reg_0),
         .O(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     mbar_decode_I_i_2
@@ -28376,7 +29036,7 @@ module microblaze_mcs_0_MB_SRL16E_63
         .CLK(Clk),
         .D(Instr),
         .Q(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'h2008)) 
     \Using_FPGA.Native_i_1__53 
@@ -28392,7 +29052,7 @@ module microblaze_mcs_0_MB_SRL16E_63
         .I1(\Using_FPGA.Native_5 ),
         .I2(\Using_FPGA.Native_6 ),
         .O(force_Val1_i28_out));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'h2008)) 
     \Using_FPGA.Native_i_1__55 
@@ -28513,14 +29173,14 @@ module microblaze_mcs_0_MB_SRL16E_64
         .CLK(Clk),
         .D(Instr),
         .Q(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'hE)) 
     mbar_is_sleep_i_1
        (.I0(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ),
         .I1(instr_OF),
         .O(mbar_is_sleep0));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \write_Addr_I[0]_i_2 
@@ -28701,7 +29361,7 @@ module microblaze_mcs_0_MB_SRL16E_67
         .CLK(Clk),
         .D(Instr),
         .Q(\DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \Using_FPGA.reset_BIP_I_i_1 
@@ -28709,7 +29369,7 @@ module microblaze_mcs_0_MB_SRL16E_67
         .I1(\Using_FPGA.reset_BIP_I_reg ),
         .I2(take_Intr_Now_III),
         .O(reset_BIP_I8_out));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
     .INIT(8'h54)) 
     \write_Addr_I[3]_i_1 
@@ -41688,7 +42348,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I4(O),
         .I5(Data_Read[18]),
         .O(extend_Data_Read[26]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__10 
@@ -41696,7 +42356,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[3]),
         .O(extend_Data_Read[19]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__11 
@@ -41704,7 +42364,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[2]),
         .O(extend_Data_Read[18]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__12 
@@ -41712,7 +42372,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[1]),
         .O(extend_Data_Read[17]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__13 
@@ -41770,7 +42430,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I4(O),
         .I5(Data_Read[23]),
         .O(extend_Data_Read[31]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__7 
@@ -41778,7 +42438,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[6]),
         .O(extend_Data_Read[22]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__8 
@@ -41786,7 +42446,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[5]),
         .O(extend_Data_Read[21]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_1__9 
@@ -41794,7 +42454,7 @@ module microblaze_mcs_0_MicroBlaze_Area
         .I1(O),
         .I2(Data_Read[4]),
         .O(extend_Data_Read[20]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Using_FPGA.Native_i_2 
@@ -59183,7 +59843,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_FDR
   wire take_Intr_Now_III;
   wire trace_jump_taken_i_reg;
 
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'h00000004)) 
     \Size_17to32.imm_Reg[0]_i_1 
@@ -59236,7 +59896,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_FDR
         .I4(nonvalid_IFetch_n_reg_1),
         .I5(nonvalid_IFetch_n_reg_2),
         .O(inHibit_EX_reg));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h2)) 
     nonvalid_IFetch_n_i_2
@@ -64535,14 +65195,14 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_12
         .I3(dbg_stop_instr_fetch),
         .I4(Trace_Delay_Slot_early),
         .O(jump2_I_reg));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \Using_FPGA.Native_i_1__2__0 
        (.I0(sync_reset),
         .I1(of_Pause_reg),
         .O(R_0));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \Using_FPGA.Native_i_1__3__0 
@@ -64556,7 +65216,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_12
         .I1(inHibit_EX),
         .I2(of_Pause_reg),
         .O(R));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Using_FPGA.Native_i_2__0 
@@ -64573,7 +65233,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_12
         .I4(of_Pause_reg),
         .I5(Trace_Delay_Slot_early_reg),
         .O(break_Pipe_i_reg0));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'hF7F7FF00)) 
     ex_Valid_i_1
@@ -64805,14 +65465,14 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_25
   assign take_Intr_Now_III = lopt;
   GND GND
        (.G(\<const0> ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h1)) 
     Select_Logic_i_1
        (.I0(take_Intr_Now_III),
         .I1(instr_OF),
         .O(Select_Logic0));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \Using_FPGA.Native_i_1__58 
@@ -64824,14 +65484,14 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_25
     \Using_FPGA.Native_i_1__5__0 
        (.I0(take_Intr_Now_III),
         .O(load_Store_i2));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \Using_FPGA.take_Intr_2nd_Phase_i_1 
        (.I0(take_Intr_Now_III),
         .I1(\Using_FPGA.take_Intr_2nd_Phase_reg ),
         .O(inHibit_EX1));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \Using_LWX_SWX_instr.reservation_i_3 
@@ -65260,7 +65920,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
   assign lopt_3 = \^lopt_4 ;
   assign lopt_6 = \^lopt_7 ;
   assign lopt_9 = lopt_8;
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'h08)) 
     Blocked_Valid_Instr_i_1
@@ -65268,7 +65928,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I1(mul_Executing_reg),
         .I2(take_intr_Done),
         .O(Blocked_Valid_Instr0));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     Compare_Instr_i_1
@@ -65276,7 +65936,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I1(take_Intr_Now_III),
         .I2(sync_reset),
         .O(\Use_Async_Reset.sync_reset_reg_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hEA)) 
     Unsigned_Op_i_1
@@ -65301,7 +65961,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
        (.I0(mul_Executing_reg),
         .I1(Buffer_Addr),
         .O(S));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \Using_FPGA.Native_i_1__61 
@@ -65328,7 +65988,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I4(DReady),
         .I5(mul_Executing_reg),
         .O(\Using_LWX_SWX_instr.reservation_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h44440444)) 
     ex_Valid_1st_cycle_i_1
@@ -65347,7 +66007,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I3(instr_OF),
         .I4(is_swx_I),
         .O(is_lwx_I_reg));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'hBABABAAA)) 
     is_lwx_I_i_3
@@ -65366,7 +66026,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I3(instr_OF),
         .I4(is_swx_I),
         .O(is_swx_I_reg));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT4 #(
     .INIT(16'h0100)) 
     swx_ready_i_1
@@ -65375,7 +66035,7 @@ module microblaze_mcs_0_microblaze_v11_0_1_MB_MUXCY_32
         .I2(swx_ready_reg),
         .I3(\Using_LWX_SWX_instr.reservation_reg ),
         .O(\Use_Async_Reset.sync_reset_reg_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \write_Addr_I[0]_i_1 

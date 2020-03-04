@@ -59,7 +59,10 @@ COMPONENT microblaze_mcs_0
     UART_rxd : IN STD_LOGIC;
     UART_txd : OUT STD_LOGIC;
     GPIO1_tri_i : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    GPIO1_tri_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    GPIO1_tri_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    GPIO2_tri_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    GPIO3_tri_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    GPIO4_tri_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -75,7 +78,10 @@ your_instance_name : microblaze_mcs_0
     UART_rxd => UART_rxd,
     UART_txd => UART_txd,
     GPIO1_tri_i => GPIO1_tri_i,
-    GPIO1_tri_o => GPIO1_tri_o
+    GPIO1_tri_o => GPIO1_tri_o,
+    GPIO2_tri_o => GPIO2_tri_o,
+    GPIO3_tri_o => GPIO3_tri_o,
+    GPIO4_tri_o => GPIO4_tri_o
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

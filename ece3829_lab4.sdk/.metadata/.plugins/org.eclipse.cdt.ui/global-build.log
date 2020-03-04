@@ -109,3 +109,221 @@ mb-size hello_world.elf  |tee "hello_world.elf.size"
   11076	    724	   3120	  14920	   3a48	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
+14:41:27 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
+     y_pos - y_pos - 1;
+     ^~~~~
+../src/helloworld.c:143:6: error: 'data' undeclared (first use in this function)
+      data = XIOModule_DiscreteRead(&iomodule, 1);
+      ^~~~
+../src/helloworld.c:143:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:152:6: error: 'button' undeclared (first use in this function)
+      button[0] = 0;
+      ^~~~~~
+../src/helloworld.c:153:6: error: 'seg_out' undeclared (first use in this function); did you mean 'stdout'?
+      seg_out = 0;
+      ^~~~~~~
+      stdout
+../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:42:16 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
+     y_pos - y_pos - 1;
+     ^~~~~
+../src/helloworld.c:143:6: error: 'data' undeclared (first use in this function)
+      data = XIOModule_DiscreteRead(&iomodule, 1);
+      ^~~~
+../src/helloworld.c:143:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:48:21 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:75:6: error: 'data_button' undeclared (first use in this function)
+      data_button = XIOModule_Recv(&iomodule, keyboard, 1);
+      ^~~~~~~~~~~
+../src/helloworld.c:75:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
+     y_pos - y_pos - 1;
+     ^~~~~
+../src/helloworld.c:144:9: error: 'data' undeclared (first use in this function)
+      if(data) {
+         ^~~~
+../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
+     u32 data_disp;
+         ^~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:48:36 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:79:5: warning: statement with no effect [-Wunused-value]
+     y_pos - y_pos - 1;
+     ^~~~~
+../src/helloworld.c:145:9: error: 'data' undeclared (first use in this function)
+      if(data) {
+         ^~~~
+../src/helloworld.c:145:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:60:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
+     u32 data_disp;
+         ^~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:48:43 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:145:9: error: 'data' undeclared (first use in this function)
+      if(data) {
+         ^~~~
+../src/helloworld.c:145:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:60:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
+     u32 data_disp;
+         ^~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:48:58 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
+     u32 coordinates = 0;
+         ^~~~~~~~~~~
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9368	    636	   3116	  13120	   3340	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+14:58:08 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:151:6: error: 'coordinates' undeclared (first use in this function)
+      coordinates = 0;
+      ^~~~~~~~~~~
+../src/helloworld.c:151:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+15:19:52 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9360	    636	   3116	  13112	   3338	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:23:03 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9360	    636	   3116	  13112	   3338	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:26:50 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
+     u32 data_button;
+         ^~~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9364	    636	   3120	  13120	   3340	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '

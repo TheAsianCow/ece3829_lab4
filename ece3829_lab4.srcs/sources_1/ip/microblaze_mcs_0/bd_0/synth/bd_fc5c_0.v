@@ -11,12 +11,18 @@ module bd_fc5c_0
    (Clk,
     GPIO1_tri_i,
     GPIO1_tri_o,
+    GPIO2_tri_o,
+    GPIO3_tri_o,
+    GPIO4_tri_o,
     Reset,
     UART_rxd,
     UART_txd);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_ASYNC_RESET Reset, CLK_DOMAIN bd_fc5c_0_Clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input Clk;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_I" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO1, C_GPI1_INTERRUPT 0, C_GPI1_SIZE 8, C_GPO1_INIT 0x00000000, C_GPO1_SIZE 8, C_USE_GPI1 1, C_USE_GPO1 1" *) input [7:0]GPIO1_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO1 TRI_O" *) output [7:0]GPIO1_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO2 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO2, C_GPI2_INTERRUPT 0, C_GPI2_SIZE 32, C_GPO2_INIT 0x00000000, C_GPO2_SIZE 32, C_USE_GPI2 0, C_USE_GPO2 1" *) output [31:0]GPIO2_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO3 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO3, C_GPI3_INTERRUPT 0, C_GPI3_SIZE 32, C_GPO3_INIT 0x00000000, C_GPO3_SIZE 32, C_USE_GPI3 0, C_USE_GPO3 1" *) output [31:0]GPIO3_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO4 TRI_O" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME GPIO4, C_GPI4_INTERRUPT 0, C_GPI4_SIZE 32, C_GPO4_INIT 0x00000000, C_GPO4_SIZE 32, C_USE_GPI4 0, C_USE_GPO4 1" *) output [31:0]GPIO4_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input Reset;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART RxD" *) input UART_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 UART TxD" *) output UART_txd;
@@ -88,11 +94,17 @@ module bd_fc5c_0
   wire ilmb_sl_0_WRITESTROBE;
   wire [7:0]iomodule_0_GPIO1_TRI_I;
   wire [7:0]iomodule_0_GPIO1_TRI_O;
+  wire [31:0]iomodule_0_GPIO2_TRI_O;
+  wire [31:0]iomodule_0_GPIO3_TRI_O;
+  wire [31:0]iomodule_0_GPIO4_TRI_O;
   wire iomodule_0_UART_RxD;
   wire iomodule_0_UART_TxD;
 
   assign Clk1 = Clk;
   assign GPIO1_tri_o[7:0] = iomodule_0_GPIO1_TRI_O;
+  assign GPIO2_tri_o[31:0] = iomodule_0_GPIO2_TRI_O;
+  assign GPIO3_tri_o[31:0] = iomodule_0_GPIO3_TRI_O;
+  assign GPIO4_tri_o[31:0] = iomodule_0_GPIO4_TRI_O;
   assign UART_txd = iomodule_0_UART_TxD;
   assign iomodule_0_GPIO1_TRI_I = GPIO1_tri_i[7:0];
   assign iomodule_0_UART_RxD = UART_rxd;
@@ -194,6 +206,9 @@ module bd_fc5c_0
        (.Clk(Clk1),
         .GPI1(iomodule_0_GPIO1_TRI_I),
         .GPO1(iomodule_0_GPIO1_TRI_O),
+        .GPO2(iomodule_0_GPIO2_TRI_O),
+        .GPO3(iomodule_0_GPIO3_TRI_O),
+        .GPO4(iomodule_0_GPIO4_TRI_O),
         .LMB_ABus(dlmb_sl_0_ABUS),
         .LMB_AddrStrobe(dlmb_sl_0_ADDRSTROBE),
         .LMB_BE(dlmb_sl_0_BE),

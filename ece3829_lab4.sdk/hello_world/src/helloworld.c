@@ -52,50 +52,106 @@
 #include "xiomodule.h" // add
 
 
-int main(){
-	init_platform();
-	 u32 data;
-	 XIOModule iomodule; // iomodule variable for gpi, gpo, and uart
-	 u8 msg[15] = "This is a test";// buffer for sending message using XIOModule_Send
-	 u8 rx_buf[10]; // receive buffer using XIOModule_Recv
-	 u32 counter;
-	 // example using xil_printf
-	 counter = 1234;
-	 xil_printf("The counter value is %d in decimal and %x in hex\n\r", counter,
-	counter);
-	 print("Read switches, write to LED port, and UART send and receive chars\n\r");
-	 // Initialize module to obtain base address
-	 data = XIOModule_Initialize(&iomodule, XPAR_IOMODULE_0_DEVICE_ID);
-	 data = XIOModule_Start(&iomodule);
-	 // Send 12 characters using Send
-	 // Send is non-blocking so must be called in a loop, may return without sending a character
-	 // unsigned int XIOModule_Send(XIOModule *InstancePtr, u8 *DataBufferPtr, unsigned int NumBytes);
-	 const int count = 14;
-	 int index = 0;
-	 while (index < count) {
-		 data = XIOModule_Send(&iomodule, &msg[index], count - index);
-		 index += data;
-	 }
-	 xil_printf("\n\rThe number of bytes sent was %d\n\r", index);
-	 // Another way to send individual characters
-	 outbyte('X');
-	 outbyte(0x37); // number '7'
-	 outbyte('Z');
-	 outbyte('\n'); // line feed
-	 // Receive a character and store in rx_buf
-	 // unsigned int XIOModule_Recv(XIOModule *InstancePtr, u8 *DataBufferPtr, unsigned int NumBytes);
-	 while
-		 ((data = XIOModule_Recv(&iomodule, rx_buf, 1)) == 0);
-	 xil_printf("The number of bytes received was %d\n\r", data);
-	 xil_printf("Recv: The received char was %c\n\r", rx_buf[0]);
-	 // Another way to receive a single character
-	 rx_buf[0] = inbyte();
-	 xil_printf("inbyte: The received char was %c\n\r", rx_buf[0]);
-	 while (1) {
-		 data = XIOModule_DiscreteRead(&iomodule, 1); // read switches (channel 1)
-		 // data = XIOModule_DiscreteRead(&iomodule, 2); // read push (channel 2)
-		 XIOModule_DiscreteWrite(&iomodule, 1, data); // turn on LEDs (channel 1)
-	 }
-	 cleanup_platform();
-	 return 0;
+int main()
+
+{
+    init_platform();
+    u32 data_button;
+    u32 data_disp;
+    XIOModule iomodule;
+
+    u8 keyboard[10];
+    u16 x_coord = 0;
+    u16 y_coord = 0;
+    u16 pressed = 0;
+
+    u32 x_pos = 9;
+    u32 y_pos = 7;
+
+
+
+    while(1) {
+
+    	data_button = XIOModule_Recv(&iomodule, keyboard, 1);
+    	if(!pressed) {
+			if(keyboard[0] == 'w') { //up
+				y_pos = y_pos - 1;
+				pressed = 1;
+			}
+			else if (keyboard[0] == 's') { //down
+				y_pos = y_pos + 1;
+				pressed = 1;
+			}
+
+			else if (keyboard[0] == 'a') { //left
+				x_pos = x_pos - 1;
+				pressed = 1;
+
+			}
+
+			else if (keyboard[0] == 'd') { //right
+				x_pos = x_pos + 1;
+				pressed = 1;
+			}
+			else {
+				x_pos = x_pos;
+				y_pos = y_pos;
+				pressed = pressed;
+			}
+
+    	}
+
+    	// Debouncer
+    	if(keyboard[0] != 'w' && keyboard[0] != 'a' && keyboard[0] != 's' && keyboard[0] != 'd') pressed = 0;
+
+    	// Wrap Around Logic
+    	if (x_pos == 20)
+    		x_pos = 0;
+		else if (x_pos == -1)
+			x_pos = 19;
+		else if (y_pos == 15)
+			y_pos = 0;
+		else if (y_pos == -1)
+			y_pos = 14;
+		else {
+			y_pos = y_pos;
+			x_pos = x_pos;
+		}
+
+		XIOModule_DiscreteWrite(&iomodule, 1, x_pos);
+		XIOModule_DiscreteWrite(&iomodule, 2, y_pos);
+
+		// Convert Position to BCD for Seven Seg
+		u16 x_ten = x_pos >= 10 ? 1 : 0;
+		u16 x_one = x_pos >= 10 ? x_pos - 10 : x_pos;
+		u16 y_ten = y_pos >= 10 ? 1 : 0;
+		u16 y_one = y_pos >= 10 ? y_pos - 10 : y_pos;
+
+		x_coord |= x_ten;
+		x_coord = x_coord << 4;
+		x_coord |= x_one;
+
+		y_coord |= y_ten;
+		y_coord = y_coord << 4;
+		y_coord |= y_one;
+
+		XIOModule_DiscreteWrite(&iomodule, 3, x_coord);
+		XIOModule_DiscreteWrite(&iomodule, 4, y_coord);
+
+		data_disp = XIOModule_DiscreteRead(&iomodule, 1);
+		if(data_disp){
+			xil_printf("Lab 4: Alyssa Ungerer and Jeffrey Huang\n\r");
+			xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
+		}
+
+
+		// reset everything before the next loop
+		keyboard[0] = 0;
+		x_coord = 0;
+		y_coord = 0;
+
+    }
+
+    cleanup_platform();
+    return 0;
 }

@@ -33,11 +33,23 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world/Debug/hello_world.elf
-set_property SCOPED_TO_REF microblaze_mcs_0 [get_files -all R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world/Debug/hello_world.elf]
-set_property SCOPED_TO_CELLS inst/microblaze_I [get_files -all R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.sdk/hello_world/Debug/hello_world.elf]
-read_verilog -library xil_defaultlib R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/new/mcs_top.v
-read_ip -quiet r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.xci
+add_files R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/Debug/hello_world.elf
+set_property SCOPED_TO_REF microblaze_mcs_0 [get_files -all R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/Debug/hello_world.elf]
+set_property SCOPED_TO_CELLS inst/microblaze_I [get_files -all R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/Debug/hello_world.elf]
+read_verilog -library xil_defaultlib {
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/sources_1/imports/new/bcd7seg.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/new/decoder2to4.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/new/my_counter.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/sources_1/new/seven_seg.v
+  C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/new/slowclock.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/new/vga_clk.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/new/vga_display.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/new/mcs_top.v
+}
+read_vhdl -library xil_defaultlib R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/ECE3829/vga_controller_640_60.vhd
+read_ip -quiet R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0.xci
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_board.xdc]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/bd_fc5c_0_microblaze_I_0.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/bd_fc5c_0_microblaze_I_0_ooc_debug.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_1/bd_fc5c_0_rst_0_0_board.xdc]
@@ -47,10 +59,8 @@ set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece382
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_6/bd_fc5c_0_lmb_bram_I_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_7/bd_fc5c_0_iomodule_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/bd_fc5c_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_board.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/microblaze_mcs_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/data/mb_bootloop_le.elf]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/mb_bootloop_le.elf]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/data/mb_bootloop_le.elf]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
