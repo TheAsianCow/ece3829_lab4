@@ -67,31 +67,36 @@ int main()
     u32 x_pos = 9;
     u32 y_pos = 7;
 
+    u8 led = 1;
+
     data = XIOModule_Initialize(&iomodule, XPAR_IOMODULE_0_DEVICE_ID);
     data = XIOModule_Start(&iomodule);
 
-
     while(1) {
-
     	data = XIOModule_Recv(&iomodule, keyboard, 1);
+//    	xil_printf("%d",data);
     	if(!pressed) {
 			if(keyboard[0] == 'w') { //up
 				y_pos = y_pos - 1;
 				pressed = 1;
+				xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
 			}
 			else if (keyboard[0] == 's') { //down
 				y_pos = y_pos + 1;
 				pressed = 1;
+				xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
 			}
 
 			else if (keyboard[0] == 'a') { //left
 				x_pos = x_pos - 1;
 				pressed = 1;
+				xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
 			}
 
 			else if (keyboard[0] == 'd') { //right
 				x_pos = x_pos + 1;
 				pressed = 1;
+				xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
 			}
 			else {
 				x_pos = x_pos;
@@ -118,14 +123,14 @@ int main()
 			x_pos = x_pos;
 		}
 
-		XIOModule_DiscreteWrite(&iomodule, 1, x_pos);
-		XIOModule_DiscreteWrite(&iomodule, 2, y_pos);
+		XIOModule_DiscreteWrite(&iomodule, 1, y_pos);
+		XIOModule_DiscreteWrite(&iomodule, 2, x_pos);
 
 		// Convert Position to BCD for Seven Seg
-		u16 x_ten = x_pos >= 10 ? 1 : 0;
-		u16 x_one = x_pos >= 10 ? x_pos - 10 : x_pos;
-		u16 y_ten = y_pos >= 10 ? 1 : 0;
-		u16 y_one = y_pos >= 10 ? y_pos - 10 : y_pos;
+		u16 x_ten = y_pos >= 10 ? 1 : 0;
+		u16 x_one = y_pos >= 10 ? y_pos - 10 : y_pos;
+		u16 y_ten = x_pos >= 10 ? 1 : 0;
+		u16 y_one = x_pos >= 10 ? x_pos - 10 : x_pos;
 
 		x_coord |= x_ten;
 		x_coord = x_coord << 4;
@@ -135,15 +140,17 @@ int main()
 		y_coord = y_coord << 4;
 		y_coord |= y_one;
 
-		XIOModule_DiscreteWrite(&iomodule, 3, x_coord);
-		XIOModule_DiscreteWrite(&iomodule, 4, y_coord);
+		XIOModule_DiscreteWrite(&iomodule, 3, y_coord+(x_coord<<8));
 
 		data = XIOModule_DiscreteRead(&iomodule, 1);
 		if(data){
 			xil_printf("Lab 4: Alyssa Ungerer and Jeffrey Huang\n\r");
-			xil_printf("Coordinates: X: %d, Y: %d\n\r", x_pos, y_pos);
+//			xil_printf("Coordinates: X: %d, Y: %d\n\r", y_pos, x_pos);
+			if(led==0x10) led = 1;
+			else led <<= 1;
 		}
 
+		XIOModule_DiscreteWrite(&iomodule, 4, led);
 
 		// reset everything before the next loop
 		keyboard[0] = 0;

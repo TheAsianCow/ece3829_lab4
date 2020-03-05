@@ -21,8 +21,8 @@
 
 
 module vga_display(
-    input [7:0] x_pos,
-    input [7:0] y_pos,
+    input [10:0] x_pos,
+    input [10:0] y_pos,
     input clk,
     input reset,
     output Hsync,
@@ -32,10 +32,10 @@ module vga_display(
     output reg [3:0] vgaBlue
     );
     
-    wire vga_clk;
+//    wire vga_clk;
     //wire clk_1k;
     
-    vga_clk clk2(.clk_in(clk), .clk_out(vga_clk));
+//    vga_clk clk2(.clk_in(clk), .clk_out(vga_clk));
     //slowclk_1M clk3(.clk_in(clk), .clk_out(clk_1k));
     
     wire [10:0] x,y;
@@ -50,7 +50,7 @@ module vga_display(
     //vga stuff
     vga_controller_640_60 display(
         .rst(reset), 
-        .pixel_clk(vga_clk),
+        .pixel_clk(clk),
         .HS(Hsync),
         .VS(Vsync),
         .hcount(y),

@@ -18,6 +18,8 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 create_project -in_memory -part xc7a35tcpg236-1
@@ -28,7 +30,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.cache/wt [current_project]
 set_property parent.project_path R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.cache/ip [current_project]
@@ -38,11 +40,11 @@ set_property SCOPED_TO_REF microblaze_mcs_0 [get_files -all R:/ECE3829_Labs/ece3
 set_property SCOPED_TO_CELLS inst/microblaze_I [get_files -all R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/Debug/hello_world.elf]
 read_verilog -library xil_defaultlib {
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/sources_1/imports/new/bcd7seg.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/new/debounce_clk.v
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/new/decoder2to4.v
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/new/my_counter.v
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/imports/imports/sources_1/new/seven_seg.v
-  C:/Users/ajungerer/Downloads/ece3829_lab3-master/ece3829_lab3-master/ece3829_lab3.srcs/sources_1/imports/new/slowclock.v
-  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/new/vga_clk.v
+  R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/new/slowclock.v
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/imports/sources_1/new/vga_display.v
   R:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/new/mcs_top.v
 }
@@ -61,6 +63,11 @@ set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece382
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/bd_fc5c_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/mb_bootloop_le.elf]
 set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/microblaze_mcs_0/bd_0/ip/ip_0/data/mb_bootloop_le.elf]
+
+read_ip -quiet r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all r:/ECE3829_Labs/ece3829_lab4/ece3829_lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

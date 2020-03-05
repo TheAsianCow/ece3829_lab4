@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Mar  4 15:31:47 2020
-| Host             : AK113-07 running 64-bit major release  (build 9200)
+| Date             : Thu Mar  5 16:20:19 2020
+| Host             : AK113-09 running 64-bit major release  (build 9200)
 | Command          : report_power -file mcs_top_power_routed.rpt -pb mcs_top_power_summary_routed.pb -rpx mcs_top_power_routed.rpx
 | Design           : mcs_top
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.224        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.043        |
+| Dynamic (W)              | 0.151        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.003 |        3 |       --- |             --- |
-| Slice Logic              |     0.002 |     1822 |       --- |             --- |
-|   LUT as Logic           |     0.002 |      612 |     20800 |            2.94 |
+| Clocks                   |     0.005 |        7 |       --- |             --- |
+| Slice Logic              |     0.002 |     1849 |       --- |             --- |
+|   LUT as Logic           |     0.002 |      622 |     20800 |            2.99 |
 |   LUT as Distributed RAM |    <0.001 |      128 |      9600 |            1.33 |
-|   CARRY4                 |    <0.001 |       43 |      8150 |            0.53 |
-|   Register               |    <0.001 |      443 |     41600 |            1.06 |
+|   CARRY4                 |    <0.001 |       44 |      8150 |            0.54 |
+|   Register               |    <0.001 |      460 |     41600 |            1.11 |
 |   LUT as Shift Register  |    <0.001 |       48 |      9600 |            0.50 |
 |   F7/F8 Muxes            |    <0.001 |       32 |     32600 |            0.10 |
-|   Others                 |     0.000 |      326 |       --- |             --- |
-| Signals                  |     0.004 |     1158 |       --- |             --- |
+|   Others                 |     0.000 |      328 |       --- |             --- |
+| Signals                  |     0.004 |     1175 |       --- |             --- |
 | Block RAM                |     0.006 |        8 |        50 |           16.00 |
-| I/O                      |     0.028 |       38 |       106 |           35.85 |
+| MMCM                     |     0.106 |        1 |         5 |           20.00 |
+| I/O                      |     0.027 |       34 |       106 |           32.08 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.116 |          |           |                 |
+| Total                    |     0.224 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,8 +76,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.015 |      0.010 |
-| Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
+| Vccint    |       1.000 |     0.028 |       0.018 |      0.010 |
+| Vccaux    |       1.800 |     0.072 |       0.060 |      0.013 |
 | Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -128,11 +129,15 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------+----------+-----------------+
-| Clock       | Domain   | Constraint (ns) |
-+-------------+----------+-----------------+
-| sys_clk_pin | clk_fpga |            10.0 |
-+-------------+----------+-----------------+
++--------------------+------------------------------+-----------------+
+| Clock              | Domain                       | Constraint (ns) |
++--------------------+------------------------------+-----------------+
+| clk_100M_clk_wiz_0 | mmcm/inst/clk_100M_clk_wiz_0 |            10.0 |
+| clk_vga_clk_wiz_0  | mmcm/inst/clk_vga_clk_wiz_0  |            40.0 |
+| clkfbout_clk_wiz_0 | mmcm/inst/clkfbout_clk_wiz_0 |            10.0 |
+| sys_clk_pin        | clk_fpga                     |            10.0 |
+| sys_clk_pin        | clk_fpga_IBUF_BUFG           |            10.0 |
++--------------------+------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -144,12 +149,14 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| mcs_top            |     0.043 |
-|   mcs_0            |     0.014 |
-|     inst           |     0.014 |
+| mcs_top            |     0.151 |
+|   mcs_0            |     0.015 |
+|     inst           |     0.015 |
 |       iomodule_0   |     0.001 |
 |       lmb_bram_I   |     0.006 |
-|       microblaze_I |     0.007 |
+|       microblaze_I |     0.008 |
+|   mmcm             |     0.106 |
+|     inst           |     0.106 |
 +--------------------+-----------+
 
 

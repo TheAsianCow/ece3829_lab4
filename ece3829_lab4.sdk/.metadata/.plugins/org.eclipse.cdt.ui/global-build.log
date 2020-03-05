@@ -1,7 +1,10 @@
-14:53:16 **** Incremental Build of configuration Debug for project hello_world ****
+14:21:11 **** Incremental Build of configuration Debug for project hello_world ****
 make all 
 make: Nothing to be done for 'all'.
-15:09:07 **** Auto Build of configuration Debug for project hello_world ****
+14:28:06 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Nothing to be done for 'all'.
+14:34:29 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -16,10 +19,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2696	    268	   3108	   6072	   17b8	hello_world.elf
+  10704	    724	   3116	  14544	   38d0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:13:20 **** Auto Build of configuration Debug for project hello_world ****
+14:38:06 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -34,10 +37,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2696	    268	   3108	   6072	   17b8	hello_world.elf
+  10704	    724	   3116	  14544	   38d0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:15:12 **** Auto Build of configuration Debug for project hello_world ****
+14:42:57 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -52,10 +55,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   4252	    360	   3116	   7728	   1e30	hello_world.elf
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:36:21 **** Auto Build of configuration Debug for project hello_world ****
+14:51:24 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -70,10 +73,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  11076	    724	   3120	  14920	   3a48	hello_world.elf
+  10704	    724	   3116	  14544	   38d0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:39:48 **** Auto Build of configuration Debug for project hello_world ****
+14:54:23 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -88,10 +91,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  11076	    724	   3120	  14920	   3a48	hello_world.elf
+  10704	    724	   3116	  14544	   38d0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:46:56 **** Auto Build of configuration Debug for project hello_world ****
+14:57:45 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -106,134 +109,244 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  11076	    724	   3120	  14920	   3a48	hello_world.elf
+  10704	    724	   3116	  14544	   38d0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-14:41:27 **** Auto Build of configuration Debug for project hello_world ****
+14:57:54 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:01:21 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:01:29 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:05:23 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:09:05 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:11:22 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:16:17 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10676	    724	   3120	  14520	   38b8	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:21:00 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10688	    724	   3116	  14528	   38c0	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:26:22 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10688	    724	   3116	  14528	   38c0	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+15:36:24 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
-     y_pos - y_pos - 1;
-     ^~~~~
-../src/helloworld.c:143:6: error: 'data' undeclared (first use in this function)
-      data = XIOModule_DiscreteRead(&iomodule, 1);
-      ^~~~
-../src/helloworld.c:143:6: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:152:6: error: 'button' undeclared (first use in this function)
-      button[0] = 0;
-      ^~~~~~
-../src/helloworld.c:153:6: error: 'seg_out' undeclared (first use in this function); did you mean 'stdout'?
-      seg_out = 0;
-      ^~~~~~~
-      stdout
-../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
+../src/helloworld.c:70:5: error: unknown type name 'u4'; did you mean 'u64'?
+     u4 led = 1;
+     ^~
+     u64
+../src/helloworld.c:70:8: warning: unused variable 'led' [-Wunused-variable]
+     u4 led = 1;
+        ^~~
 make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-14:42:16 **** Auto Build of configuration Debug for project hello_world ****
+15:36:44 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
-     y_pos - y_pos - 1;
-     ^~~~~
-../src/helloworld.c:143:6: error: 'data' undeclared (first use in this function)
-      data = XIOModule_DiscreteRead(&iomodule, 1);
-      ^~~~
-../src/helloworld.c:143:6: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
+../src/helloworld.c:70:5: error: unknown type name 'u4'; did you mean 'u64'?
+     u4 led = 1;
+     ^~
+     u64
+../src/helloworld.c:149:4: error: 'LED' undeclared (first use in this function)
+    LED <<= 1;
+    ^~~
+../src/helloworld.c:149:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:70:8: warning: unused variable 'led' [-Wunused-variable]
+     u4 led = 1;
+        ^~~
 make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-14:48:21 **** Auto Build of configuration Debug for project hello_world ****
+15:37:30 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:75:6: error: 'data_button' undeclared (first use in this function)
-      data_button = XIOModule_Recv(&iomodule, keyboard, 1);
-      ^~~~~~~~~~~
-../src/helloworld.c:75:6: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:78:5: warning: statement with no effect [-Wunused-value]
-     y_pos - y_pos - 1;
-     ^~~~~
-../src/helloworld.c:144:9: error: 'data' undeclared (first use in this function)
-      if(data) {
-         ^~~~
-../src/helloworld.c:69:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
-     u32 data_disp;
-         ^~~~~~~~~
+../src/helloworld.c:70:5: error: unknown type name 'u4'; did you mean 'u64'?
+     u4 led = 1;
+     ^~
+     u64
 make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-14:48:36 **** Auto Build of configuration Debug for project hello_world ****
+15:37:51 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:79:5: warning: statement with no effect [-Wunused-value]
-     y_pos - y_pos - 1;
-     ^~~~~
-../src/helloworld.c:145:9: error: 'data' undeclared (first use in this function)
-      if(data) {
-         ^~~~
-../src/helloworld.c:145:9: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:60:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
-     u32 data_disp;
-         ^~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
+../src/helloworld.c:70:5: error: unknown type name 'u4'; did you mean 'u64'?
+     u4 led = 1;
+     ^~
+     u64
+../src/helloworld.c:149:19: warning: statement with no effect [-Wunused-value]
+    if(led==0) led == 1;
+               ~~~~^~~~
 make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-14:48:43 **** Auto Build of configuration Debug for project hello_world ****
+15:38:01 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:145:9: error: 'data' undeclared (first use in this function)
-      if(data) {
-         ^~~~
-../src/helloworld.c:145:9: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:60:9: warning: variable 'data_disp' set but not used [-Wunused-but-set-variable]
-     u32 data_disp;
-         ^~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
+../src/helloworld.c:70:5: error: unknown type name 'u4'; did you mean 'u64'?
+     u4 led = 1;
+     ^~
+     u64
 make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-14:48:58 **** Auto Build of configuration Debug for project hello_world ****
+15:38:42 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:70:9: warning: variable 'coordinates' set but not used [-Wunused-but-set-variable]
-     u32 coordinates = 0;
-         ^~~~~~~~~~~
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
 'Finished building: ../src/helloworld.c'
 ' '
 'Building target: hello_world.elf'
@@ -244,32 +357,14 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9368	    636	   3116	  13120	   3340	hello_world.elf
+  10736	    724	   3116	  14576	   38f0	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-14:58:08 **** Auto Build of configuration Debug for project hello_world ****
+15:44:31 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:151:6: error: 'coordinates' undeclared (first use in this function)
-      coordinates = 0;
-      ^~~~~~~~~~~
-../src/helloworld.c:151:6: note: each undeclared identifier is reported only once for each function it appears in
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
-make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
-15:19:52 **** Auto Build of configuration Debug for project hello_world ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
 'Finished building: ../src/helloworld.c'
 ' '
 'Building target: hello_world.elf'
@@ -280,54 +375,10 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   9360	    636	   3116	  13112	   3338	hello_world.elf
+  10768	    724	   3116	  14608	   3910	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
-15:23:03 **** Auto Build of configuration Debug for project hello_world ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: hello_world.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: hello_world.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size hello_world.elf  |tee "hello_world.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   9360	    636	   3116	  13112	   3338	hello_world.elf
-'Finished building: hello_world.elf.size'
-' '
-15:26:50 **** Auto Build of configuration Debug for project hello_world ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:59:9: warning: variable 'data_button' set but not used [-Wunused-but-set-variable]
-     u32 data_button;
-         ^~~~~~~~~~~
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: hello_world.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: hello_world.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size hello_world.elf  |tee "hello_world.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   9364	    636	   3120	  13120	   3340	hello_world.elf
-'Finished building: hello_world.elf.size'
-' '
-16:31:45 **** Auto Build of configuration Debug for project hello_world ****
+15:48:27 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -342,24 +393,6 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -ml
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  10592	    724	   3116	  14432	   3860	hello_world.elf
-'Finished building: hello_world.elf.size'
-' '
-18:08:40 **** Auto Build of configuration Debug for project hello_world ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_I/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: hello_world.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_world_bsp/microblaze_I/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: hello_world.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size hello_world.elf  |tee "hello_world.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  10592	    724	   3116	  14432	   3860	hello_world.elf
+  10768	    724	   3116	  14608	   3910	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
